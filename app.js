@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var apikey = require('./config/apikey');
+//var apikey = require('./config/apikey');
 
 // AUTHENTICATION MODULES
 session = require("express-session"),
@@ -167,27 +167,19 @@ app.get('/forum',forumPostController.getAllForumPosts)
 
 app.post('/forum',forumPostController.saveForumPost)
 
-
 app.post('/forumDelete',forumPostController.deleteForumPost)
 
 
-app.get('/forum', function(req, res, next) {
-  res.render('forum',{title:"forum"});
-});
 
 app.get('/griddemo', function(req, res, next) {
   res.render('griddemo',{title:"Grid Demo"});
 });
 
 
-app.get('/quiz1', function(req, res, next) {
-  res.render('quiz1',{title:"Quiz Demo"});
-});
 
 app.get('/bmidemo', (req, res) => {
   res.render('bmidemo',{title:"BMI Demo"});
 });
-
 
 
 
