@@ -172,6 +172,9 @@ app.use(function(req,res,next){
   next()
 });
 
+app.get('/about', function(req, res, next) {
+  res.render('about');
+});
 
 app.get('/', function(req, res, next) {
   res.render('index',{title:"MyDei$"});
