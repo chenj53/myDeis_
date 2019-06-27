@@ -73,20 +73,23 @@ app.use((req,res,next) => {
   else {
     res.locals.loggedIn = false
   }
-  console.log('req.user = ')
-console.dir(req.user)
+  //console.log('req.user = ')
+  //console.dir(req.user)
+  res.locals.status = 'none'
+  if (req.user){
+       console.log(JSON.stringify(owners))
+       console.log(req.user.googleemail)
+       if (owners.indexOf(req.user.googleemail)>-1){
+         console.log("Owner has logged in")
+         res.locals.status = 'owner'
+       }
+       else {
+         console.log('student has logged in')
+         res.locals.status = 'student'
+       }
+  }
+  console.log("res.locals = "+JSON.stringify(res.locals))
 
-
-
-
-if (req.user){
-     if (owners.indexOf(req.body.googleemail)>-1){
-       console.log("Owner has logged in")
-       res.locals.status = 'owner'
-     }
-     else {
-       console.log('student has logged in')
-       res.locals.status = 'student'
   next()
 })
 

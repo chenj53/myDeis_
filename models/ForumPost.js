@@ -8,6 +8,7 @@ var forumPostSchema = Schema( {
   userName: String,
   post: String,
   createdAt: Date
+  
 } );
 
 module.exports = mongoose.model( 'ForumPost', forumPostSchema );
