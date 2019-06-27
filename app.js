@@ -21,7 +21,7 @@ db.once('open', function() {
   console.log("we are connected!!!")
 });
 
-const commentController = require('./controllers/commentController')
+
 const profileController = require('./controllers/profileController')
 const forumPostController = require('./controllers/forumPostController')
 
@@ -198,18 +198,6 @@ app.get('/bmidemo', (req, res) => {
 
 
 
-app.post('/processform', commentController.saveComment)
-
-app.get('/showComments', commentController.getAllComments)
-// app.use('/', indexRouter);  // this is how we use a router to handle the / path
-// but here we are more direct
-
-app.get('/showComment/:id', commentController.getOneComment)
-
-function processFormData(req,res,next){
-  res.render('formdata',
-     {title:"Form Data",url:req.body.url, coms:req.body.theComments})
-}
 
 
 
