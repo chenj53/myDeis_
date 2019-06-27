@@ -91,7 +91,7 @@ app.use((req,res,next) => {
   console.log("res.locals = "+JSON.stringify(res.locals))
 
   next()
-})
+}
 
 
 
