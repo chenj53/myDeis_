@@ -189,10 +189,6 @@ app.post('/forumDelete',forumPostController.deleteForumPost)
 
 
 
-app.get('/griddemo', function(req, res, next) {
-  res.render('griddemo',{title:"Grid Demo"});
-});
-
 
 
 app.get('/bmidemo', (req, res) => {
@@ -201,11 +197,6 @@ app.get('/bmidemo', (req, res) => {
 
 
 
-// myform demo ...
-
-app.get('/myform', function(req, res, next) {
-  res.render('myform',{title:"Form Demo"});
-});
 
 app.post('/processform', commentController.saveComment)
 
