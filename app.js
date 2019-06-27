@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 //var apikey = require('./config/apikey');
-       
+
 // AUTHENTICATION MODULES
 session = require("express-session"),
 bodyParser = require("body-parser"),
@@ -59,11 +59,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 
-const approvedLogins = ["tjhickey724@gmail.com","csjbs2018@gmail.com"];
+const owners = ["chenj53@brandeis.edu", "jaytseng@brandeis.edu", "tristantseng@brandeis.edu" ]
 
 // here is where we check on their logged in status
 app.use((req,res,next) => {
-  res.locals.title="YellowCartwheel"
+  res.locals.title="MyDei$"
   res.locals.loggedIn = false
   if (req.isAuthenticated()){
       console.log("user has been Authenticated")
@@ -73,6 +73,20 @@ app.use((req,res,next) => {
   else {
     res.locals.loggedIn = false
   }
+  console.log('req.user = ')
+console.dir(req.user)
+
+
+
+
+if (req.user){
+     if (owners.indexOf(req.body.googleemail)>-1){
+       console.log("Owner has logged in")
+       res.locals.status = 'owner'
+     }
+     else {
+       console.log('student has logged in')
+       res.locals.status = 'student'
   next()
 })
 
