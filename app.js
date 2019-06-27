@@ -88,7 +88,7 @@ if (req.user){
        console.log('student has logged in')
        res.locals.status = 'student'
   next()
-})
+}
 
 
 
@@ -173,7 +173,7 @@ app.use(function(req,res,next){
 
 
 app.get('/', function(req, res, next) {
-  res.render('index',{title:"YellowCartwheel"});
+  res.render('index',{title:"MyDei$"});
 });
 
 
