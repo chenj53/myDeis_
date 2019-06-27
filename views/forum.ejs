@@ -13,8 +13,8 @@
             Sell item: <br>
 
 
-               <label for="category">Category</label>
-               <select class="form-control" id="category">
+               <label for="category">Category: </label>
+               <select class="form-control" id="category" name="category">
                  <option>Books</option>
                  <option>Furniture</option>
                  <option>Room Decoration</option>
@@ -23,7 +23,7 @@
                </select>
 
 
-            <textarea id="post" name="post"></textarea>
+            <textarea class="form-control" id="post" name="post" placeholder="Item Description"></textarea>
             <br>
             <input type="submit">
           </form>
@@ -39,8 +39,9 @@
                        <% if (posts[i].userId.equals(user._id)) { %>
                            <input type="checkbox" name="delete" value="<%= posts[i]._id %>">
                        <% } %>
-                       <%= posts[i].category %>
                        <%= posts[i].post %>
+                       <%= posts[i].category %>
+
 
                    </li>
               <% } %>
