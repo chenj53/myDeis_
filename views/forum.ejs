@@ -2,19 +2,22 @@
 <%- include('menubar') -%>
     <div class="jumbotron">
         <h1>Sell</h1>
-        <p>Sell Second Hand Items</p>
+        <p>Post your items for sale!</p>
     </div>
 
     <div class="row">
       <div class="col-md col-sm-2">
-        <h1> Books </h1>
-        <p> Find new and used books here </p>
         <p>   <form method="post" action="/forum">
+            <select class="form-control form-control-sm" style="width: 200px;">
+              <br>
+            <option>Books</option>
+            <option>Furniture</option>
+            </select>
             Item: <br>
-            <textarea id="post" rows="1" cols="40" name="post"></textarea>
+            <textarea id="post" rows="1" cols="35" name="post"></textarea>
             <br>
             Price: <br>
-            <textarea id="post" rows="1" cols="40" name="post"></textarea>
+            <textarea id="post" rows="1" cols="35" name="post"></textarea>
             <br>
             Description: <br>
             <textarea id="post" rows="5" cols="35" name="post"></textarea>
@@ -22,7 +25,9 @@
             <input type="submit">
           </form>
 
-          <form method="post" action="/forumDelete">
+
+
+          <!-- <form method="post" action="/forumDelete">
               <ol>
               <% for(i = 0; i<posts.length; i++){  %>
                   <li> <a href="/showPost/<%= posts[i]._id %>">
@@ -41,11 +46,12 @@
               <% } %>
               </ol>
               <input type="submit" value="delete marked">
-          </form>
+          </form> -->
+
         </p>
       </div>
 
-      <div class="col-md col-sm-2">
+      <!-- <div class="col-md col-sm-2">
         <h1> Furniture </h1>
         <p> New and used furniture available </p>
         <p>   <form method="post" action="/forum">
@@ -59,8 +65,8 @@
             <textarea id="post" rows="5" cols="35" name="post"></textarea>
             <br>
             <input type="submit">
-          </form>
-
+          </form> -->
+<!--
               <form method="post" action="/forumDelete">
                   <ol>
                   <% for(i = 0; i<posts.length; i++){  %>
@@ -78,7 +84,7 @@
                   <% } %>
                   </ol>
                   <input type="submit" value="delete marked">
-              </form>
+              </form> -->
             </p>
           </div>
       </div>
