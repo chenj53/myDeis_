@@ -7,7 +7,7 @@ exports.saveForumPost = ( req, res ) => {
   if (!res.locals.loggedIn) {
     return res.send("You must be logged in to post to the forum.")
   }
-
+ 
   let newForumPost = new ForumPost(
    {
     userId: req.user._id,
