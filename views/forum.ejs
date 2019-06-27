@@ -36,36 +36,36 @@
           </form>
         </p>
       </div>
-
       <div class="col-md col-sm-2">
         <h1> Furniture </h1>
         <p> New and used furniture available </p>
-        <p>  <form method="post" action="/forum">
-            Sell item: <br>
-            <textarea id="post" name="post"></textarea>
-            <br>
-            <input type="submit">
-          </form>
+        <p>   <form method="post" action="/forum">
+                Sell item: <br>
+                <textarea id="post" name="post"></textarea>
+                <br>
+                <input type="submit">
+              </form>
 
-          <form method="post" action="/forumDelete">
-              <ol>
-              <% for(i = 0; i<posts.length; i++){  %>
-                  <li> <a href="/showPost/<%= posts[i]._id %>">
-                        <%= posts[i].userName %></a>
-                        <i>
-                       <%= posts[i].createdAt %></\/i> <br>
-                       <% console.dir([posts[i].userId,user._id]) %>
-                       <% if (posts[i].userId.equals(user._id)) { %>
-                           <input type="checkbox" name="delete" value="<%= posts[i]._id %>">
-                       <% } %>
-                       <%= posts[i].post %>
+              <form method="post" action="/forumDelete">
+                  <ol>
+                  <% for(i = 0; i<posts.length; i++){  %>
+                      <li> <a href="/showPost/<%= posts[i]._id %>">
+                            <%= posts[i].userName %></a>
+                            <i>
+                           <%= posts[i].createdAt %></\/i> <br>
+                           <% console.dir([posts[i].userId,user._id]) %>
+                           <% if (posts[i].userId.equals(user._id)) { %>
+                               <input type="checkbox" name="delete" value="<%= posts[i]._id %>">
+                           <% } %>
+                           <%= posts[i].post %>
 
-                   </li>
-              <% } %>
-              </ol>
-              <input type="submit" value="delete marked">
-          </form>
-        </p>
+                       </li>
+                  <% } %>
+                  </ol>
+                  <input type="submit" value="delete marked">
+              </form>
+            </p>
+          </div>
       </div>
     </div>
 

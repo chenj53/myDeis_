@@ -5,14 +5,15 @@ exports.saveForumPost = ( req, res ) => {
   //console.log("in saveSkill!")
   //console.dir(req)
   if (!res.locals.loggedIn) {
-    return res.send("You must be logged in to post to the forum.")
+    return res.send("You must be logged in to use the shop.")
   }
- 
+
   let newForumPost = new ForumPost(
    {
     userId: req.user._id,
     userName:req.user.googlename,
-    post: req.body.post,
+    post1: req.body.post1,
+    post2: req.body.post2,
     createdAt: new Date()
    }
   )
