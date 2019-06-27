@@ -88,7 +88,7 @@ if (req.user){
        console.log('student has logged in')
        res.locals.status = 'student'
   next()
-})
+}
 
 
 
