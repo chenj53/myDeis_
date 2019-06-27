@@ -1,8 +1,8 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
     <div class="jumbotron">
-        <h1>Shop</h1>
-        <p>Sell and Purchase Second Hand Items</p>
+        <h1>Sell</h1>
+        <p>Sell Second Hand Items</p>
     </div>
 
     <div class="row">
@@ -10,20 +10,14 @@
         <h1> Books </h1>
         <p> Find new and used books here </p>
         <p>   <form method="post" action="/forum">
-            Sell item: <br>
-
-            <div class="form-group">
-               <label for="category">Category</label>
-               <select class="form-control" id="category">
-                 <option>Books</option>
-                 <option>Furniture</option>
-                 <option>Room Decoration</option>
-                 <option>Instruments</option>
-                 <option>Other</option>
-               </select>
-             </div>
-
-            <textarea id="post" name="post"></textarea>
+            Item: <br>
+            <textarea id="post" rows="1" cols="40" name="post"></textarea>
+            <br>
+            Price: <br>
+            <textarea id="post" rows="1" cols="40" name="post"></textarea>
+            <br>
+            Description: <br>
+            <textarea id="post" rows="5" cols="35" name="post"></textarea>
             <br>
             <input type="submit">
           </form>
@@ -39,8 +33,9 @@
                        <% if (posts[i].userId.equals(user._id)) { %>
                            <input type="checkbox" name="delete" value="<%= posts[i]._id %>">
                        <% } %>
-                       <%= posts[i].category %>
                        <%= posts[i].post %>
+                       <%= posts[i].category %>
+
 
                    </li>
               <% } %>
@@ -49,16 +44,22 @@
           </form>
         </p>
       </div>
-      
+
       <div class="col-md col-sm-2">
         <h1> Furniture </h1>
         <p> New and used furniture available </p>
         <p>   <form method="post" action="/forum">
-                Sell item: <br>
-                <textarea id="post" name="post"></textarea>
-                <br>
-                <input type="submit">
-              </form>
+            Item: <br>
+            <textarea id="post" rows="1" cols="40" name="post"></textarea>
+            <br>
+            Price: <br>
+            <textarea id="post" rows="1" cols="40" name="post"></textarea>
+            <br>
+            Description: <br>
+            <textarea id="post" rows="5" cols="35" name="post"></textarea>
+            <br>
+            <input type="submit">
+          </form>
 
               <form method="post" action="/forumDelete">
                   <ol>
