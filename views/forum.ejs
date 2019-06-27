@@ -11,6 +11,18 @@
         <p> Find new and used books here </p>
         <p>   <form method="post" action="/forum">
             Sell item: <br>
+
+
+               <label for="category">Category</label>
+               <select class="form-control" id="category">
+                 <option>Books</option>
+                 <option>Furniture</option>
+                 <option>Room Decoration</option>
+                 <option>Instruments</option>
+                 <option>Other</option>
+               </select>
+
+
             <textarea id="post" name="post"></textarea>
             <br>
             <input type="submit">
@@ -27,6 +39,7 @@
                        <% if (posts[i].userId.equals(user._id)) { %>
                            <input type="checkbox" name="delete" value="<%= posts[i]._id %>">
                        <% } %>
+                       <%= posts[i].category %>
                        <%= posts[i].post %>
 
                    </li>
@@ -36,7 +49,7 @@
           </form>
         </p>
       </div>
-      
+
       <div class="col-md col-sm-2">
         <h1> Furniture </h1>
         <p> New and used furniture available </p>

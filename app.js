@@ -195,6 +195,11 @@ app.get('/bmidemo', (req, res) => {
   res.render('bmidemo',{title:"BMI Demo"});
 });
 
+app.get('/shop', (req, res) => {
+  res.render('shop',{title:"Shop"});
+});
+
+
 
 
 
