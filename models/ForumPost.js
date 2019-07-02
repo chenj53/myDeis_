@@ -7,7 +7,7 @@ var forumPostSchema = Schema( {
   userId: ObjectId,
   userName: String,
   post1: String,
-  post2: String,
+  post2: Number,
   createdAt: Date
 
 } );

@@ -2,33 +2,35 @@
 <%- include('menubar') -%>
     <div class="jumbotron">
         <h1>Sell</h1>
-        <p>Sell Second Hand Items</p>
+        <p>Post your items for sale!</p>
     </div>
 
     <div class="row">
       <div class="col-md col-sm-2">
-        <h1> Books </h1>
-        <p> Find new and used books here </p>
-        <p>   <form method="post" action="/forum">
-            Sell item: <br>
+        <p>   <form method="post" action="/forum" >
+            <select class="form-control form-control-md" style="width: 200px;" >
+            Category:  <br>
+            <option>Books</option>
+            <option>Furniture</option>
+            <option>Apparel</option>
+            <option>Others</option>
+            </select>
 
-
-               <label for="category">Category: </label>
-               <select class="form-control" id="category" name="category">
-                 <option>Books</option>
-                 <option>Furniture</option>
-                 <option>Room Decoration</option>
-                 <option>Instruments</option>
-                 <option>Other</option>
-               </select>
-
-
-            <textarea class="form-control" id="post" name="post" placeholder="Item Description"></textarea>
+            Item: <br>
+            <textarea class="form-control form-control-md" id="post" rows="1" cols="35" style="width: 200px;" name="post"></textarea>
+            <br>
+            Price: <br>
+            <textarea class="form-control form-control-md" id="post" rows="1" cols="35" style="width: 200px;" name="post"></textarea>
+            <br>
+            Description: <br>
+            <textarea class="form-control form-control-md" id="post" rows="5" cols="35"  name="post"></textarea>
             <br>
             <input type="submit">
           </form>
 
-          <form method="post" action="/forumDelete">
+
+
+          <!-- <form method="post" action="/forumDelete">
               <ol>
               <% for(i = 0; i<posts.length; i++){  %>
                   <li> <a href="/showPost/<%= posts[i]._id %>">
@@ -47,21 +49,28 @@
               <% } %>
               </ol>
               <input type="submit" value="delete marked">
-          </form>
+          </form> -->
+
         </p>
       </div>
       
 
-      <div class="col-md col-sm-2">
+      <!-- <div class="col-md col-sm-2">
         <h1> Furniture </h1>
         <p> New and used furniture available </p>
         <p>   <form method="post" action="/forum">
-                Sell item: <br>
-                <textarea id="post" name="post"></textarea>
-                <br>
-                <input type="submit">
-              </form>
-
+            Item: <br>
+            <textarea id="post" rows="1" cols="40" name="post"></textarea>
+            <br>
+            Price: <br>
+            <textarea id="post" rows="1" cols="40" name="post"></textarea>
+            <br>
+            Description: <br>
+            <textarea id="post" rows="5" cols="35" name="post"></textarea>
+            <br>
+            <input type="submit">
+          </form> -->
+<!--
               <form method="post" action="/forumDelete">
                   <ol>
                   <% for(i = 0; i<posts.length; i++){  %>
@@ -79,7 +88,7 @@
                   <% } %>
                   </ol>
                   <input type="submit" value="delete marked">
-              </form>
+              </form> -->
             </p>
           </div>
       </div>
