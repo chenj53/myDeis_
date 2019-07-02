@@ -1,102 +1,35 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
     <div class="jumbotron">
-        <h1>Sell</h1>
-        <p>Post your items for sale!</p>
+        <h1>Student Forum</h1>
+        <p>Chat about classes and life!</p>
     </div>
 
-    <div class="row">
-      <div class="col-md col-sm-2">
-        <p>   <form method="post" action="/forum" >
-            <select class="form-control form-control-md" style="width: 200px;" >
-            Category:  <br>
-            <option>Books</option>
-            <option>Furniture</option>
-            <option>Apparel</option>
-            <option>Others</option>
-            </select>
+    <form method="post" action="/forum">
+      New Post: <br>
+      <textarea id="post" name="post"></textarea>
+      <br>
+      <input type="submit">
+    </form>
+    <hr>
+    <form method="post" action="/forumDelete">
+        <input type="submit" value="delete marked">
+        <ol>
+        <% for(i = 0; i<posts.length; i++){  %>
+            <li> <a href="/showPost/<%= posts[i]._id %>">
+                  <%= posts[i].userName %></a>
+                  <i>
+                 <%= posts[i].createdAt %></\/i> <br>
+                 <% console.dir([posts[i].userId,user._id]) %>
+                 <% if (posts[i].userId.equals(user._id)) { %>
+                     <input type="checkbox" name="delete" value="<%= posts[i]._id %>">
+                 <% } %>
+                 <pre><%= posts[i].post %></pre>
 
-            Item: <br>
-            <textarea class="form-control form-control-md" id="post" rows="1" cols="35" style="width: 200px;" name="post"></textarea>
-            <br>
-            Price: <br>
-            <textarea class="form-control form-control-md" id="post" rows="1" cols="35" style="width: 200px;" name="post"></textarea>
-            <br>
-            Description: <br>
-            <textarea class="form-control form-control-md" id="post" rows="5" cols="35"  name="post"></textarea>
-            <br>
-            <input type="submit">
-          </form>
+             </li>
+        <% } %>
+        </ol>
 
-
-
-          <!-- <form method="post" action="/forumDelete">
-              <ol>
-              <% for(i = 0; i<posts.length; i++){  %>
-                  <li> <a href="/showPost/<%= posts[i]._id %>">
-                        <%= posts[i].userName %></a>
-                        <i>
-                       <%= posts[i].createdAt %></\/i> <br>
-                       <% console.dir([posts[i].userId,user._id]) %>
-                       <% if (posts[i].userId.equals(user._id)) { %>
-                           <input type="checkbox" name="delete" value="<%= posts[i]._id %>">
-                       <% } %>
-                       <%= posts[i].post %>
-                       <%= posts[i].category %>
-
-
-                   </li>
-              <% } %>
-              </ol>
-              <input type="submit" value="delete marked">
-          </form> -->
-
-        </p>
-      </div>
-      
-
-      <!-- <div class="col-md col-sm-2">
-        <h1> Furniture </h1>
-        <p> New and used furniture available </p>
-        <p>   <form method="post" action="/forum">
-            Item: <br>
-            <textarea id="post" rows="1" cols="40" name="post"></textarea>
-            <br>
-            Price: <br>
-            <textarea id="post" rows="1" cols="40" name="post"></textarea>
-            <br>
-            Description: <br>
-            <textarea id="post" rows="5" cols="35" name="post"></textarea>
-            <br>
-            <input type="submit">
-          </form> -->
-<!--
-              <form method="post" action="/forumDelete">
-                  <ol>
-                  <% for(i = 0; i<posts.length; i++){  %>
-                      <li> <a href="/showPost/<%= posts[i]._id %>">
-                            <%= posts[i].userName %></a>
-                            <i>
-                           <%= posts[i].createdAt %></\/i> <br>
-                           <% console.dir([posts[i].userId,user._id]) %>
-                           <% if (posts[i].userId.equals(user._id)) { %>
-                               <input type="checkbox" name="delete" value="<%= posts[i]._id %>">
-                           <% } %>
-                           <%= posts[i].post %>
-
-                       </li>
-                  <% } %>
-                  </ol>
-                  <input type="submit" value="delete marked">
-              </form> -->
-            </p>
-          </div>
-      </div>
-    </div>
-
-
-
-
-
+    </form>
 
 <%- include('bootfooter') -%>
