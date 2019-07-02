@@ -1,5 +1,51 @@
 'use strict';
 const ForumPost = require( '../models/ForumPost' );
+const ForumComment = require( '../models/ForumComment' );
+
+
+
+exports.showOnePost = ( req, res ) => {
+  //gconsle.log('in getAllSkills')
+  const id = req.params.id
+  console.log('the id is '+id)
+  ForumPost.findOne({_id:id})
+    .exec()
+    .then( ( forumPost ) => {
+      res.render( 'forumPost', {
+        post:forumPost, title:"Forum Post"
+      } );
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      //console.log( 'skill promise complete' );
+    } );
+};
+
+exports.attachAllForumComments = ( req, res, next ) => {
+  //gconsle.log('in getAllSkills')
+  console.log("in aAFC with id= "+req.params.id)
+  var ObjectId = require('mongoose').Types.ObjectId;
+  ForumComment.find({postId:ObjectId(req.params.id)}).sort({createdAt:-1})
+    .exec()
+    .then( ( comments ) => {
+      console.log("comments.length=")
+      console.dir(comments.length)
+      res.locals.comments = comments
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      //console.log( 'skill promise complete' );
+    } );
+};
+
+
 
 exports.saveForumPost = ( req, res ) => {
   //console.log("in saveSkill!")
@@ -12,8 +58,10 @@ exports.saveForumPost = ( req, res ) => {
    {
     userId: req.user._id,
     userName:req.user.googlename,
-    post1: req.body.post1,
-    post2: req.body.post2,
+    post: req.body.post,
+
+
+
     createdAt: new Date()
    }
   )
@@ -28,6 +76,33 @@ exports.saveForumPost = ( req, res ) => {
       res.send( error );
     } );
 };
+
+
+exports.saveForumComment = (req,res) => {
+  if (!res.locals.loggedIn) {
+    return res.send("You must be logged in to post a comment to the forum.")
+  }
+
+  let newForumComment = new ForumComment(
+   {
+    userId: req.user._id,
+    postId: req.body.postId,
+    userName:req.user.googlename,
+    comment: req.body.comment,
+    createdAt: new Date()
+   }
+  )
+
+  //console.log("skill = "+newSkill)
+
+  newForumComment.save()
+    .then( () => {
+      res.redirect( 'showPost/'+req.body.postId );
+    } )
+    .catch( error => {
+      res.send( error );
+    } );
+}
 
 
 // this displays all of the skills

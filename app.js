@@ -187,6 +187,12 @@ app.post('/forum',forumPostController.saveForumPost)
 
 app.post('/forumDelete',forumPostController.deleteForumPost)
 
+app.get('/showPost/:id',
+        forumPostController.attachAllForumComments,
+        forumPostController.showOnePost)
+
+  app.post('/saveForumComment',forumPostController.saveForumComment)
+
 
 
 
