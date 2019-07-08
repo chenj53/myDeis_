@@ -99,6 +99,8 @@ app.get('/loginerror', function(req,res){
   res.render('loginerror',{})
 })
 
+
+
 app.get('/login', function(req,res){
   res.render('login',{})
 })
@@ -172,6 +174,8 @@ app.use(function(req,res,next){
   next()
 });
 
+
+
 app.get('/about', function(req, res, next) {
   res.render('about');
 });
@@ -209,7 +213,9 @@ app.get('/sellSubmit', function(req, res, next) {
   res.render('sellSubmit',{title:"Sell Submit"});
 });
 
-
+app.get('/market', function(req,res, next){
+  res.render('market',{})
+})
 
 
 
