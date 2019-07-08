@@ -213,9 +213,12 @@ app.get('/sellSubmit', function(req, res, next) {
   res.render('sellSubmit',{title:"Sell Submit"});
 });
 
-app.get('/market', function(req,res, next){
-  res.render('market',{})
-})
+app.get('/Market', function(req, res, next) {
+  res.render('Market',{title:"Market"});
+});
+
+
+
 
 
 
