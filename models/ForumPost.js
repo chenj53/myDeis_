@@ -6,8 +6,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 var forumPostSchema = Schema( {
   userId: ObjectId,
   userName: String,
-  post1: String,
-  post2: Number,
+  post: String,
   createdAt: Date
 
 } );

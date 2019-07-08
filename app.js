@@ -99,6 +99,8 @@ app.get('/loginerror', function(req,res){
   res.render('loginerror',{})
 })
 
+
+
 app.get('/login', function(req,res){
   res.render('login',{})
 })
@@ -171,6 +173,8 @@ app.use(function(req,res,next){
   //console.dir(req.headers)
   next()
 });
+
+
 
 app.get('/about', function(req, res, next) {
   res.render('about');
@@ -248,8 +252,14 @@ app.get('/Spews', function(req, res, next) {
 app.get('/Other', function(req, res, next) {
   res.render('Other',{title:"Other"});
 });
+app.get('/sellwhat', function(req, res, next) {
+  res.render('sellwhat',{title:"sellwhat"});
+});
 
 
+app.get('/index2.0', function(req, res, next) {
+  res.render('index2.0',{title:"index2.0"});
+});
 
 
 

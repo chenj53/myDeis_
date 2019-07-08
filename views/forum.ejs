@@ -6,7 +6,7 @@
     </div>
 
     <form method="post" action="/forum">
-      New Post: <br>
+      Make a post: <br>
       <textarea id="post" name="post"></textarea>
       <br>
       <input type="submit">
@@ -17,6 +17,7 @@
         <ol>
         <% for(i = 0; i<posts.length; i++){  %>
             <li> <a href="/showPost/<%= posts[i]._id %>">
+                  <%= posts[i].postID %></a>
                   <%= posts[i].userName %></a>
                   <i>
                  <%= posts[i].createdAt %></\/i> <br>
