@@ -252,6 +252,10 @@ app.get('/Spews', function(req, res, next) {
 app.get('/Other', function(req, res, next) {
   res.render('Other',{title:"Other"});
 });
+app.get('/sellwhat', function(req, res, next) {
+  res.render('sellwhat',{title:"sellwhat"});
+});
+
 
 
 
