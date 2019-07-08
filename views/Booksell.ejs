@@ -4,31 +4,50 @@
         <h1>Selling your textbooks here</h1>
     </div>
 
-    <div class="row">
-      <div class="col-md col-sm-2">
-        <p>   <form method="post" action="/forum" >
-
-            Title: <textarea class="form-control form-control-md" id="post" rows="1" cols="35" style="width: 200px;" name="post"></textarea> <br>
-            Course Name: <textarea class="form-control form-control-md" id="post" rows="1" cols="35" style="width: 200px;" name="post"></textarea><br>
-            Book Condition: <select class="form-control form-control-md" style="width: 200px;" >
-            <option>Brand New</option>
-            <option>Used--Very Good</option>
-            <option>Used--Acceptable</option>
-            </select> <br>
-            Price: <textarea class="form-control form-control-md" id="post" rows="5" cols="35"  name="post"></textarea> <br>
-            Contact method: <select class="mdb-select colorful-select dropdown-primary md-form">
-                  <option value="1">Facebook</option>
-                  <option value="2">Text</option>
-                  <option value="3">Wechat</option>
-                  <option value="4">Phone</option>
-                </select>
-                <button class="btn-save btn btn-primary btn-sm">Save</button>
-
+    <form method="post" action="/forum" >
+      <div class="form-group">
+        <label for="Input1">Title</label>
+        <input type="text" id="title" class="form-control" aria-describedby="Input1HelpBlock">
+        <small id="Input1HelpBlock" class="form-text text-muted">
+          Name the book you want to sell.
+        </small>
       </div>
-      <input type="submit">
-  </div>
 
+      <div class="form-group">
+            <label for="Input2">Course Name </label>
+            <input type="text" id="Course Name" class="form-control" aria-describedby="Input2HelpBlock">
+            <small id="Input2HelpBlock" class="form-text text-muted">
+              The name of the course which requires this book, adding the professor name and semester details is recommended.
+            </small>
+      </div>
 
+      <div class="form-group">
+        <label for="Select1">Book Condition</label>
+        <select class="form-control" id="Book Condition">
+          <option selected disabled>Select</option>
+          <option>Brand New</option>
+          <option>Used--Very Good</option>
+          <option>Used--Acceptable</option>
+          </select>
+        </div>
 
+        <div class="form-group">
+            <label for="Input3">Price</label>
+            <input type="text" id="Price" class="form-control" placeholder="$">
+        </div>
+
+        <div class="form-group">
+          <label for="Select2">Contact Method</label>
+          <select class="form-control" multiple id="Contact Method">
+            <option>Facebook</option>
+            <option>Text</option>
+            <option>Wechat</option>
+            <option>Telephone</option>
+          </select>
+        </div>
+
+    <button type="button" class="btn btn-warning">Submit</button>
+
+  </form>
 
 <%- include('bootfooter') -%>
