@@ -17,7 +17,7 @@
         <ol>
         <% for(i = 0; i<posts.length; i++){  %>
             <li> <a href="/showPost/<%= posts[i]._id %>">
-                  <%= posts[i].userName %></a>
+                  <%= posts[i].comment %></a>
                   <i>
                  <%= posts[i].createdAt %></\/i> <br>
                  <% console.dir([posts[i].userId,user._id]) %>
