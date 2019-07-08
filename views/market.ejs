@@ -1,21 +1,35 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
+  <div class="jumbotron">
+    <h1> Welcome to the Marketplace </h1>
+  </div>
 
 
-
-<div class="pos-f-t">
-  <div class="collapse" id="navbarToggleExternalContent">
-    <div class="bg-dark p-4">
-      <h5 class="text-white h4"></h5>
-      <span class="text-muted">Toggleable via the navbar brand.</span>
+  <div class="row">
+    <div class="col-md10">
+      <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        All Categories
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">TextBooks</a>
+        <a class="dropdown-item" href="#">Fernitures</a>
+        <a class="dropdown-item" href="#">Housing</a>
+        <a class="dropdown-item" href="#">Others</a>
+      </div>
+      </div>
+    </div>
+    <div class="col-md2">
+        <button type="button" class="btn btn-lg btn-primary" disabled>Post Item</button>
     </div>
   </div>
-  <nav class="navbar navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </nav>
-</div>
+
+
+
+
+
+
+
 
 
 
