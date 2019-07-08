@@ -99,6 +99,8 @@ app.get('/loginerror', function(req,res){
   res.render('loginerror',{})
 })
 
+
+
 app.get('/login', function(req,res){
   res.render('login',{})
 })
@@ -171,6 +173,8 @@ app.use(function(req,res,next){
   //console.dir(req.headers)
   next()
 });
+
+
 
 app.get('/about', function(req, res, next) {
   res.render('about');
