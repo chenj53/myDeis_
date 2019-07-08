@@ -253,7 +253,9 @@ app.get('/Other', function(req, res, next) {
   res.render('Other',{title:"Other"});
 });
 
-
+app.get('/index2.0', function(req, res, next) {
+  res.render('index2.0',{title:"index2.0"});
+});
 
 
 
