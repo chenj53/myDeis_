@@ -59,7 +59,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 
-const owners = ["chenj53@brandeis.edu", "jaytseng@brandeis.edu", "tristantseng@brandeis.edu" ]
+const owners = ["chenj53@brandeis.edu", "jaytseng@brandeis.edu", "tristantseng@brandeis.edu", "yutdong@brandeis.edu" ]
 
 // here is where we check on their logged in status
 app.use((req,res,next) => {
@@ -201,8 +201,8 @@ app.get('/bmidemo', (req, res) => {
   res.render('bmidemo',{title:"BMI Demo"});
 });
 
-app.get('/shop', (req, res) => {
-  res.render('shop',{title:"Shop"});
+app.get('/Booksell', function(req, res, next) {
+  res.render('Booksell',{title:"Book Sell"});
 });
 
 

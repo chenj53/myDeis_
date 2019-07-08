@@ -1,0 +1,34 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+    <div class="jumbotron">
+        <h1>Selling your textbooks here</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-md col-sm-2">
+        <p>   <form method="post" action="/forum" >
+
+            Title: <textarea class="form-control form-control-md" id="post" rows="1" cols="35" style="width: 200px;" name="post"></textarea> <br>
+            Course Name: <textarea class="form-control form-control-md" id="post" rows="1" cols="35" style="width: 200px;" name="post"></textarea><br>
+            Book Condition: <select class="form-control form-control-md" style="width: 200px;" >
+            <option>Brand New</option>
+            <option>Used--Very Good</option>
+            <option>Used--Acceptable</option>
+            </select> <br>
+            Price: <textarea class="form-control form-control-md" id="post" rows="5" cols="35"  name="post"></textarea> <br>
+            Contact method: <select class="mdb-select colorful-select dropdown-primary md-form">
+                  <option value="1">Facebook</option>
+                  <option value="2">Text</option>
+                  <option value="3">Wechat</option>
+                  <option value="4">Phone</option>
+                </select>
+                <button class="btn-save btn btn-primary btn-sm">Save</button>
+
+      </div>
+      <input type="submit">
+  </div>
+
+
+
+
+<%- include('bootfooter') -%>
