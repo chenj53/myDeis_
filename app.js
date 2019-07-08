@@ -213,6 +213,9 @@ app.get('/Market', function(req, res, next) {
   res.render('Market',{title:"Market"});
 });
 
+app.get('/index2.0', function(req, res, next) {
+  res.render('index2',{title:"index2"});
+});
 
 
 
