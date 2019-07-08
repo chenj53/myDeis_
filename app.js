@@ -217,7 +217,41 @@ app.get('/Market', function(req, res, next) {
   res.render('Market',{title:"Market"});
 });
 
+app.get('/Club', function(req, res, next) {
+  res.render('Club',{title:"Club"});
+});
 
+app.get('/Events', function(req, res, next) {
+  res.render('Events',{title:"Events"});
+});
+
+app.get('/Housing', function(req, res, next) {
+  res.render('Housing',{title:"Housing"});
+});
+
+app.get('/Academic', function(req, res, next) {
+  res.render('Academic',{title:"Academic"});
+});
+
+app.get('/Confessions', function(req, res, next) {
+  res.render('Confessions',{title:"Confessions"});
+});
+
+app.get('/Gaming', function(req, res, next) {
+  res.render('Gaming',{title:"Gaming"});
+});
+
+app.get('/Sports', function(req, res, next) {
+  res.render('Sports',{title:"Sports"});
+});
+
+app.get('/Spews', function(req, res, next) {
+  res.render('Spews',{title:"Spews"});
+});
+
+app.get('/Other', function(req, res, next) {
+  res.render('Other',{title:"Other"});
+});
 
 
 
