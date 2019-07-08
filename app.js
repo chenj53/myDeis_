@@ -245,13 +245,10 @@ app.get('/Sports', function(req, res, next) {
   res.render('Sports',{title:"Sports"});
 });
 
-app.get('/Spews', function(req, res, next) {
-  res.render('Spews',{title:"Spews"});
+app.get('/Rideshare', function(req, res, next) {
+  res.render('Rideshare',{title:"Rideshare"});
 });
 
-app.get('/Other', function(req, res, next) {
-  res.render('Other',{title:"Other"});
-});
 app.get('/sellwhat', function(req, res, next) {
   res.render('sellwhat',{title:"sellwhat"});
 });
