@@ -257,7 +257,9 @@ app.get('/sellwhat', function(req, res, next) {
 });
 
 
-
+app.get('/index2.0', function(req, res, next) {
+  res.render('index2.0',{title:"index2.0"});
+});
 
 
 
