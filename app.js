@@ -159,8 +159,8 @@ app.get('/editProfile',isLoggedIn, (req,res)=>{
 
 app.get('/profiles', isLoggedIn, profileController.getAllProfiles);
 app.get('/showProfile/:id', isLoggedIn, profileController.getOneProfile);
-
-
+app.post('/processPost', isLoggedIn,forumPostController.saveForumPost);
+app.get('/showMarketPost/',forumPostController.getAllForumPosts);
 app.post('/updateProfile',profileController.update)
 
 // add page for editProfile and views

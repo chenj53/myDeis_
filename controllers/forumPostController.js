@@ -48,8 +48,8 @@ exports.attachAllForumComments = ( req, res, next ) => {
 
 
 exports.saveForumPost = ( req, res ) => {
-  //console.log("in saveSkill!")
-  //console.dir(req)
+  console.log("We have saved!")
+  console.dir(req)
   if (!res.locals.loggedIn) {
     return res.send("You must be logged in to use the shop.")
   }
@@ -59,9 +59,10 @@ exports.saveForumPost = ( req, res ) => {
     userId: req.user._id,
     userName:req.user.googlename,
     post: req.body.post,
-
-
-
+    price: req.body.price,
+    course: req.body.course,
+    condition: req.body.condition,
+    contact: req.body.contact,
     createdAt: new Date()
    }
   )
@@ -89,7 +90,10 @@ exports.saveForumComment = (req,res) => {
     postId: req.body.postId,
     userName:req.user.googlename,
     comment: req.body.comment,
-    createdAt: new Date()
+    price: req.body.price,
+    course: req.body.course,
+    condition: req.body.condition,
+    contact: req.body.contact
    }
   )
 
@@ -111,7 +115,10 @@ exports.getAllForumPosts = ( req, res, next ) => {
   ForumPost.find({}).sort({createdAt: -1})
     .exec()
     .then( ( posts ) => {
-      res.render('forum',{posts:posts,title:"Forum"})
+      res.render('market',{
+        posts:posts,
+        title:"Forum"
+      })
     } )
     .catch( ( error ) => {
       console.log( error.message );
