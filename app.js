@@ -209,6 +209,10 @@ app.get('/Booksell', function(req, res, next) {
   res.render('Booksell',{title:"Book Sell"});
 });
 
+app.get('/FurnitureSell', function(req, res, next) {
+  res.render('FurnitureSell',{title:"Furniture Sell"});
+});
+
 app.get('/sellSubmit', function(req, res, next) {
   res.render('sellSubmit',{title:"Sell Submit"});
 });

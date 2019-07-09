@@ -1,0 +1,56 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+    <div class="jumbotron">
+        <h1>Sell Your Furniture Here</h1>
+    </div>
+
+    <form method="post" action="/forum" >
+      <div class="form-group">
+        <label for="Input1">Product Description</label>
+        <input type="text" id="title" class="form-control" aria-describedby="Input1HelpBlock">
+        <small id="Input1HelpBlock" class="form-text text-muted">
+          What type of furniture are you selling?
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="Select1">Furniture Condition</label>
+        <select class="form-control" id="Book Condition">
+          <option selected disabled>Select</option>
+          <option>Brand New</option>
+          <option>Looks New</option>
+          <option>Some Wear and Tear</option>
+          <option>Worn Down</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Input3">Price</label>
+            <input type="text" id="Price" class="form-control" placeholder="$">
+        </div>
+
+        <div class="form-group">
+          <label for="Select2">Picture of product</label>
+          <input type="file" class="form-control-file" name="productPicture">
+        </div>
+
+
+        <div class="form-group">
+          <label for="Select2">Contact Method</label>
+          <select class="form-control" multiple id="Contact Method">
+            <option>Facebook</option>
+            <option>Text</option>
+            <option>Wechat</option>
+            <option>Telephone</option>
+          </select>
+        </div>
+        </form>
+
+
+
+    <button type="button" class="btn btn-warning"><a href="/sellSubmit">Submit</a>
+    </button>
+
+  </form>
+
+<%- include('bootfooter') -%>
