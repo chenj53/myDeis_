@@ -1,6 +1,7 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
     <div class="jumbotron">
+
         <h1>Student Forum</h1>
         <p>Chat about classes and life!</p>
     </div>
@@ -20,6 +21,7 @@
                   <%= posts[i].postID %></a>
                   <%= posts[i].userName %></a>
                   <i>
+                <%= status %></a>
                  <%= posts[i].createdAt %></\/i> <br>
                  <% console.dir([posts[i].userId,user._id]) %>
                  <% if (posts[i].userId.equals(user._id)) { %>
