@@ -16,13 +16,24 @@
   <a class="btn btn-lg btn-primary" href="/Booksell" role="button">Other</a>
 
 
+  <ol>
+    <% for(i = 0; i<posts.length; i++){  %>
+  <li> <a href="/showPost/<%= posts[i]._id %>">
+        <%= posts[i].userName %></a>
+        <i>
+       <%= posts[i].createdAt %></\/i> <br>
+        <%= posts[i].condition %></\/i> <br>
 
+      <%= posts[i].post %></\/i> <br>
+       <% console.dir([posts[i].userId,posts[i].userId]) %>
 
-
-
-
-
-
+       <% if (posts[i].userId.equals(posts[i].userId)) { %>
+           <input type="checkbox" name="delete" value="<%= posts[i].userId %>">
+       <% } %>
+       <pre><%= posts[i].post %></pre>
+   </li>
+<% } %>
+      </ol>
 
 
 
