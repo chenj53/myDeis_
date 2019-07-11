@@ -8,7 +8,7 @@ var forumPostSchema = Schema( {
   userId: ObjectId,
   userName: String,
   post: String, //title
-  createdAt: Date
+  createdAt: Date,
   price: Number,
 
 
