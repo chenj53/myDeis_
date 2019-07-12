@@ -186,11 +186,18 @@ app.get('/', function(req, res, next) {
 });
 
 
-app.get('/forum',forumPostController.getAllForumPosts)
+app.post('/processbook',forumPostController.saveForumPost)
 
-app.post('/forum',forumPostController.saveForumPost)
 
-app.post('/forumDelete',forumPostController.deleteForumPost)
+
+
+app.get('/market',forumPostController.getAllForumPosts)
+
+
+
+app.post('/market',forumPostController.saveForumPost)
+
+//app.post('/forumDelete',forumPostController.deleteForumPost)
 
 app.get('/showPost/:id',
         forumPostController.attachAllForumComments,

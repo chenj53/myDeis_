@@ -13,8 +13,11 @@
       <input type="submit">
     </form>
     <hr>
+
+
     <form method="post" action="/forumDelete">
         <input type="submit" value="delete marked">
+
         <ol>
         <% for(i = 0; i<posts.length; i++){  %>
             <li> <a href="/showPost/<%= posts[i]._id %>">
