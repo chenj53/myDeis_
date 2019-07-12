@@ -7,7 +7,7 @@
     <form method="post" action="/forum" >
       <div class="form-group">
         <label for="Input1">Product Description</label>
-        <input type="text" id="title" class="form-control" aria-describedby="Input1HelpBlock">
+        <input type="text" name="FDescription" class="form-control" aria-describedby="Input1HelpBlock">
         <small id="Input1HelpBlock" class="form-text text-muted">
           What type of furniture are you selling?
         </small>
@@ -15,7 +15,7 @@
 
       <div class="form-group">
         <label for="Select1">Furniture Condition</label>
-        <select class="form-control" id="Book Condition">
+        <select class="form-control" name="FCondition">
           <option selected disabled>Select</option>
           <option>Brand New</option>
           <option>Looks New</option>
@@ -26,18 +26,18 @@
 
         <div class="form-group">
             <label for="Input3">Price</label>
-            <input type="text" id="Price" class="form-control" placeholder="$">
+            <input type="text" name="FPrice" class="form-control" placeholder="$">
         </div>
 
         <div class="form-group">
           <label for="Select2">Picture of product</label>
-          <input type="file" class="form-control-file" name="productPicture">
+          <input type="file" class="form-control-file" name="FPicture">
         </div>
 
 
         <div class="form-group">
           <label for="Select2">Contact Method</label>
-          <select class="form-control" multiple id="Contact Method">
+          <select class="form-control" multiple name="FContact">
             <option>Facebook</option>
             <option>Text</option>
             <option>Wechat</option>

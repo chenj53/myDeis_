@@ -1,26 +1,24 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
-<div class="jumbotron">
-  <h1> Schedule Rides with Other Students </h1>
-</div>
+<img src="images/RideShare.png" width="100%">
 
 <form>
   <label for="Input1">Starting Point</label>
   <div class="form-row">
     <div class="col-7">
-      <input type="text" class="form-control" placeholder="City">
+      <input type="text" class="form-control" placeholder="City" name="StartCity">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="State">
+      <input type="text" class="form-control" placeholder="State" name="StartState">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Zip">
+      <input type="text" class="form-control" placeholder="Zip" name="StartZip">
     </div>
   </div>
 </form>
-    <div class="col">
+    <div class="col-12">
       <label for="Input2">Desired Destination</label>
-      <input type="text" class="form-control" placeholder="Boston Logan International Airport">
+      <input type="text" class="form-control" placeholder="Boston Logan International Airport" name="Destination">
     </div>
     <div class="form-row">
       <div class="col">
@@ -28,10 +26,10 @@
       <input type="text" class="form-control" placeholder="08/19/2019">
       </div>
 
+        <button type="button" class="btn btn-primary"><a href="/RideSharePost">Submit</a>
+      <button type="button" class="btn btn-primary"><a href="/RideShare">Reset</a>
 </form>
 
-<input class="btn btn-primary" type="submit" value="Submit">
-<input class="btn btn-primary" type="reset" value="Reset">
 
 
 <%- include('bootfooter') -%>

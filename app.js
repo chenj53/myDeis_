@@ -207,11 +207,6 @@ app.get('/showPost/:id',
 
 
 
-
-app.get('/bmidemo', (req, res) => {
-  res.render('bmidemo',{title:"BMI Demo"});
-});
-
 app.get('/Booksell', function(req, res, next) {
   res.render('Booksell',{title:"Book Sell"});
 });
@@ -226,10 +221,6 @@ app.get('/sellSubmit', function(req, res, next) {
 
 app.get('/Market', function(req, res, next) {
   res.render('Market',{title:"Market"});
-});
-
-app.get('/Club', function(req, res, next) {
-  res.render('Club',{title:"Club"});
 });
 
 app.get('/Events', function(req, res, next) {
@@ -256,9 +247,14 @@ app.get('/Sports', function(req, res, next) {
   res.render('Sports',{title:"Sports"});
 });
 
-app.get('/Rideshare', function(req, res, next) {
-  res.render('Rideshare',{title:"Rideshare"});
+app.get('/RideShare', function(req, res, next) {
+  res.render('RideShare',{title:"RideShare"});
 });
+
+app.get('/RideSharePost', function(req, res, next) {
+  res.render('RideSharePost',{title:"RideSharePost"});
+});
+
 
 app.get('/sellwhat', function(req, res, next) {
   res.render('sellwhat',{title:"sellwhat"});
