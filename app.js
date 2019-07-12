@@ -24,6 +24,7 @@ db.once('open', function() {
 
 const profileController = require('./controllers/profileController')
 const forumPostController = require('./controllers/forumPostController')
+const BuyItemsController = require('./controllers/BuyItemsController')
 
 // Authentication
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
@@ -203,6 +204,22 @@ app.get('/showPost/:id',
         forumPostController.showOnePost)
 
   app.post('/saveForumComment',forumPostController.saveForumComment)
+
+
+
+
+
+  app.post('/ItemsDelete',BuyItemsController.deleteRecipesPost)
+
+app.get('/Items',BuyItemsController.getAllRecipesPosts)
+
+app.post('/Items',BuyItemsController.saveRecipesPost)
+
+app.get('/showPost/:id',
+        BuyItemsController.attachAllRecipesComments,
+        BuyItemsController.showOneRecipe)
+
+app.post('/saveNewItem',BuyItemsController.saveNewItem)
 
 
 

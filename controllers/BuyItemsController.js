@@ -1,6 +1,6 @@
 'use strict';
-const RecipesPost = require( '../models/RecipesPost' );
-const RecipesComment = require( '../models/RecipesComment' );
+const BookBuy = require( '../models/BookBuy' );
+const FurnitureBuy = require( '../models/FurnitureBuy' );
 
 
 exports.saveRecipesPost = ( req, res ) => {

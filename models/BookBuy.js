@@ -6,7 +6,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 var BookBuySchema = Schema( {
   userId: ObjectId,
   postId: ObjectId,
-  BDescription: String,
+  BTitle: String,
   BPrice: String,
   BCondition: String,
   BPicture: String,
