@@ -209,17 +209,17 @@ app.get('/showPost/:id',
 
 
 
-  app.post('/ItemsDelete',recipesPostController.deleteRecipesPost)
+  app.post('/ItemsDelete',BuyItemsController.deleteRecipesPost)
 
-app.get('/Items',recipesPostController.getAllRecipesPosts)
+app.get('/Items',BuyItemsController.getAllRecipesPosts)
 
-app.post('/Items',recipesPostController.saveRecipesPost)
+app.post('/Items',BuyItemsController.saveRecipesPost)
 
 app.get('/showPost/:id',
         BuyItemsController.attachAllRecipesComments,
         BuyItemsController.showOneRecipe)
 
-app.post('/saveNewItem',recipesPostController.saveNewItem)
+app.post('/saveNewItem',BuyItemsController.saveNewItem)
 
 
 
