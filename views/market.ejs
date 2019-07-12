@@ -7,13 +7,26 @@
   </div>
 
 
+  <input type="radio" name="items" value="buy"> Buy<br>
+  <input type="radio" name="items" value="sell"> Sell<br>
+
+
   <div class="jumbotron">
       Select Item Catagory
   </div>
 
+  <% if(items="buy") %>
+
   <a class="btn btn-lg btn-primary" href="/Booksell" role="button">TextBooks</a>
   <a class="btn btn-lg btn-primary" href="/FurnitureSell" role="button">Furniture</a>
   <a class="btn btn-lg btn-primary" href="/Booksell" role="button">Other</a>
+
+
+  <% else%>
+  <a class="btn btn-lg btn-primary" href="/BookBuy" role="button">TextBooks</a>
+  <a class="btn btn-lg btn-primary" href="/FurnitureBuy" role="button">Furniture</a>
+  <a class="btn btn-lg btn-primary" href="/Booksell" role="button">Other</a>
+
 
 
 
