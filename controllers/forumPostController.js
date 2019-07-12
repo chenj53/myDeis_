@@ -25,6 +25,8 @@ exports.saveForumPost = ( req, res ) => {
 
    }
   )
+  console.log("formumPost is ")
+  console.dir(newForumPost)
 
   //console.log("skill = "+newSkill)
 
@@ -33,7 +35,7 @@ exports.saveForumPost = ( req, res ) => {
       res.redirect( 'market' );
     } )
     .catch( error => {
-      res.send( error );
+      res.send( "ForumPostError is "+error );
     } );
 };
 

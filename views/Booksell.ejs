@@ -15,30 +15,34 @@
       </div>
 
       <div class="form-group">
-            <label for="Input2">Course Name </label>
-            <input type="text" id="course" class="form-control" aria-describedby="Input2HelpBlock">
-            <small id="Input2HelpBlock" class="form-text text-muted">
-              The name of the course which requires this book, adding the professor name and semester details is recommended.
-            </small>
+        <label for="post">Price</label>
+        Price: <input type="post" id="price" name="price" placeholder="$"> <br>
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="post">course</label>
+        Course: <input type="post" id="course" name="course"> <br>
       </div>
 
       <div class="form-group">
-
         Condition (1=poor, 5=great):
         <select name="condition">
           <option>one</option>
           <option>two</option>
           <option>three</option>
           <option>four</option>
-
         </select>
 
-
-        </div>
-
         <div class="form-group">
-            <label for="Input3">Price</label>
-            <input type="text" id="price" class="form-control" placeholder="$">
+          Contact Method
+          <select name="contact">
+            <option>Facebook</option>
+            <option>Text</option>
+            <option>Wechat</option>
+            <option>Phone</option>
+          </select>
         </div>
 
         <div class="form-group">
@@ -46,16 +50,6 @@
           <input type="file" class="form-control-file" name="productPicture">
         </div>
 
-
-        <div class="form-group">
-          <label for="Select2">Contact Method</label>
-          <select class="form-control" multiple id="contact">
-            <option>Facebook</option>
-            <option>Text</option>
-            <option>Wechat</option>
-            <option>Telephone</option>
-          </select>
-        </div>
         <input class="btn btn-primary" type="submit" value="Submit">
         </form>
 
