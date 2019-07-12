@@ -15,7 +15,7 @@
   <h1> Sell </h1>
   <p>  <a class="btn btn-lg btn-primary" href="/Booksell" role="button">TextBooks</a>
     <a class="btn btn-lg btn-primary" href="/FurnitureSell" role="button">Furniture</a>
-    <a class="btn btn-lg btn-primary" href="/Booksell" role="button">Other</a>
+    <a class="btn btn-lg btn-primary" href="/Other" role="button">Other</a>
     </p>
   </div>
   <div class="col-md col-sm-6">
@@ -35,13 +35,28 @@
 
 
 
+  <ol>
+    <% for(i = 0; i<posts.length; i++){  %>
+  <li> <a href="/showPost/<%= posts[i]._id %>">
+        <%= posts[i].userName %></a>
+        <i>
+       <%= posts[i].createdAt %></\/i> <br>
+        <%= posts[i].condition %></\/i> <br>
 
+      <%= posts[i].post %></\/i> <br>
+       <% console.dir([posts[i].userId,posts[i].userId]) %>
 
-
-
-
-
-
+       <% if (posts[i].userId.equals(posts[i].userId)) { %>
+           <input type="checkbox" name="delete" value="<%= posts[i].userId %>">
+       <% } %>
+       <pre><%= posts[i].post %></pre>
+        <pre><%= posts[i].course %></pre>
+         <pre><%= posts[i].price %></pre>
+          <pre><%= posts[i].contact %></pre>
+           <pre><%= posts[i].condition %></pre>
+   </li>
+<% } %>
+      </ol>
 
 
 

@@ -4,59 +4,58 @@
         <h1>Sell Your Textbooks Here</h1>
     </div>
 
-    <form method="post" action="/forum" >
+
+
+
+
+    <form method="post" action="/processbook" >
       <div class="form-group">
-        <label for="Input1">Title</label>
-        <input type="text" id="title" class="form-control" aria-describedby="Input1HelpBlock">
-        <small id="Input1HelpBlock" class="form-text text-muted">
-          Name the book you want to sell.
-        </small>
+        <label for="post">Title of the Book</label>
+        post: <input type="post" id="post" name="post"> <br>
       </div>
 
       <div class="form-group">
-            <label for="Input2">Course Name </label>
-            <input type="text" id="Course Name" class="form-control" aria-describedby="Input2HelpBlock">
-            <small id="Input2HelpBlock" class="form-text text-muted">
-              The name of the course which requires this book, adding the professor name and semester details is recommended.
-            </small>
+        <label for="post">Price</label>
+        Price: <input type="post" id="price" name="price" placeholder="$"> <br>
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="post">course</label>
+        Course: <input type="post" id="course" name="course"> <br>
       </div>
 
       <div class="form-group">
-        <label for="Select1">Book Condition</label>
-        <select class="form-control" id="Book Condition">
-          <option selected disabled>Select</option>
-          <option>Brand New</option>
-          <option>Used--Very Good</option>
-          <option>Used--Acceptable</option>
-          <option>Used--Poor Condition</option>
-          </select>
-        </div>
+        Condition (1=poor, 5=great):
+        <select name="condition">
+          <option>one</option>
+          <option>two</option>
+          <option>three</option>
+          <option>four</option>
+        </select>
 
         <div class="form-group">
-            <label for="Input3">Price</label>
-            <input type="text" id="Price" class="form-control" placeholder="$">
+          Contact Method
+          <select name="contact">
+            <option>Facebook</option>
+            <option>Text</option>
+            <option>Wechat</option>
+            <option>Phone</option>
+          </select>
         </div>
 
         <div class="form-group">
           <label for="Select2">Picture of product</label>
-          <input type="file" class="form-control-file" name="productPicture">
+          <input type="file" class="form-control-file" name="BPicture">
         </div>
 
-
-        <div class="form-group">
-          <label for="Select2">Contact Method</label>
-          <select class="form-control" multiple id="Contact Method">
-            <option>Facebook</option>
-            <option>Text</option>
-            <option>Wechat</option>
-            <option>Telephone</option>
-          </select>
-        </div>
+        <input class="btn btn-primary" type="submit" value="Submit">
         </form>
 
 
 
-    <button type="button" class="btn btn-warning"><a href="/sellSubmit">Submit</a>
+
     </button>
 
   </form>

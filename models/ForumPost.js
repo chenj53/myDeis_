@@ -10,6 +10,10 @@ var forumPostSchema = Schema( {
   post: String, //title
   createdAt: Date,
   price: Number,
+  condition: String,
+  contact: String,
+  course: String,
+  
 
 
 } );
