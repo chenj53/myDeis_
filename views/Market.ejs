@@ -51,7 +51,7 @@
        <% } %>
        <pre><%= posts[i].post %></pre>
         <pre><%= posts[i].course %></pre>
-         <pre><%= posts[i].price %></pre>
+         $<pre><%= posts[i].price %></pre>
           <pre><%= posts[i].contact %></pre>
            <pre><%= posts[i].condition %></pre>
    </li> -->
@@ -69,7 +69,7 @@
          <div class="media-body">
            <h4 class="media-heading"><%= posts[i].post %> </h4>
 
-             <p class="text-left"><%= posts[i].price %> </p> <br>
+             <p class="text-left"> $<%= posts[i].price %> </p> <br>
              <p class="text-left"><%= posts[i].course %> </p>
              <p class="text-right"> By <%= posts[i].userName %> </p> <br>
              <p><%= posts[i].descirbtion %></p>

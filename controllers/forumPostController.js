@@ -23,6 +23,7 @@ exports.saveForumPost = ( req, res ) => {
     contact: req.body.contact,
     course: req.body.course,
     descirbtion: req.body.descirbtion,
+    
 
    }
   )
