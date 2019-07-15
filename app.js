@@ -160,7 +160,10 @@ app.get('/editProfile',isLoggedIn, (req,res)=>{
 })
 
 app.get('/profiles', isLoggedIn, profileController.getAllProfiles);
-app.get('/showProfile/:id', isLoggedIn, profileController.getOneProfile);
+
+app.get('/showPofile/:id',
+        profileController.getOneProfile)
+
 
 
 app.post('/updateProfile',profileController.update)

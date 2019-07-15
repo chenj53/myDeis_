@@ -27,6 +27,8 @@ exports.saveForumPost = ( req, res ) => {
    }
   )
   console.log("formumPost is ")
+  console.log("Price =" + req.body.price)
+  console.log("Price =" + req.body.descirbtion)
   console.dir(newForumPost)
 
   //console.log("skill = "+newSkill)
