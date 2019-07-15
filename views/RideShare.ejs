@@ -1,8 +1,8 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
-<img src="images/RideShare.png" width="100%">
+<img src="images/RideShare.png" width="80%">
 
-<form>
+<form method="post" action="/rideShare">
   <label for="Input1">Starting Point</label>
   <div class="form-row">
     <div class="col-7">
@@ -26,9 +26,35 @@
       <input type="text" class="form-control" placeholder="08/19/2019">
       </div>
 
-        <button type="button" class="btn btn-primary"><a href="/RideSharePost">Submit</a>
-      <button type="button" class="btn btn-primary"><a href="/RideShare">Reset</a>
+  <input class="btn btn-primary" type="submit" value="Submit">
 </form>
+<hr>
+
+<form method="post" action="/rideDelete">
+        <input type="submit" value="delete marked">
+        <ol>
+        <% for(i = 0; i<posts.length; i++){  %>
+            <li> <a href="/showPost/<%= posts[i]._id %>">
+                  <%= posts[i].userName %></a>
+                  <i>
+                 <%= posts[i].createdAt %></\/i> <br>
+                 </i>
+                 <%= posts[i].StartCity %><br>
+                 <%= posts[i].StartState %><br>
+                 <%= posts[i].StartZip %><br>
+
+                 <% console.dir([posts[i].userId,user._id]) %>
+                 <% if (posts[i].userId.equals(user._id)) { %>
+                     <input type="checkbox" name="delete" value="<%= posts[i]._id %>">
+                 <% } %>
+                 <pre><%= posts[i].post %></pre>
+
+             </li>
+        <% } %>
+        </ol>
+
+    </form>
+
 
 
 

@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
 // sell post
-var RideShareSchema = Schema( {
+var RideShareCommentSchema = Schema( {
   userId: ObjectId,
   userName: String,
   createdAt: Date,
-  post: String,
+  comment: String,
   StartCity: String,
   StartState: String, //title
   StartZip: String,
@@ -17,4 +17,4 @@ var RideShareSchema = Schema( {
 
 } );
 
-module.exports = mongoose.model( 'RideShare', RideShareSchema );
+module.exports = mongoose.model( 'RideShareComment', RideShareCommentSchema );

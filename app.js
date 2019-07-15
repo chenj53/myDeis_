@@ -24,6 +24,7 @@ db.once('open', function() {
 
 const profileController = require('./controllers/profileController')
 const forumPostController = require('./controllers/forumPostController')
+const RideShareController = require('./controllers/RideShareController')
 
 
 // Authentication
@@ -209,6 +210,22 @@ app.get('/showPost/:id',
 
 
 
+app.post('/rideDelete',RideShareController.deleteRideShare)
+
+app.get('/rideShare',RideShareController.getAllRideShares)
+
+app.post('/rideShare',RideShareController.saveRideShare)
+
+app.get('/showPost/:id',
+        RideShareController.attachAllRideShareComment,
+        RideShareController.showOneRide)
+
+app.post('/saveRideShareComment',RideShareController.saveRideShareComment)
+
+
+
+
+
 
 
 
@@ -253,13 +270,6 @@ app.get('/Sports', function(req, res, next) {
   res.render('Sports',{title:"Sports"});
 });
 
-app.get('/RideShare', function(req, res, next) {
-  res.render('RideShare',{title:"RideShare"});
-});
-
-app.get('/RideSharePost', function(req, res, next) {
-  res.render('RideSharePost',{title:"RideSharePost"});
-});
 
 
 app.get('/sellwhat', function(req, res, next) {
