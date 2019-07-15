@@ -66,6 +66,20 @@ exports.getAllForumPosts = ( req, res, next ) => {
     } );
 };
 
+
+exports.deletePost = (req, res) => {
+  console.log("in deletePost")
+  let deleteId = req.params.postid
+
+  ForumPost.deleteOne({_id:deleteId})
+           .exec()
+           .then(()=>{res.redirect('/showProfile/'+req.user._id)})
+           .catch((error)=>{res.send(error)})
+}
+
+
+
+
 exports.deleteForumPost = (req, res) => {
   console.log("in deleteForumPost")
   let deleteId = req.body.delete

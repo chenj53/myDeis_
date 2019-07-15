@@ -214,9 +214,9 @@ app.get('/showPost/:id',
         forumPostController.attachAllForumComments,
         forumPostController.showOnePost)
 
-  app.post('/saveForumComment',forumPostController.saveForumComment)
+app.post('/saveForumComment',forumPostController.saveForumComment)
 
-
+app.get('/deletePost/:postid',forumPostController.deletePost)
 
 
 
