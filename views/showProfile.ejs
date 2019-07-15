@@ -3,12 +3,11 @@
     <div class="jumbotron">
         <h1>My Market %></h1>
 
-  <img src="<%= user.profilePicURL%>" width="200">
+  <img src="<%= profile.profilePicURL%>" width="200">
         <hr>
 
         <ol>
           <% for(i = 0; i<posts.length; i++){  %>
-            <% if (posts[i].userId.equals(user._id)) { %>
 
          <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
          <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -50,8 +49,6 @@
                 </div>
              </div>
            </div>
-
-       <% } %>
 
       <% } %>
             </ol>

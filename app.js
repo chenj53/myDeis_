@@ -151,8 +151,9 @@ function isLoggedIn(req, res, next) {
 }
 
 // we require them to be logged in to see their profile
-app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile')
+app.get('/profile', isLoggedIn,
+    function(req, res) {
+        res.redirect('showProfile/'+req.user._id)
     });
 
 app.get('/editProfile',isLoggedIn, (req,res)=>{
@@ -161,8 +162,14 @@ app.get('/editProfile',isLoggedIn, (req,res)=>{
 
 app.get('/profiles', isLoggedIn, profileController.getAllProfiles);
 
-app.get('/showPofile/:id',
-        profileController.getOneProfile)
+app.get('/showProfile/:id',
+        profileController.addProfile,
+        profileController.addPosts,
+        (req,res) => {
+          res.render( 'showProfile',
+               { title:"Profile"
+          } );
+        })
 
 
 
