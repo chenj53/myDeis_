@@ -21,9 +21,10 @@ exports.saveForumPost = ( req, res ) => {
     price: req.body.price,
     condition: req.body.condition,
     contact: req.body.contact,
+    contactinfo: req.body.contactinfo,
     course: req.body.course,
     descirbtion: req.body.descirbtion,
-    
+
 
    }
   )
