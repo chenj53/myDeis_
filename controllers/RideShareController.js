@@ -21,6 +21,8 @@ exports.saveRideShare = ( req, res ) => {
     StartCity: req.body.StartCity,
     StartState: req.body.StartState,
     StartZip: req.body.StartZip,
+    Destination: req.body.Destination,
+
 
 
    }
@@ -122,6 +124,8 @@ exports.saveRideShareComment = (req,res) => {
     StartCity: req.body.StartCity,
     StartState: req.body.StartState,
     StartZip: req.body.StartZip,
+    Destination: req.body.Destination,
+    PickupDate: req.body.PickupDate,
    }
   )
 

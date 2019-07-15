@@ -1,7 +1,7 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
 <img src="images/RideShare.png" width="80%">
-
+<div class="container">
 <form method="post" action="/rideShare">
   <label for="Input1">Starting Point</label>
   <div class="form-row">
@@ -16,19 +16,22 @@
     </div>
   </div>
 
-    <div class="col-12">
+    <div class="col-7">
       <label for="Input2">Desired Destination</label>
       <input type="text" class="form-control" placeholder="Boston Logan International Airport" name="Destination">
     </div>
     <div class="form-row">
       <div class="col">
       <label for="Input2">Date of Ride</label>
-      <input type="text" class="form-control" placeholder="08/19/2019">
+      <input type="text" class="form-control" placeholder="08/19/2019" name="PickupDate">
       </div>
 
   <input class="btn btn-primary" type="Submit" value="Submit">
 </form>
+</div>
 <hr>
+
+<div class="container">
 
 <form method="post" action="/rideDelete">
         <input type="submit" value="delete marked">
@@ -39,9 +42,11 @@
                   <i>
                  <%= posts[i].createdAt %></\/i> <br>
                  </i>
-                 <%= posts[i].StartCity %><br>
+            Pickup Location: <%= posts[i].StartCity %><br>
                  <%= posts[i].StartState %><br>
                  <%= posts[i].StartZip %><br>
+            Destination:     <%=  posts[i].Destination %><br>
+            Pickup Date: <%=  posts[i].PickupDate%><br>
 
                  <% console.dir([posts[i].userId,user._id]) %>
                  <% if (posts[i].userId.equals(user._id)) { %>
@@ -54,6 +59,7 @@
         </ol>
 
     </form>
+    </div>
 
 
 

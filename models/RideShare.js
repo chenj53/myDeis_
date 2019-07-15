@@ -12,6 +12,9 @@ var RideShareSchema = Schema( {
   StartCity: String,
   StartState: String, //title
   StartZip: String,
+  Destination: String,
+  PickupDate: String,
+
 
 
 
