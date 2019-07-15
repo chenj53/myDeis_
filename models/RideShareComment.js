@@ -13,6 +13,7 @@ var RideShareCommentSchema = Schema( {
   StartState: String, //title
   StartZip: String,
   Destination: String,
+  PickupDate: String,
 
 
 
