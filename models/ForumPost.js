@@ -13,7 +13,8 @@ var forumPostSchema = Schema( {
   condition: String,
   contact: String,
   course: String,
-  
+  descirbtion: String,
+
 
 
 } );
