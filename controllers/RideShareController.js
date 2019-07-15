@@ -25,12 +25,11 @@ exports.saveRideShare = ( req, res ) => {
 
    }
   )
-  console.log("formumPost is ")
-  console.dir(newForumPost)
+
 
   //console.log("skill = "+newSkill)
 
-  newRideShasre.save()
+  newRideShare.save()
     .then( () => {
       res.redirect( 'RideShare' );
     } )
