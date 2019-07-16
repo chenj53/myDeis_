@@ -28,14 +28,14 @@
      <div class="well">
          <div class="media">
            <a class="pull-left" href="#">
-           <img class="media-object" src="<%= posts[i].itemPic%>">
+           <img class="media-object" src="<%= posts[i].FPicture%>">
          </a>
          <div class="media-body">
-           <h4 class="media-heading"> <font size="6"> <%= posts[i].post %> </font> - <%= posts[i].course %> </h4>
+           <h4 class="media-heading"> <font size="6"> <%= posts[i].post %> <%= posts[i].FDescription%></font> - <%= posts[i].course %>  </h4>
 
-              <p class="text-left">  <%= posts[i].condition %> </p>
-              <p class="text-left"> <strong>  $ <%= posts[i].price  %> </p>
-              <p class="text-left"> <%= posts[i].contact  %> :<%= posts[i].contactinfo%>   </p>
+              <p class="text-left">  <%= posts[i].condition %>  <%= posts[i].FCondition%></p>
+              <p class="text-left"> <strong>  $ <%= posts[i].price  %> <%=posts[i].FPrice%></p>
+              <p class="text-left"> <%= posts[i].contact  %> <%=posts[i].FContact%> :<%= posts[i].contactinfo%> <%=posts[i].FContactInfo%>   </p>
               <p class="text-right"> By <%= posts[i].userName %> </p>
 
              <p><%= posts[i].descirbtion %></p>
