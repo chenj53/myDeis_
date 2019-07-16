@@ -256,6 +256,10 @@ app.get('/Market', function(req, res, next) {
   res.render('Market',{title:"Market"});
 });
 
+app.get('/OtherSell', function(req, res, next) {
+  res.render('OtherSell',{title:"Other Sell"});
+});
+
 app.get('/Events', function(req, res, next) {
   res.render('Events',{title:"Events"});
 });

@@ -30,6 +30,13 @@ exports.saveForumPost = ( req, res ) => {
     FCondition: req.body.FCondition,
     FContact: req.body.FContact,
     FContactInfo:req.body.FContactInfo,
+    otherContact: req.body.otherContact,
+    otherContactInfo: req.body.otherContactInfo,
+    otherItem: req.body.otherItem,
+    otherPicture: req.body.otherPicture,
+    otherDescription: req.body.otherDescription,
+    otherCondition:req.body.otherCondition,
+    otherPrice: req.body.otherPrice,
 
 
 
@@ -136,7 +143,7 @@ exports.showOnePost = ( req, res ) => {
 
 exports.saveForumComment = (req,res) => {
   if (!res.locals.loggedIn) {
-    return res.send("You must be logged in to post a comment to the forum.")
+    return res.send("You must be logged in to post a product.")
   }
 
   let newForumComment = new ForumComment(
