@@ -28,7 +28,7 @@ var forumPostSchema = Schema( {
   otherContact: String,
   otherContactInfo: String,
   otherItem: String,
-
+  otherCondition: String,
 
 
 
