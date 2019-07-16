@@ -15,6 +15,7 @@ var forumPostSchema = Schema( {
   contactinfo: String,
   course: String,
   descirbtion: String,
+  itemPic: String,
 
 
 

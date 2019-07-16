@@ -216,7 +216,7 @@ app.get('/showPost/:id',
 
 app.post('/saveForumComment',forumPostController.saveForumComment)
 
-app.get('/deletePost/:postid',forumPostController.deletePost)
+app.get('/deletePost/:postid',forumPostController.deleteForumPost)
 
 
 
@@ -226,7 +226,7 @@ app.get('/rideShare',RideShareController.getAllRideShares)
 
 app.post('/rideShare',RideShareController.saveRideShare)
 
-app.get('/showPost/:id',
+app.get('/showRide/:id',
         RideShareController.attachAllRideShareComment,
         RideShareController.showOneRide)
 
