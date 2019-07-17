@@ -10,6 +10,7 @@
       <p>  <a class="btn btn-lg btn-primary" href="/Booksell" role="button">TextBooks</a>
         <a class="btn btn-lg btn-primary" href="/FurnitureSell" role="button">Furniture</a>
         <a class="btn btn-lg btn-primary" href="/OtherSell" role="button">Other</a>
+        <a class="btn btn-lg btn-primary" href="/SellItem" role="button">Test Form</a>
         </p>
       </div>
       </div>
@@ -29,10 +30,10 @@
            <img class="media-object" src="http://placekitten.com/150/150">
            </a>
          <div class="media-body">
-           <h4 class="media-heading"> <font size="6"> <%= posts[i].post %> <%= posts[i].FDescription%> <%=posts[i].otherItem%></font> - <%= posts[i].course %>  </h4>
+           <h4 class="media-heading"> <font size="6"> <%= posts[i].post %> <%= posts[i].FDescription%> <%= posts[i].otherItem%></font> - <%= posts[i].course %>  </h4>
               <p class="text-left"> <strong> <%= posts[i].condition %>  <%= posts[i].FCondition%> <%= posts[i].otherCondition%></p>
-              <p class="text-left">  <strong> $ <%= posts[i].price  %> <%=posts[i].otherPrice%>  <%=posts[i].FPrice%>  </p>
-              <p class="text-left"> <strong> <%= posts[i].contact  %> <%=posts[i].FContact%> <%=posts[i].otherContact%> :<%= posts[i].contactinfo%> <%=posts[i].FContactInfo%> <%=posts[i].otherContactInfo%>  </p>
+              <p class="text-left">  <strong> $ <%= posts[i].price  %> <%=posts[i].otherPrice%>  <%= posts[i].FPrice%>  </p>
+              <p class="text-left"> <strong> <%= posts[i].contact  %> <%=posts[i].FContact%> <%= posts[i].otherContact%> :<%= posts[i].contactinfo%> <%= posts[i].FContactInfo%> <%= posts[i].otherContactInfo%>  </p>
               <p class="text-right"> By <%= posts[i].userName %> </p>
              <p><%= posts[i].descirbtion %> <%= posts[i].otherDescription %></p>
              <ul class="list-inline list-unstyled">

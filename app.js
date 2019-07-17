@@ -248,6 +248,10 @@ app.get('/FurnitureSell', function(req, res, next) {
   res.render('FurnitureSell',{title:"Furniture Sell"});
 });
 
+app.get('/SellItem', function(req, res, next) {
+  res.render('SellItem',{title:"SellItem"});
+});
+
 app.get('/sellSubmit', function(req, res, next) {
   res.render('sellSubmit',{title:"Sell Submit"});
 });
