@@ -11,6 +11,7 @@ var FurnitureBuySchema = Schema( {
   FCondition: String,
   FPicture: String,
   FContact: String,
+  FContactInfo: String,
   createdAt: Date,
 
 } );

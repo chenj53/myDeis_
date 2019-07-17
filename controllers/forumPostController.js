@@ -1,6 +1,8 @@
 'use strict';
 const ForumPost = require( '../models/ForumPost' );
 const ForumComment = require( '../models/ForumComment' );
+const OtherPost = require( '../models/OtherPost' );
+const FurnitureBuy = require( '../models/FurnitureBuy' );
 
 exports.saveForumPost = ( req, res ) => {
   //console.log("in saveSkill!")
@@ -101,7 +103,7 @@ exports.deleteForumPost = (req, res) => {
       // you are deleting just one thing ...
       ForumPost.deleteOne({_id:deleteId})
            .exec()
-           .then(()=>{res.redirect('/msrket')})
+           .then(()=>{res.redirect('/market')})
            .catch((error)=>{res.send(error)})
   } else if (typeof(deleteId)=='object'){
       ForumPost.deleteMany({_id:{$in:deleteId}})

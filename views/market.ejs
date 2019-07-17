@@ -19,26 +19,30 @@
 
 
 
-    <% for(i = 0; i<posts.length; i++){  %>
+  <% for(i = 0; i<posts.length; i++){  %>
    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
      <div class="well">
          <div class="media">
            <a class="pull-left" href="#"> </a>
            <img class="media-object" src="http://placekitten.com/150/150">
-
          <div class="media-body">
            <h4 class="media-heading"> <font size="6"> <%= posts[i].post %> <%= posts[i].FDescription%> <%=posts[i].otherItem%></font> - <%= posts[i].course %>  </h4>
-
               <p class="text-left"> <strong> <%= posts[i].condition %>  <%= posts[i].FCondition%> <%= posts[i].otherCondition%></p>
               <p class="text-left">  <strong> $ <%= posts[i].price  %> <%=posts[i].otherPrice%>  <%=posts[i].FPrice%>  </p>
               <p class="text-left"> <strong> <%= posts[i].contact  %> <%=posts[i].FContact%> <%=posts[i].otherContact%> :<%= posts[i].contactinfo%> <%=posts[i].FContactInfo%> <%=posts[i].otherContactInfo%>  </p>
               <p class="text-right"> By <%= posts[i].userName %> </p>
-
              <p><%= posts[i].descirbtion %> <%= posts[i].otherDescription %></p>
              <ul class="list-inline list-unstyled">
+
+
+      <% } %>
+
+
+
+
+
            <li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
                <li>|</li>
                <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
@@ -61,14 +65,7 @@
           </div>
        </div>
      </div>
-             <% } %>
-             </ol>
 
-         </form>
-         </div>
-
-<% } %>
-      </ol>
 
 
 
