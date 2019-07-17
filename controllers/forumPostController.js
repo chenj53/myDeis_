@@ -26,12 +26,22 @@ exports.saveForumPost = ( req, res ) => {
     contactinfo: req.body.contactinfo,
     course: req.body.course,
     descirbtion: req.body.descirbtion,
+})
+
+  let newFurnitureBuy = new FurnitureBuy(
+    {
     FDescription: req.body.FDescription,
     FPrice: req.body.FPrice,
     FPicture: req.body.FPicture,
     FCondition: req.body.FCondition,
     FContact: req.body.FContact,
     FContactInfo:req.body.FContactInfo,
+
+  })
+
+  let newOtherPost = new OtherPost(
+    {
+
     otherContact: req.body.otherContact,
     otherContactInfo: req.body.otherContactInfo,
     otherItem: req.body.otherItem,

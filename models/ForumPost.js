@@ -16,19 +16,7 @@ var forumPostSchema = Schema( {
   course: String,
   descirbtion: String,
   itemPic: String,
-  FDescription: String,
-  FPrice: String,
-  FCondition: String,
-  FPicture: String,
-  FContact: String,
-  FContactInfo: String,
-  otherDescription: String,
-  otherPrice: String,
-  otherPicture: String,
-  otherContact: String,
-  otherContactInfo: String,
-  otherItem: String,
-  otherCondition: String,
+
 
 
 
