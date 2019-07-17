@@ -2,6 +2,7 @@
 <%- include('menubar') -%>
     <div class="jumbotron">
         <h1>My Market %></h1>
+        </div>
 
   <img src="<%= profile.profilePicURL%>" width="200">
         <hr>
@@ -21,9 +22,10 @@
                <div class="media-body">
                  <h4 class="media-heading"> <font size="6"> <%= posts[i].post %> </font> - <%= posts[i].course %> </h4>
 
-                    <p class="text-left">  <%= posts[i].condition %> </p>
-                    <p class="text-left"> <strong>  $ <%= posts[i].price  %> </p>
-                   <p class="text-right"> By <%= posts[i].userName %> </p>
+                 <p class="text-left"> <strong> <%= posts[i].condition %>  <%= posts[i].FCondition%> <%= posts[i].otherCondition%></p>
+                 <p class="text-left">  <strong> $ <%= posts[i].price  %> <%=posts[i].otherPrice%>  <%=posts[i].FPrice%>  </p>
+                 <p class="text-left"> <strong> <%= posts[i].contact  %> <%=posts[i].FContact%> <%=posts[i].otherContact%> :<%= posts[i].contactinfo%> <%=posts[i].FContactInfo%> <%=posts[i].otherContactInfo%>  </p>
+                 <p class="text-right"> By <%= posts[i].userName %> </p>
 
                    <p><%= posts[i].descirbtion %></p>
                    <ul class="list-inline list-unstyled">
@@ -60,6 +62,6 @@
       <% } %>
             </ol>
         <p> Last updated on <%= profile.lastUpdate %> </p>
-    </div>
+
 
 <%- include('bootfooter') -%>

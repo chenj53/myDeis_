@@ -187,3 +187,36 @@ exports.attachAllForumComments = ( req, res, next ) => {
       //console.log( 'skill promise complete' );
     } );
 };
+
+
+
+// exports.update = ( req, res ) => {
+//
+//   posts.findOne(req.body.postId)
+//   .exec()
+//   .then((p) => {
+//
+//     p.post: req.body.post, //title
+//     p.createdAt:  new Date(),
+//     p.price: req.body.price,
+//     p.condition: req.body.condition,
+//     p.contact: req.body.contact,
+//     p.contactinfo: req.body.contactinfo,
+//     p.course: req.body.course,
+//     p.descirbtion: req.body.descirbtion,
+//
+//
+//     p.save()
+//     .then(() => {
+//       res.redirect( '/profile' );
+//     })
+//
+//   })
+//   .catch(function (error) {
+//     // handle error
+//     console.log(error);
+//   })
+//   .finally(function () {
+//     // always executed
+//   });
+// };
