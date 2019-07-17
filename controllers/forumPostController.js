@@ -1,6 +1,8 @@
 'use strict';
 const ForumPost = require( '../models/ForumPost' );
 const ForumComment = require( '../models/ForumComment' );
+const OtherPost = require( '../models/OtherPost' );
+const FurnitureBuy = require( '../models/FurnitureBuy' );
 
 exports.saveForumPost = ( req, res ) => {
   //console.log("in saveSkill!")
@@ -24,12 +26,22 @@ exports.saveForumPost = ( req, res ) => {
     contactinfo: req.body.contactinfo,
     course: req.body.course,
     descirbtion: req.body.descirbtion,
+})
+
+  let newFurnitureBuy = new FurnitureBuy(
+    {
     FDescription: req.body.FDescription,
     FPrice: req.body.FPrice,
     FPicture: req.body.FPicture,
     FCondition: req.body.FCondition,
     FContact: req.body.FContact,
     FContactInfo:req.body.FContactInfo,
+
+  })
+
+  let newOtherPost = new OtherPost(
+    {
+
     otherContact: req.body.otherContact,
     otherContactInfo: req.body.otherContactInfo,
     otherItem: req.body.otherItem,
@@ -87,7 +99,7 @@ exports.deletePost = (req, res) => {
 
   ForumPost.deleteOne({_id:deleteId})
            .exec()
-           .then(()=>{res.redirect('/showProfile/'+req.user._id)})
+           .then(()=>{res.redirect('/showPost/'+req.user._id)})
            .catch((error)=>{res.send(error)})
 }
 
@@ -101,16 +113,16 @@ exports.deleteForumPost = (req, res) => {
       // you are deleting just one thing ...
       ForumPost.deleteOne({_id:deleteId})
            .exec()
-           .then(()=>{res.redirect('/forum')})
+           .then(()=>{res.redirect('/market')})
            .catch((error)=>{res.send(error)})
   } else if (typeof(deleteId)=='object'){
       ForumPost.deleteMany({_id:{$in:deleteId}})
            .exec()
-           .then(()=>{res.redirect('/forum')})
+           .then(()=>{res.redirect('/market')})
            .catch((error)=>{res.send(error)})
   } else if (typeof(deleteId)=='undefined'){
       //console.log("This is if they didn't select a skill")
-      res.redirect('/forum')
+      res.redirect('/market')
   } else {
     //console.log("This shouldn't happen!")
     res.send(`unknown deleteId: ${deleteId} Contact the Developer!!!`)
