@@ -22,6 +22,13 @@ var forumPostSchema = Schema( {
   FPicture: String,
   FContact: String,
   FContactInfo: String,
+  otherDescription: String,
+  otherPrice: String,
+  otherPicture: String,
+  otherContact: String,
+  otherContactInfo: String,
+  otherItem: String,
+  otherCondition: String,
 
 
 
