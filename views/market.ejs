@@ -25,8 +25,9 @@
    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
      <div class="well">
          <div class="media">
-           <a class="pull-left" href="#"> </a>
+           <a class="pull-left" href="#">
            <img class="media-object" src="http://placekitten.com/150/150">
+           </a>
          <div class="media-body">
            <h4 class="media-heading"> <font size="6"> <%= posts[i].post %> <%= posts[i].FDescription%> <%=posts[i].otherItem%></font> - <%= posts[i].course %>  </h4>
               <p class="text-left"> <strong> <%= posts[i].condition %>  <%= posts[i].FCondition%> <%= posts[i].otherCondition%></p>
@@ -37,7 +38,7 @@
              <ul class="list-inline list-unstyled">
 
 
-      <% } %>
+
 
 
 
@@ -65,6 +66,7 @@
           </div>
        </div>
      </div>
+           <% } %>
 
 
 
