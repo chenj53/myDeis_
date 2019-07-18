@@ -243,11 +243,11 @@ app.get('/BookSell', function(req, res, next) {
   res.render('BookSell',{title:"BookSell"});
 });
 
-app.get('/FurnitureSell', function(req, res, next) {
+app.get('/FurnitureSell', isLoggedIn, function(req, res, next) {
   res.render('FurnitureSell',{title:"Furniture Sell"});
 });
 
-app.get('/OtherSell', function(req, res, next) {
+app.get('/OtherSell', isLoggedIn, function(req, res, next) {
   res.render('OtherSell',{title:"OtherSell"});
 });
 
