@@ -12,9 +12,11 @@ bodyParser = require("body-parser"),
 User = require( './models/User' ),
 flash = require('connect-flash')
 // END OF AUTHENTICATION MODULES
+MONGOLAB_URI = "mongodb://heroku_k6r5hkqb:5s5i9lvopgjiph4grfgvcipga6@ds353007.mlab.com:53007/heroku_k6r5hkqb"
+LOCAL_URI = 'mongodb://localhost/mydeis'
 
 const mongoose = require( 'mongoose' );
-mongoose.connect( 'mongodb://localhost/mydb' );
+mongoose.connect( LOCAL_URI );
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
