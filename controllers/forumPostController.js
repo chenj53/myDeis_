@@ -1,8 +1,8 @@
 'use strict';
 const ForumPost = require( '../models/ForumPost' );
 const ForumComment = require( '../models/ForumComment' );
-const OtherPost = require( '../models/OtherPost' );
-const FurnitureBuy = require( '../models/FurnitureBuy' );
+
+
 
 exports.saveForumPost = ( req, res ) => {
   //console.log("in saveSkill!")
