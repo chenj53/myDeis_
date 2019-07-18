@@ -116,6 +116,7 @@
                  <%= posts[i].StartZip %><br>
             Destination:     <%=  posts[i].Destination %><br>
             Pickup Date: <%=  posts[i].PickupDate%><br>
+            Contact Info: <%= posts[i].contact %> : <%= posts[i].contactInfo %>
 
                  <% console.dir([posts[i].userId,user._id]) %>
                  <% if (posts[i].userId.equals(user._id)) { %>
