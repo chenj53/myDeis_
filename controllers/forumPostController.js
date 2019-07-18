@@ -19,14 +19,14 @@ exports.saveForumPost = ( req, res ) => {
     userName: req.user.googlename,
     post: req.body.post, //title
     createdAt:  new Date(),
-    price: req.user.price,
-    condition: req.user.condition,
-    contact: req.user.contact,
-    contactinfo: req.user.contactinfo,
-    course: req.user.course,
-    description:req.user.description,
-    itemPic: req.user.itemPic,
-    product: req.user.product
+    price: req.body.price,
+    condition: req.body.condition,
+    contact: req.body.contact,
+    contactinfo: req.body.contactinfo,
+    course: req.body.course,
+    description:req.body.description,
+    itemPic: req.body.itemPic,
+    product: req.body.product
   })
 
 
