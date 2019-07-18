@@ -197,7 +197,7 @@ app.get('/', function(req, res, next) {
 });
 
 
-app.post('/processsell',forumPostController.saveForumPost)
+app.post('/processbook',forumPostController.saveForumPost)
 
 
 app.get('/market',forumPostController.getAllForumPosts)
@@ -239,6 +239,17 @@ app.get('/SellItem', function(req, res, next) {
   res.render('SellItem',{title:"SellItem"});
 });
 
+app.get('/BookSell', function(req, res, next) {
+  res.render('BookSell',{title:"BookSell"});
+});
+
+app.get('/FurnitureSell', function(req, res, next) {
+  res.render('FurnitureSell',{title:"Furniture Sell"});
+});
+
+app.get('/OtherSell', function(req, res, next) {
+  res.render('OtherSell',{title:"OtherSell"});
+});
 
 
 app.get('/market', function(req, res, next) {
