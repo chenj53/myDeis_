@@ -24,7 +24,7 @@ exports.saveForumPost = ( req, res ) => {
     contact: req.user.contact,
     contactinfo: req.user.contactinfo,
     course: req.user.course,
-    descirbtion:req.user.descirbtion,
+    description:req.user.description,
     itemPic: req.user.itemPic,
     product: req.user.product
   })
