@@ -1,6 +1,8 @@
 'use strict';
 const ForumPost = require( '../models/ForumPost' );
 const ForumComment = require( '../models/ForumComment' );
+const OtherPost = require( '../models/OtherPost' );
+const FurnitureBuy = require( '../models/FurnitureBuy' );
 
 exports.saveForumPost = ( req, res ) => {
   //console.log("in saveSkill!")
@@ -11,6 +13,8 @@ exports.saveForumPost = ( req, res ) => {
 
   let newForumPost = new ForumPost(
    {
+
+
 
     userId: req.user._id,
     userName: req.user.googlename,
@@ -72,7 +76,7 @@ exports.deletePost = (req, res) => {
 
   ForumPost.deleteOne({_id:deleteId})
            .exec()
-           .then(()=>{res.redirect('/showPost/'+req.user._id)})
+           .then(()=>{res.redirect('/showProfile/'+req.user._id)})
            .catch((error)=>{res.send(error)})
 }
 
