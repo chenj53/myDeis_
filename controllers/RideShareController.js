@@ -23,6 +23,8 @@ exports.saveRideShare = ( req, res ) => {
     StartZip: req.body.StartZip,
     Destination: req.body.Destination,
     PickupDate: req.body.PickupDate,
+    contact: req.body.contact,
+    contactInfo: req.body.contactInfo
 
 
 

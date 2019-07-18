@@ -4,14 +4,71 @@
 <div class="container">
 <form method="post" action="/rideShare">
   <label for="Input1">Starting Point</label>
-  <div class="form-row">
+  <div class="form-group">
+    <div class="col-7">
+      <input type="text" class="form-control" placeholder="Address" name="StartAddress">
+    </div>
     <div class="col-7">
       <input type="text" class="form-control" placeholder="City" name="StartCity">
     </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="State" name="StartState">
-    </div>
-    <div class="col">
+    <div class="form-group col-md-4">
+          <label for="State">State</label>
+          <select name="StartState" class="form-control">
+            <option selected>Choose...</option>
+            <option selected>Alabama</option>
+            <option selected>Alaska</option>
+            <option selected>Arizona</option>
+            <option selected>Arkansas</option>
+            <option selected>California</option>
+            <option selected>Colorado</option>
+            <option selected>Connecticut</option>
+            <option selected>Delaware</option>
+            <option selected>Florida</option>
+            <option selected>Georgia</option>
+            <option selected>Hawaii</option>
+            <option selected>Idaho</option>
+            <option selected>Illinois</option>
+            <option selected>Indiana</option>
+            <option selected>Iowa</option>
+            <option selected>Kansas</option>
+            <option selected>Kentucky</option>
+            <option selected>Louisiana</option>
+            <option selected>Maine</option>
+            <option selected>Maryland</option>
+            <option selected>Massachusetts</option>
+            <option selected>Michigan</option>
+            <option selected>Minnesota</option>
+            <option selected>Mississippi</option>
+            <option selected>Missouri</option>
+            <option selected>Montana</option>
+            <option selected>Nebraska</option>
+            <option selected>Nevada</option>
+            <option selected>New Hampshire</option>
+            <option selected>New Jersey</option>
+            <option selected>New Mexico</option>
+            <option selected>New York</option>
+            <option selected>North Carolina</option>
+            <option selected>North Dakota</option>
+            <option selected>Ohio</option>
+            <option selected>Oklahoma</option>
+            <option selected>Oregon</option>
+            <option selected>Pennsylvania</option>
+            <option selected>Rhode Island</option>
+            <option selected>South Carolina</option>
+            <option selected>South Dakota</option>
+            <option selected>Tennessee</option>
+            <option selected>Texas</option>
+            <option selected>Utah</option>
+            <option selected>Vermont</option>
+            <option selected>Virginia</option>
+            <option selected>Washington</option>
+            <option selected>West Virginia</option>
+            <option selected>Wisconsin</option>
+            <option selected>Wyoming</option>
+            <option>...</option>
+          </select>
+        </div>
+    <div class="col-3">
       <input type="text" class="form-control" placeholder="Zip" name="StartZip">
     </div>
   </div>
@@ -23,8 +80,19 @@
     <div class="form-row">
       <div class="col">
       <label for="Input2">Date of Ride</label>
-      <input type="text" class="form-control" placeholder="08/19/2019" name="PickupDate">
+      <input type="text" class="form-control" placeholder="MM/DD/YY" name="PickupDate">
       </div>
+      <div class="form-group">
+        Contact Method
+        <select name="contact">
+          <option>Facebook</option>
+          <option>Text</option>
+          <option>Wechat</option>
+          <option>Phone</option>
+        </select>
+          <input type="post" id="contactinfo" name="contactInfo"> <br>
+      </div>
+
 
   <input class="btn btn-primary" type="Submit" value="Submit">
 </form>
@@ -42,7 +110,8 @@
                   <i>
                  <%= posts[i].createdAt %></\/i> <br>
                  </i>
-            Pickup Location: <%= posts[i].StartCity %><br>
+            Pickup Location: <%= posts[i].StartAddress %><br>
+                  <%= posts[i].StartCity %><br>
                  <%= posts[i].StartState %><br>
                  <%= posts[i].StartZip %><br>
             Destination:     <%=  posts[i].Destination %><br>
