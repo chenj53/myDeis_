@@ -63,7 +63,7 @@ const owners = ["chenj53@brandeis.edu", "jaytseng@brandeis.edu", "tristantseng@b
 
 // here is where we check on their logged in status
 app.use((req,res,next) => {
-  res.locals.title="MyDei$"
+  res.locals.title="Basement Records"
   res.locals.loggedIn = false
   if (req.isAuthenticated()){
       console.log("user has been Authenticated")
@@ -177,7 +177,7 @@ app.get('/about', function(req, res, next) {
 });
 
 app.get('/', function(req, res, next) {
-  res.render('index',{title:"MyDei$"});
+  res.render('index',{title:"Basement Records"});
 });
 
 
