@@ -20,6 +20,7 @@ exports.saveForumPost = ( req, res ) => {
     userName: req.user.googlename,
     post: req.body.post, //title
     createdAt:  new Date(),
+    postId: req.body.postId, //title
     price: req.body.price,
     condition: req.body.condition,
     contact: req.body.contact,
