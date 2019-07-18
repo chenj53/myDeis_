@@ -14,8 +14,6 @@ exports.saveForumPost = ( req, res ) => {
   let newForumPost = new ForumPost(
    {
 
-
-
     userId: req.user._id,
     userName: req.user.googlename,
     post: req.body.post, //title
