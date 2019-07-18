@@ -27,7 +27,7 @@ exports.saveRideShare = ( req, res ) => {
     contact: req.body.contact,
     contactInfo: req.body.contactInfo,
     PickupTime: req.body.PickupTime,
-    AmPm: req.body.AmPm,
+
 
 
 

@@ -222,7 +222,7 @@ app.get('/deletePost/:postid',forumPostController.deletePost)
 
 app.post('/rideDelete',RideShareController.deleteRideShare)
 
-app.get('/rideShare',RideShareController.getAllRideShares)
+app.get('/rideShare',isLoggedIn, RideShareController.getAllRideShares)
 
 app.post('/rideShare',RideShareController.saveRideShare)
 
