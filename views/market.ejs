@@ -17,7 +17,6 @@
 
 
 
-
   <% for(i = 0; i<posts.length; i++){  %>
    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -28,12 +27,12 @@
            <img class="media-object" src="http://placekitten.com/150/150">
            </a>
          <div class="media-body">
-           <h4 class="media-heading"> <font size="6"> <%= posts[i].post %> </font> - <%= posts[i].course %>  </h4>
+           <h4 class="media-heading"> <font size="6"> <%= posts[i].post %> </font> - <%= posts[i].course%>  </h4>
               <p class="text-left"> <strong> <%= posts[i].condition %> </p>
               <p class="text-left">  $ <%= posts[i].price  %>   </p>
               <p class="text-left"> <%= posts[i].contact  %>  :<%= posts[i].contactInfo%>   </p>
               <p class="text-right"> By <%= posts[i].userName %> </p>
-             <p><%= posts[i].descirbtion %> </p>
+             <p> <%= posts[i].descirbtion %> </p>
              <ul class="list-inline list-unstyled">
 
 

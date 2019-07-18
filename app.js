@@ -200,8 +200,6 @@ app.get('/', function(req, res, next) {
 app.post('/processsell',forumPostController.saveForumPost)
 
 
-
-
 app.get('/market',forumPostController.getAllForumPosts)
 
 
@@ -237,32 +235,17 @@ app.post('/saveRideShareComment',RideShareController.saveRideShareComment)
 
 
 
-
-
-
-app.get('/Booksell', function(req, res, next) {
-  res.render('Booksell',{title:"Book Sell"});
-});
-
-app.get('/FurnitureSell', function(req, res, next) {
-  res.render('FurnitureSell',{title:"Furniture Sell"});
-});
-
 app.get('/SellItem', function(req, res, next) {
   res.render('SellItem',{title:"SellItem"});
 });
 
-app.get('/sellSubmit', function(req, res, next) {
-  res.render('sellSubmit',{title:"Sell Submit"});
-});
+
 
 app.get('/market', function(req, res, next) {
   res.render('market',{title:"market"});
 });
 
-app.get('/OtherSell', function(req, res, next) {
-  res.render('OtherSell',{title:"Other Sell"});
-});
+
 
 app.get('/Events', function(req, res, next) {
   res.render('Events',{title:"Events"});

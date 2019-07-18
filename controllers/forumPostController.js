@@ -26,8 +26,8 @@ exports.saveForumPost = ( req, res ) => {
     descirbtion:req.user.descirbtion,
     itemPic: req.user.itemPic,
     product: req.user.product
-   }
-  )
+  })
+
 
   console.log("formumPost is ")
   console.log("Price =" + req.body.price)
