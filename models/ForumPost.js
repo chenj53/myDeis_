@@ -12,10 +12,11 @@ var forumPostSchema = Schema( {
   price: Number,
   condition: String,
   contact: String,
-  contactinfo: String,
+  contactInfo: String,
   course: String,
   descirbtion: String,
   itemPic: String,
+  product: String,
 
 
 

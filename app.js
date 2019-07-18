@@ -197,7 +197,7 @@ app.get('/', function(req, res, next) {
 });
 
 
-app.post('/processbook',forumPostController.saveForumPost)
+app.post('/processsell',forumPostController.saveForumPost)
 
 
 

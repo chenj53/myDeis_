@@ -16,28 +16,17 @@ exports.saveForumPost = ( req, res ) => {
     userName: req.user.googlename,
     post: req.body.post, //title
     createdAt:  new Date(),
-    price: req.body.price,
-    condition: req.body.condition,
-    contact: req.body.contact,
-    contactinfo: req.body.contactinfo,
-    course: req.body.course,
-    descirbtion: req.body.descirbtion,
-    FDescription: req.body.FDescription,
-    FPrice: req.body.FPrice,
-    FPicture: req.body.FPicture,
-    FCondition: req.body.FCondition,
-    FContact: req.body.FContact,
-    FContactInfo:req.body.FContactInfo,
-    OtherContact: req.body.otherContact,
-    otherContactInfo: req.body.otherContactInfo,
-    otherItem: req.body.otherItem,
-    otherPicture: req.body.otherPicture,
-    otherDescription: req.body.otherDescription,
-    otherCondition:req.body.otherCondition,
-    otherPrice: req.body.otherPrice,
+    price: req.user.price,
+    condition: req.user.condition,
+    contact: req.user.contact,
+    contactinfo: req.user.contactinfo,
+    course: req.user.course,
+    descirbtion:req.user.descirbtion,
+    itemPic: req.user.itemPic,
+    product: req.user.product
    }
   )
-  
+
   console.log("formumPost is ")
   console.log("Price =" + req.body.price)
   console.log("Price =" + req.body.descirbtion)
