@@ -1,6 +1,8 @@
 'use strict';
 const ForumPost = require( '../models/ForumPost' );
 const ForumComment = require( '../models/ForumComment' );
+const OtherPost = require( '../models/OtherPost' );
+const FurnitureBuy = require( '../models/FurnitureBuy' );
 
 exports.saveForumPost = ( req, res ) => {
   //console.log("in saveSkill!")
@@ -12,33 +14,47 @@ exports.saveForumPost = ( req, res ) => {
   let newForumPost = new ForumPost(
    {
 
+
+
     userId: req.user._id,
     userName: req.user.googlename,
     post: req.body.post, //title
     createdAt:  new Date(),
-    postId: req.body.postId, //title
+    postId: req.body.pos, //title
     price: req.body.price,
     condition: req.body.condition,
     contact: req.body.contact,
     contactinfo: req.body.contactinfo,
     course: req.body.course,
     descirbtion: req.body.descirbtion,
+})
+
+  let newFurnitureBuy = new FurnitureBuy(
+    {
     FDescription: req.body.FDescription,
     FPrice: req.body.FPrice,
     FPicture: req.body.FPicture,
     FCondition: req.body.FCondition,
     FContact: req.body.FContact,
     FContactInfo:req.body.FContactInfo,
-    OtherContact: req.body.otherContact,
+
+  })
+
+  let newOtherPost = new OtherPost(
+    {
+
+    otherContact: req.body.otherContact,
     otherContactInfo: req.body.otherContactInfo,
     otherItem: req.body.otherItem,
     otherPicture: req.body.otherPicture,
     otherDescription: req.body.otherDescription,
     otherCondition:req.body.otherCondition,
     otherPrice: req.body.otherPrice,
+
+
+
    }
   )
-  
   console.log("formumPost is ")
   console.log("Price =" + req.body.price)
   console.log("Price =" + req.body.descirbtion)
@@ -84,7 +100,7 @@ exports.deletePost = (req, res) => {
 
   ForumPost.deleteOne({_id:deleteId})
            .exec()
-           .then(()=>{res.redirect('/showPost/'+req.user._id)})
+           .then(()=>{res.redirect('/showProfile/'+req.user._id)})
            .catch((error)=>{res.send(error)})
 }
 
