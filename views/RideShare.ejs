@@ -77,11 +77,20 @@
       <label for="Input2">Desired Destination</label>
       <input type="text" class="form-control" placeholder="Boston Logan International Airport" name="Destination">
     </div>
-    <div class="form-row">
-      <div class="col">
+    <div class="form-group">
+      <div class="col-5">
       <label for="Input2">Date of Ride</label>
       <input type="text" class="form-control" placeholder="MM/DD/YY" name="PickupDate">
       </div>
+      <div class="col-5">
+      <label for="Input2">Time of Ride</label>
+      <input type="text" class="form-control" placeholder="Enter Time" name="PickupTime">
+      <input type="radio" name="AmPm" value="AM"> AM<br>
+      <input type="radio" name="AmPm" value="PM"> PM<br>
+      </div>
+      </div>
+
+
       <div class="form-group">
         Contact Method
         <select name="contact">
@@ -115,7 +124,8 @@
                  <%= posts[i].StartState %><br>
                  <%= posts[i].StartZip %><br>
             Destination:     <%=  posts[i].Destination %><br>
-            Pickup Date: <%=  posts[i].PickupDate%><br>
+            Pickup Date and Time: <%=  posts[i].PickupDate%>   <%= posts[i].PickupTime%> <%= posts[i].AmPm %> <br>
+            Contact Info: <%= posts[i].contact %> : <%= posts[i].contactInfo %>
 
                  <% console.dir([posts[i].userId,user._id]) %>
                  <% if (posts[i].userId.equals(user._id)) { %>
