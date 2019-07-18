@@ -71,7 +71,7 @@ exports.saveForumPost = ( req, res ) => {
 
   newForumPost.save()
     .then( () => {
-      res.redirect( 'forum' );
+      res.redirect( 'sellSubmit' );
     } )
     .catch( error => {
       res.send( error );
