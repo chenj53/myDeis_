@@ -1,57 +1,57 @@
 'use strict';
-const ForumPost = require( '../models/ForumPost' );
-const ForumComment = require( '../models/ForumComment' );
+const FurnitureComment = require( '../models/FurnitureComment' );
+const FurniturePost = require( '../models/FurniturePost' );
 
 
 
 
-exports.saveForumPost = ( req, res ) => {
+exports.saveFurniturePost = ( req, res ) => {
   //console.log("in saveSkill!")
   //console.dir(req)
   if (!res.locals.loggedIn) {
-    return res.send("You must be logged in to post to the forum.")
+    return res.send("You must be logged in to post an item for sale.")
   }
 
-  let newForumPost = new ForumPost(
+  let newFurniturePost = new FurniturePost(
    {
 
     userId: req.user._id,
     userName: req.user.googlename,
     post: req.body.post, //title
     createdAt:  new Date(),
-    price: req.user.price,
-    condition: req.user.condition,
-    contact: req.user.contact,
-    contactinfo: req.user.contactinfo,
-    course: req.user.course,
-    descirbtion:req.user.descirbtion,
-    itemPic: req.user.itemPic,
-    product: req.user.product
+    price: req.body.price,
+    condition: req.body.condition,
+    contact: req.body.contact,
+    contactInfo: req.body.contactInfo,
+    course: req.body.course,
+    description:req.body.description,
+    picture: req.body.picture,
+    product: req.body.product
   })
 
 
-  console.log("formumPost is ")
+  console.log("furniturePost is ")
   console.log("Price =" + req.body.price)
-  console.log("Price =" + req.body.descirbtion)
-  console.dir(newForumPost)
+  console.log("Price =" + req.body.description)
+  console.dir(newFurniturePost)
 
   //console.log("skill = "+newSkill)
 
-  newForumPost.save()
+  newFurniturePost.save()
     .then( () => {
       res.redirect( 'market' );
     } )
     .catch( error => {
-      res.send( "ForumPostError is "+error );
+      res.send( "FurniturePostError is "+error );
     } );
 };
 
 
 // this displays all of the skills
-exports.getAllForumPosts = ( req, res, next ) => {
+exports.getAllFurniturePosts = ( req, res, next ) => {
   //gconsle.log('in getAllSkills')
   console.log("hello hello hello hello")
-  ForumPost.find({}).sort({createdAt: -1})
+  FurniturePost.find({}).sort({createdAt: -1})
 
     .exec()
     .then( ( posts) => {
@@ -73,7 +73,7 @@ exports.deletePost = (req, res) => {
   console.log("in deletePost")
   let deleteId = req.params.postid
 
-  ForumPost.deleteOne({_id:deleteId})
+  FurniturePost.deleteOne({_id:deleteId})
            .exec()
            .then(()=>{res.redirect('/showProfile/'+req.user._id)})
            .catch((error)=>{res.send(error)})
@@ -82,17 +82,17 @@ exports.deletePost = (req, res) => {
 
 
 
-exports.deleteForumPost = (req, res) => {
-  console.log("in deleteForumPost")
+exports.deleteFurniturePost = (req, res) => {
+  console.log("in deleteFurniturePost")
   let deleteId = req.body.delete
   if (typeof(deleteId)=='string') {
       // you are deleting just one thing ...
-      ForumPost.deleteOne({_id:deleteId})
+      FurniturePost.deleteOne({_id:deleteId})
            .exec()
            .then(()=>{res.redirect('/market')})
            .catch((error)=>{res.send(error)})
   } else if (typeof(deleteId)=='object'){
-      ForumPost.deleteMany({_id:{$in:deleteId}})
+      FurniturePost.deleteMany({_id:{$in:deleteId}})
            .exec()
            .then(()=>{res.redirect('/market')})
            .catch((error)=>{res.send(error)})
@@ -112,11 +112,11 @@ exports.showOnePost = ( req, res ) => {
   //gconsle.log('in getAllSkills')
   const id = req.params.id
   console.log('the id is '+id)
-  ForumPost.findOne({_id:id})
+  FurniturePost.findOne({_id:id})
     .exec()
-    .then( ( forumPost ) => {
-      res.render( 'forumPost', {
-        post:forumPost, title:"Forum Post"
+    .then( ( furniturePost ) => {
+      res.render( 'furniturePost', {
+        post:furniturePost, title:"FurniturePost"
       } );
     } )
     .catch( ( error ) => {
@@ -129,12 +129,12 @@ exports.showOnePost = ( req, res ) => {
 };
 
 
-exports.saveForumComment = (req,res) => {
+exports.saveFurnitureComment = (req,res) => {
   if (!res.locals.loggedIn) {
     return res.send("You must be logged in to post a product.")
   }
 
-  let newForumComment = new ForumComment(
+  let newFurnitureComment = new FurnitureComment(
    {
     userId: req.user._id,
     postId: req.body.postId,
@@ -146,7 +146,7 @@ exports.saveForumComment = (req,res) => {
 
   //console.log("skill = "+newSkill)
 
-  newForumComment.save()
+  newFurnitureComment.save()
     .then( () => {
       res.redirect( 'showPost/'+req.body.postId );
     } )
@@ -159,11 +159,11 @@ exports.saveForumComment = (req,res) => {
 
 
 // this displays all of the skills
-exports.attachAllForumComments = ( req, res, next ) => {
+exports.attachAllFurnitureComments = ( req, res, next ) => {
   //gconsle.log('in getAllSkills')
   console.log("in aAFC with id= "+req.params.id)
   var ObjectId = require('mongoose').Types.ObjectId;
-  ForumComment.find({postId:ObjectId(req.params.id)}).sort({createdAt:-1})
+  FurnitureComment.find({postId:ObjectId(req.params.id)}).sort({createdAt:-1})
     .exec()
     .then( ( comments ) => {
       console.log("comments.length=")
