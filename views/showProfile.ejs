@@ -2,64 +2,14 @@
 <%- include('menubar') -%>
     <div class="jumbotron">
         <h1>My Market %></h1>
+        </div>
 
   <img src="<%= profile.profilePicURL%>" width="200">
         <hr>
 
-        <ol>
-          <% for(i = 0; i<posts.length; i++){  %>
+<%- include('booklist') -%>
 
-         <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-         <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-           <div class="well">
-               <div class="media">
-                 <a class="pull-left" href="#">
-                 <img class="media-object" src="http://placekitten.com/150/150">
-               </a>
-               <div class="media-body">
-                 <h4 class="media-heading"> <font size="6"> <%= posts[i].post %> </font> - <%= posts[i].course %> </h4>
-
-                    <p class="text-left">  <%= posts[i].condition %> </p>
-                    <p class="text-left"> <strong>  $ <%= posts[i].price  %> </p>
-                   <p class="text-right"> By <%= posts[i].userName %> </p>
-
-                   <p><%= posts[i].descirbtion %></p>
-                   <ul class="list-inline list-unstyled">
-                 <li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
-                     <li>|</li>
-                     <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
-                     <li>|</li>
-                     <li>
-                        <span class="glyphicon glyphicon-star"></span>
-                                 <span class="glyphicon glyphicon-star"></span>
-                                 <span class="glyphicon glyphicon-star"></span>
-                                 <span class="glyphicon glyphicon-star"></span>
-                                 <span class="glyphicon glyphicon-star-empty"></span>
-                     </li>
-                     <li>|</li>
-                     <li>
-                     <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
-                       <span><i class="fa fa-facebook-square"></i></span>
-                       <span><i class="fa fa-twitter-square"></i></span>
-                       <span><i class="fa fa-google-plus-square"></i></span>
-                     </li>
-                     <% if (posts[i].userId.equals(user._id)){ %>
-                     <li>
-                       <a href="/deletePost/<%= posts[i]._id %>">
-                         <span class="glyphicon glyphicon-remove"></span>
-                       </a>
-                     </li>
-                     <% } %>
-               </ul>
-                </div>
-             </div>
-           </div>
-
-      <% } %>
-            </ol>
         <p> Last updated on <%= profile.lastUpdate %> </p>
-    </div>
+
 
 <%- include('bootfooter') -%>

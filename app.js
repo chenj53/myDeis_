@@ -12,9 +12,11 @@ bodyParser = require("body-parser"),
 User = require( './models/User' ),
 flash = require('connect-flash')
 // END OF AUTHENTICATION MODULES
+MONGOLAB_URI = "mongodb://heroku_k6r5hkqb:5s5i9lvopgjiph4grfgvcipga6@ds353007.mlab.com:53007/heroku_k6r5hkqb"
+LOCAL_URI = 'mongodb://localhost/mydeis'
 
 const mongoose = require( 'mongoose' );
-mongoose.connect( 'mongodb://localhost/mydb' );
+mongoose.connect( LOCAL_URI );
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
@@ -200,8 +202,6 @@ app.get('/', function(req, res, next) {
 app.post('/processbook',forumPostController.saveForumPost)
 
 
-
-
 app.get('/market',forumPostController.getAllForumPosts)
 
 
@@ -222,11 +222,11 @@ app.get('/deletePost/:postid',forumPostController.deletePost)
 
 app.post('/rideDelete',RideShareController.deleteRideShare)
 
-app.get('/rideShare',RideShareController.getAllRideShares)
+app.get('/rideShare',isLoggedIn, RideShareController.getAllRideShares)
 
 app.post('/rideShare',RideShareController.saveRideShare)
 
-app.get('/showPost/:id',
+app.get('/showRide/:id',
         RideShareController.attachAllRideShareComment,
         RideShareController.showOneRide)
 
@@ -237,24 +237,28 @@ app.post('/saveRideShareComment',RideShareController.saveRideShareComment)
 
 
 
-
-
-
-app.get('/Booksell', function(req, res, next) {
-  res.render('Booksell',{title:"Book Sell"});
+app.get('/SellItem', function(req, res, next) {
+  res.render('SellItem',{title:"SellItem"});
 });
 
-app.get('/FurnitureSell', function(req, res, next) {
+app.get('/BookSell', isLoggedIn, function(req, res, next) {
+  res.render('BookSell',{title:"BookSell"});
+});
+
+app.get('/FurnitureSell', isLoggedIn, function(req, res, next) {
   res.render('FurnitureSell',{title:"Furniture Sell"});
 });
 
-app.get('/sellSubmit', function(req, res, next) {
-  res.render('sellSubmit',{title:"Sell Submit"});
+app.get('/OtherSell', isLoggedIn, function(req, res, next) {
+  res.render('OtherSell',{title:"OtherSell"});
 });
 
-app.get('/Market', function(req, res, next) {
-  res.render('Market',{title:"Market"});
+
+app.get('/market', function(req, res, next) {
+  res.render('market',{title:"market"});
 });
+
+
 
 app.get('/Events', function(req, res, next) {
   res.render('Events',{title:"Events"});

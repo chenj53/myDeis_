@@ -8,13 +8,17 @@ var forumPostSchema = Schema( {
   userId: ObjectId,
   userName: String,
   post: String, //title
+  postId: String, //title
   createdAt: Date,
   price: Number,
   condition: String,
   contact: String,
-  contactinfo: String,
+  contactInfo: String,
   course: String,
-  descirbtion: String,
+  description: String,
+  itemPic: String,
+  product: String,
+
 
 
 

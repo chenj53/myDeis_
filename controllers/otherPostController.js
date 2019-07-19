@@ -19,14 +19,14 @@ exports.saveForumPost = ( req, res ) => {
     userName: req.user.googlename,
     post: req.body.post, //title
     createdAt:  new Date(),
-    price: req.body.price,
-    condition: req.body.condition,
-    contact: req.body.contact,
-    contactinfo: req.body.contactinfo,
-    course: req.body.course,
-    description:req.body.description,
-    itemPic: req.body.itemPic,
-    product: req.body.product
+    price: req.user.price,
+    condition: req.user.condition,
+    contact: req.user.contact,
+    contactinfo: req.user.contactinfo,
+    course: req.user.course,
+    descirbtion:req.user.descirbtion,
+    itemPic: req.user.itemPic,
+    product: req.user.product
   })
 
 
@@ -39,7 +39,7 @@ exports.saveForumPost = ( req, res ) => {
 
   newForumPost.save()
     .then( () => {
-      res.redirect( '/showProfile/'+req.user._id );
+      res.redirect( 'market' );
     } )
     .catch( error => {
       res.send( "ForumPostError is "+error );
@@ -82,11 +82,7 @@ exports.deletePost = (req, res) => {
 
 
 
-exports.deleteMultiplePosts = (req, res) => {
-  // this is when you use checkboxes with name="delete"
-  // to specify which posts should be deleted
-  // it will delete one or none or many depending on how many
-  // boxes are checked ...
+exports.deleteForumPost = (req, res) => {
   console.log("in deleteForumPost")
   let deleteId = req.body.delete
   if (typeof(deleteId)=='string') {
