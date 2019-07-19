@@ -1,18 +1,18 @@
 'use strict';
-const ForumPost = require( '../models/ForumPost' );
-const ForumComment = require( '../models/ForumComment' );
+const OtherPost = require( '../models/OtherPost' );
+const OtherComment = require( '../models/OtherComment' );
 
 
 
 
-exports.saveForumPost = ( req, res ) => {
+exports.saveOtherPost = ( req, res ) => {
   //console.log("in saveSkill!")
   //console.dir(req)
   if (!res.locals.loggedIn) {
-    return res.send("You must be logged in to post to the forum.")
+    return res.send("You must be logged in to post an item.")
   }
 
-  let newForumPost = new ForumPost(
+  let newOtherPost = new OtherPost(
    {
 
     userId: req.user._id,
@@ -24,34 +24,34 @@ exports.saveForumPost = ( req, res ) => {
     contact: req.user.contact,
     contactinfo: req.user.contactinfo,
     course: req.user.course,
-    descirbtion:req.user.descirbtion,
+    description:req.user.description,
     itemPic: req.user.itemPic,
     product: req.user.product
   })
 
 
-  console.log("formumPost is ")
+  console.log("otherPost is ")
   console.log("Price =" + req.body.price)
-  console.log("Price =" + req.body.descirbtion)
-  console.dir(newForumPost)
+  console.log("Price =" + req.body.description)
+  console.dir(newdescriptionPost)
 
   //console.log("skill = "+newSkill)
 
-  newForumPost.save()
+  newOtherPost.save()
     .then( () => {
       res.redirect( 'market' );
     } )
     .catch( error => {
-      res.send( "ForumPostError is "+error );
+      res.send( "OtherPostError is "+error );
     } );
 };
 
 
 // this displays all of the skills
-exports.getAllForumPosts = ( req, res, next ) => {
+exports.getAllOtherPosts = ( req, res, next ) => {
   //gconsle.log('in getAllSkills')
   console.log("hello hello hello hello")
-  ForumPost.find({}).sort({createdAt: -1})
+  OtherPost.find({}).sort({createdAt: -1})
 
     .exec()
     .then( ( posts) => {
@@ -73,7 +73,7 @@ exports.deletePost = (req, res) => {
   console.log("in deletePost")
   let deleteId = req.params.postid
 
-  ForumPost.deleteOne({_id:deleteId})
+  OtherPost.deleteOne({_id:deleteId})
            .exec()
            .then(()=>{res.redirect('/showProfile/'+req.user._id)})
            .catch((error)=>{res.send(error)})
@@ -82,17 +82,17 @@ exports.deletePost = (req, res) => {
 
 
 
-exports.deleteForumPost = (req, res) => {
-  console.log("in deleteForumPost")
+exports.deleteOtherPost = (req, res) => {
+  console.log("in deleteOtherPost")
   let deleteId = req.body.delete
   if (typeof(deleteId)=='string') {
       // you are deleting just one thing ...
-      ForumPost.deleteOne({_id:deleteId})
+      OtherPost.deleteOne({_id:deleteId})
            .exec()
            .then(()=>{res.redirect('/market')})
            .catch((error)=>{res.send(error)})
   } else if (typeof(deleteId)=='object'){
-      ForumPost.deleteMany({_id:{$in:deleteId}})
+      OtherPost.deleteMany({_id:{$in:deleteId}})
            .exec()
            .then(()=>{res.redirect('/market')})
            .catch((error)=>{res.send(error)})
@@ -112,11 +112,11 @@ exports.showOnePost = ( req, res ) => {
   //gconsle.log('in getAllSkills')
   const id = req.params.id
   console.log('the id is '+id)
-  ForumPost.findOne({_id:id})
+  OtherPost.findOne({_id:id})
     .exec()
-    .then( ( forumPost ) => {
+    .then( ( otherPost ) => {
       res.render( 'forumPost', {
-        post:forumPost, title:"Forum Post"
+        post:otherPost, title:"Other Post"
       } );
     } )
     .catch( ( error ) => {
@@ -129,12 +129,12 @@ exports.showOnePost = ( req, res ) => {
 };
 
 
-exports.saveForumComment = (req,res) => {
+exports.saveOtherComment = (req,res) => {
   if (!res.locals.loggedIn) {
     return res.send("You must be logged in to post a product.")
   }
 
-  let newForumComment = new ForumComment(
+  let newOtherComment = new OtherComment(
    {
     userId: req.user._id,
     postId: req.body.postId,
@@ -146,7 +146,7 @@ exports.saveForumComment = (req,res) => {
 
   //console.log("skill = "+newSkill)
 
-  newForumComment.save()
+  newOtherComment.save()
     .then( () => {
       res.redirect( 'showPost/'+req.body.postId );
     } )
@@ -159,11 +159,11 @@ exports.saveForumComment = (req,res) => {
 
 
 // this displays all of the skills
-exports.attachAllForumComments = ( req, res, next ) => {
+exports.attachAllOtherComments = ( req, res, next ) => {
   //gconsle.log('in getAllSkills')
   console.log("in aAFC with id= "+req.params.id)
   var ObjectId = require('mongoose').Types.ObjectId;
-  ForumComment.find({postId:ObjectId(req.params.id)}).sort({createdAt:-1})
+  OtherComment.find({postId:ObjectId(req.params.id)}).sort({createdAt:-1})
     .exec()
     .then( ( comments ) => {
       console.log("comments.length=")

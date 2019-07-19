@@ -27,6 +27,8 @@ db.once('open', function() {
 const profileController = require('./controllers/profileController')
 const forumPostController = require('./controllers/forumPostController')
 const RideShareController = require('./controllers/RideShareController')
+const furniturePostController = require('./controllers/furniturePostController')
+const otherPostController = require('./controllers/furniturePostController')
 
 
 // Authentication
@@ -202,11 +204,32 @@ app.get('/', function(req, res, next) {
 app.post('/processbook',forumPostController.saveForumPost)
 
 
+//app.post('/processfurniture',furniturePostController.saveFurniturePost)
+
+//app.post('/processother',otherPostController.saveOtherPost)
+
+
+
+
+
+
+
 app.get('/market',forumPostController.getAllForumPosts)
+
+//app.get('/market',furniturePostController.getAllFurniturePosts)
+
+//app.get('/market',otherPostController.getAllOtherPosts)
+
 
 
 
 app.post('/market',forumPostController.saveForumPost)
+
+//app.post('/market',furniturePostController.saveFurniturePost)
+
+//app.post('/market',otherPostController.saveOtherPost)
+
+
 
 //app.post('/forumDelete',forumPostController.deleteForumPost)
 
@@ -254,8 +277,8 @@ app.get('/OtherSell', isLoggedIn, function(req, res, next) {
 });
 
 
-app.get('/market', function(req, res, next) {
-  res.render('market',{title:"market"});
+app.get('/Market', function(req, res, next) {
+  res.render('Market',{title:"Market"});
 });
 
 
