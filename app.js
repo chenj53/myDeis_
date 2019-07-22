@@ -238,7 +238,8 @@ app.post('/market',forumPostController.saveForumPost)
 
 app.get('/showPost/:id',
         forumPostController.attachAllForumComments,
-        forumPostController.showOnePost)
+        forumPostController.showOnePost,
+)
 
 app.post('/saveForumComment',forumPostController.saveForumComment)
 

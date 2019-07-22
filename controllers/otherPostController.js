@@ -22,7 +22,7 @@ exports.saveOtherPost = ( req, res ) => {
     price: req.user.price,
     condition: req.user.condition,
     contact: req.user.contact,
-    contactinfo: req.user.contactinfo,
+    contactInfo: req.user.contactInfo,
     course: req.user.course,
     description:req.user.description,
     itemPic: req.user.itemPic,
