@@ -14,9 +14,9 @@
             <h4 class="media-heading"> <font size="6"> <%= posts[i].post %>   </a></font> - <%= posts[i].course%>  </h4>
             <p class="text-left"> <strong> <%= posts[i].condition %> </p>
             <p class="text-left">  $ <%= posts[i].price  %>   </p>
-            <p class="text-left">CONTACT: <%= posts[i].contact  %>  : <%= posts[i].contactInfo %>   </p>
+            <p class="text-left"> <%= posts[i].contact  %>  : <%= posts[i].contactInfo %>   </p>
             <p class="text-right"> By <%= posts[i].userName %> </p>
-            <p>  Description: <%= posts[i].description %> </p>
+            <p> <%= posts[i].description %> </p>
 
 
             <ul class="list-inline list-unstyled">
@@ -40,13 +40,13 @@
                </li>
                <% if (user._id.equals(posts[i].userId)) { %>
                  <li>
-                    <a href="/deletePost/<%= posts[i]._id %>">
-                      <span class="glyphicon glyphicon-remove"></span>
-                    </a>
+                    <a href="/deletePost/<%= posts[i]._id %>" class="btn btn-info btn-lg">
+                    <span class="glyphicon glyphicon-remove-circle"></span> Remove
+                     </a>
                  </li>
                  <a href="#" class="btn btn-info btn-lg">
-                   <span class="glyphicon glyphicon-edit"></span> Edit
-                 </a>
+          <span class="glyphicon glyphicon-edit"></span> Edit
+        </a>
               <% } %>
             </ul>
           </div>
