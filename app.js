@@ -12,11 +12,11 @@ bodyParser = require("body-parser"),
 User = require( './models/User' ),
 flash = require('connect-flash')
 // END OF AUTHENTICATION MODULES
-MONGOLAB_URI = "mongodb://heroku_k6r5hkqb:5s5i9lvopgjiph4grfgvcipga6@ds353007.mlab.com:53007/heroku_k6r5hkqb"
+MONGOLAB_URI = "mongodb://heroku_w4sxst21:l3jbvnggf9fp7vfns81bk06dam@ds253567.mlab.com:53567/heroku_w4sxst21"
 LOCAL_URI = 'mongodb://localhost/mydeis'
 
 const mongoose = require( 'mongoose' );
-mongoose.connect( LOCAL_URI );
+mongoose.connect( MONGOLAB_URI);
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
@@ -197,7 +197,7 @@ app.get('/about', function(req, res, next) {
 });
 
 app.get('/', function(req, res, next) {
-  res.render('index',{title:"Basement Records"});
+  res.render('index',{title:"Home Page"});
 });
 
 
