@@ -164,6 +164,9 @@ app.get('/editProfile',isLoggedIn, (req,res)=>{
   res.render('editProfile')
 })
 
+// app.get('/editPosts/:id',isLoggedIn,forumPostController.showEdit);
+// app.post('/editPosts/:id',isLoggedIn,forumPostController.update);
+
 app.get('/profiles', isLoggedIn, profileController.getAllProfiles);
 
 app.get('/showProfile/:id',

@@ -2,9 +2,14 @@ module.exports = {
 
 
     'googleAuth' : {
-        'clientID': '246096591118-ti33uv184e4m1bib9grgn8alm45btadb.apps.googleusercontent.com',
-        'clientSecret'  : 'iqgLqu6pXgLuHsZFq6nvxDX3',
-        'callbackURL'   : 'http://127.0.0.1:5500/login/authorized'
+        'clientID': '514085856294-n5q4nofnut2p4fnauhmbrpomoqb85rhn.apps.googleusercontent.com',
+        'clientSecret'  : 'WlnIfp-2T7p2NHVmvpCWNKm6',
+        // 'callbackURL'   : 'http://127.0.0.1:5500/login/authorized'
+        'callbackURL'   : 'http://morning-eyrie-60063.herokuapp.com/login/authorized'
+
+
+
+
     }
 
 };
