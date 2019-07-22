@@ -192,19 +192,21 @@ exports.attachAllForumComments = ( req, res, next ) => {
 //   .exec()
 //   .then((p) => {
 //
-//     p.post: req.body.post, //title
+//     p.post: req.body.post,
 //     p.createdAt:  new Date(),
 //     p.price: req.body.price,
 //     p.condition: req.body.condition,
 //     p.contact: req.body.contact,
 //     p.contactinfo: req.body.contactinfo,
 //     p.course: req.body.course,
-//     p.descirbtion: req.body.descirbtion,
+//     p.description:req.body.description,
+//     p.itemPic: req.body.itemPic,
+//     p.product: req.body.product
 //
 //
 //     p.save()
 //     .then(() => {
-//       res.redirect( '/profile' );
+//       res.redirect('/showProfile/'+req.user._id);
 //     })
 //
 //   })
