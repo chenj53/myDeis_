@@ -103,7 +103,7 @@ exports.showOneRide = ( req, res ) => {
   RideShare.findOne({_id:id})
     .exec()
     .then( ( RideShare) => {
-      res.render( 'RideShare', {
+      res.render( 'RideShareComment', {
         post:RideShare, title:"Ride Share"
       } );
     } )
