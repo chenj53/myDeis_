@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
 // sell post
-var forumPostSchema = Schema( {
+var otherPostSchema = Schema( {
   userId: ObjectId,
   userName: String,
   post: String, //title
@@ -16,7 +16,7 @@ var forumPostSchema = Schema( {
   contactInfo: String,
   course: String,
   description: String,
-  itemPic: String,
+  picture: String,
   product: String,
 
 
@@ -24,4 +24,4 @@ var forumPostSchema = Schema( {
 
 } );
 
-module.exports = mongoose.model( 'ForumPost', forumPostSchema );
+module.exports = mongoose.model( 'OtherPost', otherPostSchema );

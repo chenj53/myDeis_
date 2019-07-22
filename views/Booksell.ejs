@@ -11,7 +11,7 @@
     <form method="post" action="/processbook" >
       <div class="form-group">
         <label for="post">Title of the Book</label>
-        post: <input autocapitalize="words" id="post" name="post"> <br>
+        post: <input autocapitalize="words" name="post"> <br>
       </div>
 
       <div class="form-group">
@@ -28,7 +28,7 @@
 
       <div class="form-group">
         <label for="post">Description</label>
-        <input type="post" id="descirbtion" name="descirbtion"> <br>
+        <input type="post" name="description"> <br>
       </div>
 
       <div class="form-group">
@@ -38,21 +38,27 @@
           <option>Used</option>
         </select>
 
-        <div class="form-group">
-          Contact Method
-          <select name="contact">
-            <option>Facebook</option>
-            <option>Text</option>
-            <option>Wechat</option>
-            <option>Phone</option>
-          </select>
-            <input type="post" id="contactinfo" name="contactinfo"> <br>
         </div>
 
         <div class="form-group">
+          Contact Method
+          <select name="contact">
+            <option>Phone</option>
+            <option>Email</option>
+            <option>Wechat</option>
+            <option>Facebook</option>
+          </select>
+            <input type="post" name="contactInfo"> <br>
+        </div>
+<!--
+        <div class="form-group">
           <label for="Select2">Picture of product</label>
           <input type="file" class="form-control-file" name="itemPic">
+          Or URL:
+          <input type="text" name="itemPic">
+
         </div>
+-->
 
         <input class="btn btn-primary" type="submit" value="Submit">
         </form>

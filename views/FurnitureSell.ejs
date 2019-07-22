@@ -6,16 +6,22 @@
 
     <form method="post" action="/processbook" >
       <div class="form-group">
-        <label for="Input1">Product Description</label>
-        <input autocapitalize="words" name="FDescription" class="form-control" aria-describedby="Input1HelpBlock">
+        <label for="Input1">Product </label>
+        <input autocapitalize="words" name="post" class="form-control" aria-describedby="Input1HelpBlock">
         <small id="Input1HelpBlock" class="form-text text-muted">
           What type of furniture are you selling?
         </small>
       </div>
 
       <div class="form-group">
+            <label for="Input2">Describe the product</label>
+            <input type="text"  class="form-control" aria-describedby="Input2HelpBlock" name="description">
+
+      </div>
+
+      <div class="form-group">
         <label for="Select1">Furniture Condition</label>
-        <select class="form-control" name="FCondition">
+        <select class="form-control" name="condition">
           <option selected disabled>Select</option>
           <option>Brand New</option>
           <option>Looks New</option>
@@ -26,31 +32,33 @@
 
         <div class="form-group">
             <label for="Input3">Price</label>
-            <input type="text" name="FPrice" class="form-control" placeholder="$">
+            <input type="text" name="price" class="form-control" placeholder="$">
         </div>
-
+<!--
         <div class="form-group">
           <label for="Select2">Picture of product</label>
-          <input type="file" class="form-control-file" name="FPicture">
+          <input type="file" class="form-control-file" name="picture">
         </div>
 
-
+-->
         <div class="form-group">
+          <div class="col-7">
           <label for="Select2">Contact Method</label>
-          <select name="FContact">
-            <option>Facebook</option>
-            <option>Text</option>
+          <select name="contact">
+            <option>Phone</option>
+            <option>Email</option>
             <option>Wechat</option>
-            <option>Telephone</option>
+            <option>Facebook</option>
           </select>
-          <input type="post" id="contactinfo" name="Fcontactinfo"> <br>
+          <input type="post"  name="contactInfo"> <br>
+        </div>
         </div>
         <input class="btn btn-primary" type="submit" value="Submit">
         </form>
 
 
 
-    
+
 
   </form>
 

@@ -7,7 +7,7 @@
     <form method="post" action="/processbook" >
       <div class="form-group">
         <label for="Input1">What are you selling?</label>
-        <input type="text" id="title" class="form-control" aria-describedby="Input1HelpBlock" name="otherItem">
+        <input type="text"  class="form-control" aria-describedby="Input1HelpBlock" name="post">
         <small id="Input1HelpBlock" class="form-text text-muted">
           Ex: Car, shoes, ring, etc
         </small>
@@ -15,13 +15,13 @@
 
       <div class="form-group">
             <label for="Input2">Describe the product</label>
-            <input type="text" id="Course Name" class="form-control" aria-describedby="Input2HelpBlock" name="otherDescription">
+            <input type="text"  class="form-control" aria-describedby="Input2HelpBlock" name="description">
 
       </div>
 
       <div class="form-group">
         <label for="Select1">Product Condition</label>
-        <select class="form-control" id="Book Condition" name="otherCondition">
+        <select class="form-control"  name="condition">
           <option selected disabled>Select</option>
           <option>Brand New</option>
           <option>Looks New</option>
@@ -32,24 +32,26 @@
 
         <div class="form-group">
             <label for="Input3">Price</label>
-            <input type="text" id="Price" class="form-control" placeholder="$" name="otherCost">
+            <input type="text"  class="form-control" placeholder="$" name="price">
         </div>
-
+<!--
         <div class="form-group">
           <label for="Select2">Picture of product</label>
-          <input type="file" class="form-control-file" name="otherPicture">
+          <input type="file" class="form-control-file" name="picture">
         </div>
-
+-->
 
         <div class="form-group">
+          <div class="col-5">
           <label for="Select2">Contact Method</label>
-          <select class="form-control"  name="otherContact">
-            <option>Facebook</option>
-            <option>Text</option>
+          <select name="contact">
+            <option>Phone</option>
+            <option>Email</option>
             <option>Wechat</option>
-            <option>Telephone</option>
+            <option>Facebook</option>
           </select>
-            <input type="post" id="contactinfo" name="otherContactInfo"> <br>
+          <input type="post"  name="contactInfo"> <br>
+        </div>
         </div>
         <input class="btn btn-primary" type="submit" value="Submit">
         </form>
