@@ -1,0 +1,69 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+    <div class="jumbotron">
+        <h1>Sell Your Textbooks Here</h1>
+    </div>
+
+
+
+
+
+    <form method="post" action="/processbook" >
+      <div class="form-group">
+        <label for="post">Title of the Book</label>
+        post: <input autocapitalize="words" id="post" name="post"> <br>
+      </div>
+
+      <div class="form-group">
+        <label for="post">Price:</label>
+       <input type="post"  name="price" placeholder="$"> <br>
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="post">Course</label>
+      <input type="post" id="course" name="course"> <br>
+      </div>
+
+      <div class="form-group">
+        <label for="post">Description</label>
+        <input type="post" id="descirbtion" name="descirbtion"> <br>
+      </div>
+
+      <div class="form-group">
+        Condition:
+        <select name="condition">
+          <option>New</option>
+          <option>Used</option>
+        </select>
+
+        <div class="form-group">
+          Contact Method
+          <select name="contact">
+            <option>Facebook</option>
+            <option>Text</option>
+            <option>Wechat</option>
+            <option>Phone</option>
+          </select>
+            <input type="post" id="contactinfo" name="contactinfo"> <br>
+        </div>
+
+        <div class="form-group">
+          <label for="Select2">Picture of product</label>
+          <input type="file" class="form-control-file" name="itemPic">
+        </div>
+
+        <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+
+
+
+
+    </button>
+
+  </form>
+
+
+
+<%- include('bootfooter') -%>

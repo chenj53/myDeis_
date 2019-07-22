@@ -1,5 +1,6 @@
 'use strict';
 const User = require( '../models/User' );
+const ForumPost = require( '../models/ForumPost' );
 const axios = require('axios');
 
 
@@ -60,6 +61,47 @@ exports.getOneProfile = ( req, res ) => {
       res.render( 'showProfile', {
         profile:profile, title:"Profile"
       } );
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      //console.log( 'skill promise complete' );
+    } );
+};
+
+
+exports.addProfile = ( req, res, next ) => {
+  //gconsle.log('in getAllSkills')
+  const id = req.params.id
+  console.log('the id is '+id)
+  User.findOne({_id:id})
+    .exec()
+    .then( ( profile ) => {
+      res.locals.profile = profile
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      //console.log( 'skill promise complete' );
+    } );
+};
+
+
+
+exports.addPosts = ( req, res, next ) => {
+  //gconsle.log('in getAllSkills')
+  const id = res.locals.profile._id
+  console.log('the id is '+id)
+  ForumPost.find({userId:id})
+    .exec()
+    .then( ( posts ) => {
+      res.locals.posts = posts
+      next()
     } )
     .catch( ( error ) => {
       console.log( error.message );

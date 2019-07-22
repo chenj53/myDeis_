@@ -6,3 +6,13 @@ body {
 a {
   color: #00B7FF;
 }
+.search-box{
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%,-50%);
+  background: #2f3640;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+}

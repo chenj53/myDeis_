@@ -24,6 +24,8 @@ db.once('open', function() {
 
 const profileController = require('./controllers/profileController')
 const forumPostController = require('./controllers/forumPostController')
+const RideShareController = require('./controllers/RideShareController')
+
 
 // Authentication
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
@@ -59,7 +61,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 
-const owners = ["chenj53@brandeis.edu", "jaytseng@brandeis.edu", "tristantseng@brandeis.edu" ]
+const owners = ["chenj53@brandeis.edu", "jaytseng@brandeis.edu", "tristantseng@brandeis.edu", "yutdong@brandeis.edu" ]
 
 // here is where we check on their logged in status
 app.use((req,res,next) => {
@@ -98,6 +100,8 @@ app.use((req,res,next) => {
 app.get('/loginerror', function(req,res){
   res.render('loginerror',{})
 })
+
+
 
 app.get('/login', function(req,res){
   res.render('login',{})
@@ -147,8 +151,9 @@ function isLoggedIn(req, res, next) {
 }
 
 // we require them to be logged in to see their profile
-app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile')
+app.get('/profile', isLoggedIn,
+    function(req, res) {
+        res.redirect('showProfile/'+req.user._id)
     });
 
 app.get('/editProfile',isLoggedIn, (req,res)=>{
@@ -156,7 +161,16 @@ app.get('/editProfile',isLoggedIn, (req,res)=>{
 })
 
 app.get('/profiles', isLoggedIn, profileController.getAllProfiles);
-app.get('/showProfile/:id', isLoggedIn, profileController.getOneProfile);
+
+app.get('/showProfile/:id',
+        profileController.addProfile,
+        profileController.addPosts,
+        (req,res) => {
+          res.render( 'showProfile',
+               { title:"Profile"
+          } );
+        })
+
 
 
 app.post('/updateProfile',profileController.update)
@@ -172,6 +186,8 @@ app.use(function(req,res,next){
   next()
 });
 
+
+
 app.get('/about', function(req, res, next) {
   res.render('about');
 });
@@ -181,26 +197,107 @@ app.get('/', function(req, res, next) {
 });
 
 
-app.get('/forum',forumPostController.getAllForumPosts)
-
-app.post('/forum',forumPostController.saveForumPost)
-
-app.post('/forumDelete',forumPostController.deleteForumPost)
+app.post('/processsell',forumPostController.saveForumPost)
 
 
 
 
+app.get('/market',forumPostController.getAllForumPosts)
 
-app.get('/bmidemo', (req, res) => {
-  res.render('bmidemo',{title:"BMI Demo"});
+
+
+app.post('/market',forumPostController.saveForumPost)
+
+//app.post('/forumDelete',forumPostController.deleteForumPost)
+
+app.get('/showPost/:id',
+        forumPostController.attachAllForumComments,
+        forumPostController.showOnePost)
+
+app.post('/saveForumComment',forumPostController.saveForumComment)
+
+app.get('/deletePost/:postid',forumPostController.deleteForumPost)
+
+
+
+app.post('/rideDelete',RideShareController.deleteRideShare)
+
+app.get('/rideShare',RideShareController.getAllRideShares)
+
+app.post('/rideShare',RideShareController.saveRideShare)
+
+app.get('/showRide/:id',
+        RideShareController.attachAllRideShareComment,
+        RideShareController.showOneRide)
+
+app.post('/saveRideShareComment',RideShareController.saveRideShareComment)
+
+
+
+
+
+
+
+
+
+app.get('/Booksell', function(req, res, next) {
+  res.render('Booksell',{title:"Book Sell"});
 });
 
-app.get('/shop', (req, res) => {
-  res.render('shop',{title:"Shop"});
+app.get('/FurnitureSell', function(req, res, next) {
+  res.render('FurnitureSell',{title:"Furniture Sell"});
+});
+
+app.get('/SellItem', function(req, res, next) {
+  res.render('SellItem',{title:"SellItem"});
+});
+
+app.get('/sellSubmit', function(req, res, next) {
+  res.render('sellSubmit',{title:"Sell Submit"});
+});
+
+app.get('/market', function(req, res, next) {
+  res.render('market',{title:"market"});
+});
+
+app.get('/OtherSell', function(req, res, next) {
+  res.render('OtherSell',{title:"Other Sell"});
+});
+
+app.get('/Events', function(req, res, next) {
+  res.render('Events',{title:"Events"});
+});
+
+app.get('/Housing', function(req, res, next) {
+  res.render('Housing',{title:"Housing"});
+});
+
+app.get('/Academic', function(req, res, next) {
+  res.render('Academic',{title:"Academic"});
+});
+
+app.get('/Confessions', function(req, res, next) {
+  res.render('Confessions',{title:"Confessions"});
+});
+
+app.get('/Gaming', function(req, res, next) {
+  res.render('Gaming',{title:"Gaming"});
+});
+
+app.get('/Sports', function(req, res, next) {
+  res.render('Sports',{title:"Sports"});
 });
 
 
 
+app.get('/sellwhat', function(req, res, next) {
+  res.render('sellwhat',{title:"sellwhat"});
+});
+
+
+app.get('/index2.0', function(req, res, next) {
+  res.render('index2.0',{title:"index2.0"});
+});
 
 
 

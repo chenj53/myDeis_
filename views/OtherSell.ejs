@@ -1,0 +1,63 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+    <div class="jumbotron">
+        <h1>Sell Other Items Here</h1>
+    </div>
+
+    <form method="post" action="/processbook" >
+      <div class="form-group">
+        <label for="Input1">What are you selling?</label>
+        <input type="text" id="title" class="form-control" aria-describedby="Input1HelpBlock" name="otherItem">
+        <small id="Input1HelpBlock" class="form-text text-muted">
+          Ex: Car, shoes, ring, etc
+        </small>
+      </div>
+
+      <div class="form-group">
+            <label for="Input2">Describe the product</label>
+            <input type="text" id="Course Name" class="form-control" aria-describedby="Input2HelpBlock" name="otherDescription">
+
+      </div>
+
+      <div class="form-group">
+        <label for="Select1">Product Condition</label>
+        <select class="form-control" id="Book Condition" name="otherCondition">
+          <option selected disabled>Select</option>
+          <option>Brand New</option>
+          <option>Looks New</option>
+          <option>Acceptable</option>
+          <option>Worn</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Input3">Price</label>
+            <input type="text" id="Price" class="form-control" placeholder="$" name="otherCost">
+        </div>
+
+        <div class="form-group">
+          <label for="Select2">Picture of product</label>
+          <input type="file" class="form-control-file" name="otherPicture">
+        </div>
+
+
+        <div class="form-group">
+          <label for="Select2">Contact Method</label>
+          <select class="form-control"  name="otherContact">
+            <option>Facebook</option>
+            <option>Text</option>
+            <option>Wechat</option>
+            <option>Telephone</option>
+          </select>
+            <input type="post" id="contactinfo" name="otherContactInfo"> <br>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+
+
+
+
+
+  </form>
+
+<%- include('bootfooter') -%>
