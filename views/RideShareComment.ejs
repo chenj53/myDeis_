@@ -3,7 +3,7 @@
 
 <div class="jumbotron">
     <h1><%= post.userName %></h1>
-    <p> <%= post.createdAt %></p>
+    <p> <%= post.rideCreated %></p>
 </div>
 
 <% if (post.userId.equals(user._id)) { %>
@@ -25,7 +25,7 @@
       <li> <a href="/showComment/<%= comments[i]._id %>"></a>
             <%= comments[i].userName %>
             <i>
-           <%= comments[i].createdAt %></\/i> <br>
+           <%= comments[i].rideCreated %></\/i> <br>
            <% if (comments[i].userId.equals(user._id)) { %>
                <input type="checkbox" name="delete" value="<%= comments[i]._id %>">
            <% } %>

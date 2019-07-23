@@ -1,4 +1,4 @@
-<% for(i = 0; i<posts.length; i++){  %>
+<% for(i = 0; i<rides.length; i++){  %>
  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -10,18 +10,18 @@
          </a>
          -->
         <div class="media-body">
-          <p> <a href="/showRide/<%= posts[i]._id %>"> </p>
-            <h4 class="media-heading"> <font size="6"> <%= posts[i].userName %>   </a></font> -  <%= status %> </p></h4>
-            <p class="text-left"> <strong> Pickup Location: <%= posts[i].StartAddress %> </p>
-            <p class="text-left">   <%= posts[i].StartCity  %>, <%= posts[i].StartState  %>, <%= posts[i].StartZip  %>   </p>
-            <p class="text-left"> Pickup Date and Time: <%= posts[i].PickupTime %> <%= posts[i].PickupDate %>
-            <p class="text-left"> Contact Info: <%= posts[i].contact %> : <%= posts[i].contactInfo %>
-                <p class="text-right">  Destination:  <%= posts[i].Destination %>, <%= posts[i].DestinationCity %>, <%= posts[i].DestinationState  %>   </p>
+          <p> <a href="/showRide/<%= rides[i]._id %>"> </p>
+            <h4 class="media-heading"> <font size="6"> <%= rides[i].userName %>   </a></font> -  <%= status %> </p></h4>
+            <p class="text-left"> <strong> Pickup Location: <%= rides[i].StartAddress %> </p>
+            <p class="text-left">   <%= rides[i].StartCity  %>, <%= rides[i].StartState  %>, <%= rides[i].StartZip  %>   </p>
+            <p class="text-left"> Pickup Date and Time: <%= rides[i].PickupTime %> <%= rides[i].PickupDate %>
+            <p class="text-left"> Contact Info: <%= rides[i].rideContact %> : <%= rides[i].rideContactInfo %>
+                <p class="text-right">  Destination:  <%= rides[i].Destination %>, <%= rides[i].DestinationCity %>, <%= rides[i].DestinationState  %>   </p>
 
 
 
             <ul class="list-inline list-unstyled">
-               <li><span><i class="glyphicon glyphicon-calendar"></i> <%= posts[i].createdAt %> </span></li>
+               <li><span><i class="glyphicon glyphicon-calendar"></i> <%= rides[i].rideCreated %> </span></li>
                <li>|</li>
                <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
                <li>|</li>
@@ -39,9 +39,9 @@
                  <span><i class="fa fa-twitter-square"></i></span>
                  <span><i class="fa fa-google-plus-square"></i></span>
                </li>
-               <% if (user._id.equals(posts[i].userId)) { %>
+               <% if (user._id.equals(rides[i].userId)) { %>
                  <li>
-                    <a href="/deleteRideShare/<%= posts[i]._id %>" class="btn btn-info btn-lg">
+                    <a href="/deleteRideShare/<%= rides[i]._id %>" class="btn btn-info btn-lg">
                     <span class="glyphicon glyphicon-remove-circle"></span> Remove
                      </a>
                  </li>

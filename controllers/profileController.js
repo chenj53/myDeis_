@@ -1,6 +1,7 @@
 'use strict';
 const User = require( '../models/User' );
 const ForumPost = require( '../models/ForumPost' );
+const RideShare = require('../models/RideShare');
 const axios = require('axios');
 
 
@@ -101,6 +102,26 @@ exports.addPosts = ( req, res, next ) => {
     .exec()
     .then( ( posts ) => {
       res.locals.posts = posts
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      //console.log( 'skill promise complete' );
+    } );
+};
+
+
+exports.addRides = ( req, res, next ) => {
+  //gconsle.log('in getAllSkills')
+  const id = res.locals.profile._id
+  console.log('the id is '+id)
+  RideShare.find({userId:id})
+    .exec()
+    .then( ( rides ) => {
+      res.locals.rides = rides
       next()
     } )
     .catch( ( error ) => {
