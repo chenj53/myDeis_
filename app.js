@@ -270,7 +270,7 @@ app.get('/SellItem', function(req, res, next) {
 });
 
 app.get('/BookSell', isLoggedIn, function(req, res, next) {
-  res.render('BookSell',{title:"BookSell"});
+  res.render('Booksell',{title:"BookSell"});
 });
 
 app.get('/FurnitureSell', isLoggedIn, function(req, res, next) {
