@@ -1,13 +1,19 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
     <div class="jumbotron">
-        <h1>My Market %></h1>
+        <h1>My Market and Rideshare %></h1>
         </div>
 
   <img src="<%= profile.profilePicURL%>" width="200">
         <hr>
 
+<h2> Market </h2>
+
 <%- include('booklist') -%>
+
+<h3> Rides </h3>
+
+<%- include('ridelist') -%>
 
         <p> Last updated on <%= profile.lastUpdate %> </p>
 
