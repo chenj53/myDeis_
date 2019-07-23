@@ -55,7 +55,7 @@ exports.getAllForumPosts = ( req, res, next ) => {
 
     .exec()
     .then( ( posts) => {
-      res.render( 'market', {
+      res.render( 'Market', {
           title:"market",posts:posts
         } );
       } )
