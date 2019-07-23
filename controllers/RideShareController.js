@@ -17,15 +17,15 @@ exports.saveRideShare = ( req, res ) => {
     userId: req.user._id,
     userName: req.user.googlename,
     post: req.body.post, //title
-    createdAt:  new Date(),
+    rideCreated:  new Date(),
     StartCity: req.body.StartCity,
     StartState: req.body.StartState,
     StartZip: req.body.StartZip,
     StartAddress: req.body.StartAddress,
     Destination: req.body.Destination,
     PickupDate: req.body.PickupDate,
-    contact: req.body.contact,
-    contactInfo: req.body.contactInfo,
+    rideContact: req.body.rideContact,
+    rideContactInfo: req.body.rideContactInfo,
     PickupTime: req.body.PickupTime,
     DestinationCity: req.body.DestinationCity,
     DestinationState: req.body.DestinationState,
@@ -53,12 +53,12 @@ exports.saveRideShare = ( req, res ) => {
 exports.getAllRideShares = ( req, res, next ) => {
   //gconsle.log('in getAllSkills')
   console.log("hello hello hello hello")
-  RideShare.find({}).sort({createdAt: -1})
+  RideShare.find({}).sort({rideCreated: -1})
 
     .exec()
-    .then( ( posts) => {
+    .then( ( rides) => {
       res.render( 'RideShare', {
-          title:"RideShareSchema",posts:posts
+          title:"RideShareSchema",rides:rides
         } );
       } )
     .catch( ( error ) => {
@@ -72,7 +72,8 @@ exports.getAllRideShares = ( req, res, next ) => {
 
 exports.deleteRideShare = (req, res) => {
   console.log("in deleteRideShare")
-  let deleteId = req.body.delete
+  let deleteId = req.params.postid
+  console.log(deleteId)
   if (typeof(deleteId)=='string') {
       // you are deleting just one thing ...
       RideShare.deleteOne({_id:deleteId})
@@ -128,7 +129,7 @@ exports.saveRideShareComment = (req,res) => {
     postId: req.body.postId,
     userName:req.user.googlename,
     comment: req.body.comment,
-    createdAt: new Date(),
+    rideCreated: new Date(),
     StartCity: req.body.StartCity,
     StartState: req.body.StartState,
     StartZip: req.body.StartZip,
@@ -159,7 +160,7 @@ exports.attachAllRideShareComment = ( req, res, next ) => {
   //gconsle.log('in getAllSkills')
   console.log("in aAFC with id= "+req.params.id)
   var ObjectId = require('mongoose').Types.ObjectId;
-  RideShareComment.find({postId:ObjectId(req.params.id)}).sort({createdAt:-1})
+  RideShareComment.find({postId:ObjectId(req.params.id)}).sort({rideCreated:-1})
     .exec()
     .then( ( comments ) => {
       console.log("comments.length=")

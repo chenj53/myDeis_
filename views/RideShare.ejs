@@ -159,13 +159,13 @@
       <div class="form-group">
         <div class="col-5">
   <b>      Contact Method     </b>
-        <select name="contact">
+        <select name="rideContact">
           <option>Phone</option>
           <option>Email</option>
           <option>Wechat</option>
           <option>Phone</option>
         </select>
-          <input type="post" id="contactinfo" name="contactInfo"> <br>
+          <input type="post" id="contactinfo" name="rideContactInfo"> <br>
       </div>
       </div>
 
@@ -175,37 +175,9 @@
 </div>
 <hr>
 
-<div class="container">
 
-<form method="post" action="/rideDelete">
-        <input type="submit" value="delete marked">
-        <ol>
-        <% for(i = 0; i<posts.length; i++){  %>
-            <li> <a href="/showRide/<%= posts[i]._id %>">
-                  <%= posts[i].userName %></a>
-                  <i>
-                 <%= posts[i].createdAt %></\/i> <br>
-                 </i>
-        <strong>    Pickup Location: </strong> <%= posts[i].StartAddress %><br>
-                  <%= posts[i].StartCity %><br>
-                 <%= posts[i].StartState %><br>
-                 <%= posts[i].StartZip %><br>
-  <strong>          Destination:   </strong>  <%=  posts[i].Destination %>, <%=  posts[i].DestinationCity %>, <%=  posts[i].DestinationState %><br>
-  <strong>          Pickup Date and Time:</strong> <%=  posts[i].PickupDate%>   <%= posts[i].PickupTime%>  <br>
-  <strong>          Contact Info:</strong> <%= posts[i].contact %> : <%= posts[i].contactInfo %>
+<%- include('ridelist') -%>
 
-                 <% console.dir([posts[i].userId,user._id]) %>
-                 <% if (posts[i].userId.equals(user._id)) { %>
-                     <input type="checkbox" name="delete" value="<%= posts[i]._id %>">
-                 <% } %>
-                 <pre><%= posts[i].post %></pre>
-
-             </li>
-        <% } %>
-        </ol>
-
-    </form>
-    </div>
 
 
 

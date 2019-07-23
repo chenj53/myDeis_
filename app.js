@@ -172,6 +172,7 @@ app.get('/profiles', isLoggedIn, profileController.getAllProfiles);
 app.get('/showProfile/:id',
         profileController.addProfile,
         profileController.addPosts,
+        profileController.addRides,
         (req,res) => {
           res.render( 'showProfile',
                { title:"Profile"
@@ -247,7 +248,7 @@ app.get('/deletePost/:postid',forumPostController.deletePost)
 
 
 
-app.post('/rideDelete',RideShareController.deleteRideShare)
+app.use('/deleteRideShare/:postid',RideShareController.deleteRideShare)
 
 app.get('/rideShare',isLoggedIn, RideShareController.getAllRideShares)
 

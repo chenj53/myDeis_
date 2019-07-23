@@ -7,7 +7,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 var RideShareCommentSchema = Schema( {
   userId: ObjectId,
   userName: String,
-  createdAt: Date,
+  rideCreated: Date,
   comment: String,
   StartCity: String,
   StartState: String, //title

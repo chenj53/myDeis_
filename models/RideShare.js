@@ -7,15 +7,15 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 var RideShareSchema = Schema( {
   userId: ObjectId,
   userName: String,
-  createdAt: Date,
+  rideCreated: Date,
   post: String,
   StartCity: String,
   StartState: String, //title
   StartZip: String,
   Destination: String,
   PickupDate: String,
-  contact: String,
-  contactInfo: String,
+  rideContact: String,
+  rideContactInfo: String,
   StartAddress: String,
   PickupTime: String,
   AmPm: String,
