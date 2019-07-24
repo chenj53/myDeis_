@@ -1,25 +1,47 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
     <div class="jumbotron">
-        <h1><%= post.userName %></h1>
-        <p> <%= post.createdAt %></p>
+     <h1><%= post.post %></h1>
+     <p class="text-right"> By <%= post.userName %> </p>
     </div>
 
-    <i>
+           <p class="text-left"> <strong> <%= post.condition %> </p>
+           <p class="text-left">  $ <%= post.price  %>   </p>
+           <p class="text-left"> <%= post.contact  %>  : <%= post.contactInfo %>   </p>
 
-   <% if (post.userId.equals(user._id)) { %>
-       <input type="checkbox" name="delete" value="<%= post._id %>">
+
+           <p>  Description: <%= post.description %> </p>
+
+
+
+   <% console.log("in forumPost.ejs with comments.length ="+comments.length) %>
+   <% for(i = 0; i<comments.length; i++){  %>
+     <style>
+           .well {
+               height: 50px;
+               width: 100%;
+               color: white;
+               background-color: black;
+           }
+      </style>
+  <body>
+      <div class="well">
+        <li> <a href="/showComment/<%= comments[i]._id %>">
+              <%= comments[i].userName %> : </a>
+              <%= comments[i].comment %> <br>
+              <% if (post.userId.equals(user._id)) { %>
+        <input type="checkbox" name="delete" value="<%= post._id %>">
+    <% } %>
+
+              <%= comments[i].createdAt %></\/i> <br>
+         </li>
+      </div>
+      </body>
+
+
+
    <% } %>
-
-   <pre>
-   <h1><%= post.post %></h1>
-   <%= post.createdAt %>
-   <%= post.price %>
-   <%= post.condition %>
-   <%= post.contract %>
-   <%= post.course %>
-   </pre>
-
+   <br>
 
 
    <form method="post" action="/saveForumComment">
@@ -27,27 +49,6 @@
        <textarea name="comment"  cols="100%"></textarea><br>
        <input class="btn btn-sm btn-primary" type="submit" value="Add Comment">
    </form>
-
-
-
-
-   <br><br><br>
-   <h2>Comments</h2>
-   <ol>
-   <% console.log("in forumPost.ejs with comments.length ="+comments.length) %>
-   <% for(i = 0; i<comments.length; i++){  %>
-
-       <li> <a href="/showComment/<%= comments[i]._id %>">
-             <%= comments[i].userName %></a>
-             <i>
-            <%= comments[i].createdAt %></\/i> <br>
-            <% if (comments[i].userId.equals(user._id)) { %>
-                <input type="checkbox" name="delete" value="<%= comments[i]._id %>">
-            <% } %>
-            <pre>...<%= comments[i].comment %></pre>
-        </li>
-   <% } %>
-   </ol>
 
 
 <%- include('bootfooter') -%>
