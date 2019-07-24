@@ -26,7 +26,9 @@ exports.saveFurniturePost = ( req, res ) => {
     course: req.body.course,
     description:req.body.description,
     picture: req.body.picture,
-    product: req.body.product
+    product: req.body.product,
+    itemPic: req.body.itemPic,
+
   })
 
 
