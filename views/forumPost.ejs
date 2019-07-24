@@ -1,43 +1,27 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
     <div class="jumbotron">
-     <h1><%= post.post %></h1>
-     <p class="text-right"> By <%= post.userName %> </p>
+      <div class="media-body">
+          <h4 class="media-heading"> <font size="6"> <%= post.post %>   </a></font> - <%= post.course %>  </h4>
+          <p class="text-left"> <strong> <%= post.condition %> </p>
+          <p class="text-left">  $ <%= post.price  %>   </p>
+          <p class="text-left"> <%= post.contact  %>  : <%= post.contactInfo %>   </p>
+          <p class="text-right"> By <%= post.userName %> </p>
+          <p class="text-right">  <%= status %> </p>
+          <p>  Description: <%= post.description %> </p>
+          </strong>
+    </div>
     </div>
 
-           <p class="text-left"> <strong> <%= post.condition %> </p>
-           <p class="text-left">  $ <%= post.price  %>   </p>
-           <p class="text-left"> <%= post.contact  %>  : <%= post.contactInfo %>   </p>
-           <p>  Description: <%= post.description %> </p>
+    <i>
 
-
-
-   <% console.log("in forumPost.ejs with comments.length ="+comments.length) %>
-   <% for(i = 0; i<comments.length; i++){  %>
-     <style>
-           .well {
-               height: 50px;
-               width: 100%;
-               color: white;
-               background-color: black;
-           }
-      </style>
-  <body>
-      <div class="well">
-        <li> <a href="/showComment/<%= comments[i]._id %>">
-              <%= comments[i].userName %> : </a>
-              <%= comments[i].comment %> <br>
-
-
-              <%= comments[i].createdAt %></\/i> <br>
-         </li>
-      </div>
-      </body>
-
-
-
+   <% if (post.userId.equals(user._id)) { %>
    <% } %>
-   <br>
+
+   <pre>
+
+   </pre>
+
 
 
    <form method="post" action="/saveForumComment">
@@ -46,21 +30,19 @@
        <input class="btn btn-sm btn-primary" type="submit" value="Add Comment">
    </form>
 
-
-
 </i>
+
+
    <br><br><br>
-   <h2>Comments: <%= comments.length %></h2>
+   <h2>Comments</h2>
    <ol>
    <% console.log("in forumPost.ejs with comments.length ="+comments.length) %>
    <% for(i = 0; i<comments.length; i++){  %>
-
        <li>
           <strong>   <%= comments[i].userName %></a>
              <i>
-            <%= comments[i].createdAt %></\/i> <br></i>
+            <%= comments[i].createdAt %></\/i></i> <br>
             <% if (comments[i].userId.equals(user._id)) { %>
-
             <% } %>
             <br> </strong>
             <pre><%= comments[i].comment %></pre>
