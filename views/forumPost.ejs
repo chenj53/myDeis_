@@ -1,16 +1,29 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
     <div class="jumbotron">
-     <h1><%= post.post %></h1>
-     <p class="text-right"> By <%= post.userName %> </p>
+      <div class="media-body">
+          <h4 class="media-heading"> <font size="6"> <%= post.post %>   </a></font> - <%= post.course %>  </h4>
+          <p class="text-left"> <strong> <%= post.condition %> </p>
+          <p class="text-left">  $ <%= post.price  %>   </p>
+          <p class="text-left"> <%= post.contact  %>  : <%= post.contactInfo %>   </p>
+          <p class="text-right"> By <%= post.userName %> </p>
+          <p class="text-right">  <%= status %> </p>
+          <p>  Description: <%= post.description %> </p>
+          </strong>
+    </div>
     </div>
 
            <p class="text-left"> <strong> <%= post.condition %> </p>
            <p class="text-left">  $ <%= post.price  %>   </p>
            <p class="text-left"> <%= post.contact  %>  : <%= post.contactInfo %>   </p>
 
+   <% if (post.userId.equals(user._id)) { %>
 
-           <p>  Description: <%= post.description %> </p>
+   <% } %>
+
+   <pre>
+
+   </pre>
 
 
 
@@ -44,11 +57,18 @@
    <br>
 
 
-   <form method="post" action="/saveForumComment">
-       <input type="hidden" name="postId" value="<%= post._id %>">
-       <textarea name="comment"  cols="100%"></textarea><br>
-       <input class="btn btn-sm btn-primary" type="submit" value="Add Comment">
-   </form>
+       <li>
+          <strong>   <%= comments[i].userName %></a>
+             <i>
+            <%= comments[i].createdAt %></\/i> <br>
+            <% if (comments[i].userId.equals(user._id)) { %>
+
+            <% } %>
+            <br> </strong>
+            <pre><%= comments[i].comment %></pre>
+        </li>
+   <% } %>
+   </ol>
 
 
 <%- include('bootfooter') -%>

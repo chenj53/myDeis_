@@ -103,9 +103,9 @@ exports.showOneRide = ( req, res ) => {
   console.log('the id is '+id)
   RideShare.findOne({_id:id})
     .exec()
-    .then( ( RideShare) => {
+    .then( ( Ride ) => {
       res.render( 'RideShareComment', {
-        post:RideShare, title:"Ride Share"
+        post:Ride, title:"Ride Share"
       } );
     } )
     .catch( ( error ) => {
@@ -129,15 +129,8 @@ exports.saveRideShareComment = (req,res) => {
     postId: req.body.postId,
     userName:req.user.googlename,
     comment: req.body.comment,
-    rideCreated: new Date(),
-    StartCity: req.body.StartCity,
-    StartState: req.body.StartState,
-    StartZip: req.body.StartZip,
-    Destination: req.body.Destination,
-    PickupDate: req.body.PickupDate,
-    PickupTime: req.body.PickupTime,
-    DestinationCity: req.body.DestinationCity,
-    DestinationState: req.body.DestinationState,
+    commentCreated: new Date(),
+
    }
   )
 
@@ -145,7 +138,7 @@ exports.saveRideShareComment = (req,res) => {
 
   newRideShareComment.save()
     .then( () => {
-      res.redirect( 'showPost/'+req.body.postId );
+      res.redirect( 'showRide/'+req.body.postId );
     } )
     .catch( error => {
       res.send( error );
@@ -160,7 +153,7 @@ exports.attachAllRideShareComment = ( req, res, next ) => {
   //gconsle.log('in getAllSkills')
   console.log("in aAFC with id= "+req.params.id)
   var ObjectId = require('mongoose').Types.ObjectId;
-  RideShareComment.find({postId:ObjectId(req.params.id)}).sort({rideCreated:-1})
+  RideShareComment.find({postId:ObjectId(req.params.id)}).sort({commentCreated:-1})
     .exec()
     .then( ( comments ) => {
       console.log("comments.length=")
