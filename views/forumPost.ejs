@@ -1,23 +1,26 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
     <div class="jumbotron">
-        <h1><%= post.userName %></h1>
-        <p> <%= post.createdAt %></p>
+      <div class="media-body">
+          <h4 class="media-heading"> <font size="6"> <%= post.post %>   </a></font> - <%= post.course %>  </h4>
+          <p class="text-left"> <strong> <%= post.condition %> </p>
+          <p class="text-left">  $ <%= post.price  %>   </p>
+          <p class="text-left"> <%= post.contact  %>  : <%= post.contactInfo %>   </p>
+          <p class="text-right"> By <%= post.userName %> </p>
+          <p class="text-right">  <%= status %> </p>
+          <p>  Description: <%= post.description %> </p>
+          </strong>
+    </div>
     </div>
 
     <i>
 
    <% if (post.userId.equals(user._id)) { %>
-       <input type="checkbox" name="delete" value="<%= post._id %>">
+
    <% } %>
 
    <pre>
-   <h1><%= post.post %></h1>
-   <%= post.createdAt %>
-   <%= post.price %>
-   <%= post.condition %>
-   <%= post.contract %>
-   <%= post.course %>
+
    </pre>
 
 
@@ -37,14 +40,15 @@
    <% console.log("in forumPost.ejs with comments.length ="+comments.length) %>
    <% for(i = 0; i<comments.length; i++){  %>
 
-       <li> <a href="/showComment/<%= comments[i]._id %>">
-             <%= comments[i].userName %></a>
+       <li>
+          <strong>   <%= comments[i].userName %></a>
              <i>
             <%= comments[i].createdAt %></\/i> <br>
             <% if (comments[i].userId.equals(user._id)) { %>
-                <input type="checkbox" name="delete" value="<%= comments[i]._id %>">
+
             <% } %>
-            <pre>...<%= comments[i].comment %></pre>
+            <br> </strong>
+            <pre><%= comments[i].comment %></pre>
         </li>
    <% } %>
    </ol>
