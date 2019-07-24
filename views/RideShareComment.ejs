@@ -12,13 +12,24 @@
   <pre>
   <%= post.post %>
   </pre>
+  <div class="media-body">
+    <p> <a href="/showRide/<%= post._id %>"> </p>
+      <h4 class="media-heading"> <font size="6"> <%= post.userName %>   </a></font> -  <%= status %> </p></h4>
+      <p class="text-left"> <strong> Pickup Location: <%= post.StartAddress %> </p>
+      <p class="text-left">   <%= post.StartCity  %>, <%= post.StartState  %>, <%= post.StartZip  %>   </p>
+      <p class="text-left"> Pickup Date and Time: <%= post.PickupTime %> <%= post.PickupDate %>
+      <p class="text-left"> Contact Info: <%= post.rideContact %> : <%= post.rideContactInfo %>
+      <p class="text-right">  Destination:  <%= post.Destination %>, <%= post.DestinationCity %>, <%= post.DestinationState  %>   </p>
+</div>
   <form method="post" action="/saveRideShareComment">
       <input type="hidden" name="postId" value="<%= post._id %>">
       <textarea name="comment"  cols="100%"></textarea><br>
       <input class="btn btn-sm btn-primary" type="submit" value="Add Comment">
   </form>
   <br><br><br>
-  <h2>Comments</h2>
+
+
+  <h2>Comments: <%= comments.length %></h2>
   <ol>
   <% console.log("in RideSharePost.ejs with comments.length ="+comments.length) %>
   <% for(i = 0; i<comments.length; i++){  %>
