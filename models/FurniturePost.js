@@ -18,7 +18,7 @@ var furniturePostSchema = Schema( {
   description: String,
   picture: String,
   product: String,
-
+  itemPic: String,
 
 
 
