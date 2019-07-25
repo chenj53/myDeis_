@@ -28,6 +28,7 @@ exports.saveFurniturePost = ( req, res ) => {
     picture: req.body.picture,
     product: req.body.product,
     itemPic: req.body.itemPic,
+    status: req.body.status,
 
   })
 

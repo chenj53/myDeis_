@@ -19,14 +19,15 @@ exports.saveOtherPost = ( req, res ) => {
     userName: req.user.googlename,
     post: req.body.post, //title
     createdAt:  new Date(),
-    price: req.user.price,
-    condition: req.user.condition,
-    contact: req.user.contact,
-    contactInfo: req.user.contactInfo,
-    course: req.user.course,
-    description:req.user.description,
-    itemPic: req.user.itemPic,
-    product: req.user.product
+    price: req.body.price,
+    condition: req.body.condition,
+    contact: req.body.contact,
+    contactInfo: req.body.contactInfo,
+    course: req.body.course,
+    description:req.body.description,
+    itemPic: req.body.itemPic,
+    product: req.body.product,
+    status:req.body.status,
   })
 
 
