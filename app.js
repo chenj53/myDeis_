@@ -164,8 +164,11 @@ app.get('/editProfile',isLoggedIn, (req,res)=>{
   res.render('editProfile')
 })
 
-// app.get('/editPosts/:id',isLoggedIn,forumPostController.showEdit);
-// app.post('/editPosts/:id',isLoggedIn,forumPostController.update);
+app.get('/editPost/:id',isLoggedIn, (req,res)=>{
+    res.render('editPost')
+})
+
+app.post('/processedit',isLoggedIn,forumPostController.update);
 
 app.get('/profiles', isLoggedIn, profileController.getAllProfiles);
 
@@ -182,6 +185,7 @@ app.get('/showProfile/:id',
 
 
 app.post('/updateProfile',profileController.update)
+app.post('/updatePost',forumPostController.update)
 
 // add page for editProfile and views
 // add router for updateProfile and send browser to /profie

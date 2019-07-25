@@ -187,35 +187,37 @@ exports.attachAllForumComments = ( req, res, next ) => {
 
 
 
-// exports.update = ( req, res ) => {
-//
-//   posts.findOne(req.body.postId)
-//   .exec()
-//   .then((p) => {
-//
-//     p.post: req.body.post,
-//     p.createdAt:  new Date(),
-//     p.price: req.body.price,
-//     p.condition: req.body.condition,
-//     p.contact: req.body.contact,
-//     p.contactinfo: req.body.contactinfo,
-//     p.course: req.body.course,
-//     p.description:req.body.description,
-//     p.itemPic: req.body.itemPic,
-//     p.product: req.body.product
-//
-//
-//     p.save()
-//     .then(() => {
-//       res.redirect('/showProfile/'+req.user._id);
-//     })
-//
-//   })
-//   .catch(function (error) {
-//     // handle error
-//     console.log(error);
-//   })
-//   .finally(function () {
-//     // always executed
-//   });
-// };
+exports.update = ( req, res ) => {
+
+  ForumPost.findOne(req.params.postId)
+
+  .exec()
+  .then((p) => {
+    console.log(req.params.postId)
+
+    p.post= req.body.post,
+    p.createdAt=  new Date(),
+    p.price=req.body.price,
+    p.condition= req.body.condition,
+    p.contact= req.body.contact,
+    p.contactinfo= req.body.contactinfo,
+    p.course= req.body.course,
+    p.description=req.body.description,
+    p.itemPic=req.body.itemPic,
+    p.product= req.body.product
+
+
+    p.save()
+    .then(() => {
+      res.redirect('/showProfile/'+req.user._id);
+    })
+
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });
+};
