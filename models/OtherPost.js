@@ -19,6 +19,7 @@ var otherPostSchema = Schema( {
   picture: String,
   product: String,
   itemPic: String,
+  status: String,
 
 
 
