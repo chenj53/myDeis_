@@ -292,6 +292,11 @@ app.get('/Market', function(req, res, next) {
 });
 
 
+app.get('/Interested', function(req, res, next) {
+  res.render('Interested',{title:"Interested"});
+});
+
+
 
 app.get('/Events', function(req, res, next) {
   res.render('Events',{title:"Events"});
