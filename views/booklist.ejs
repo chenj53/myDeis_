@@ -5,25 +5,26 @@
       <div class="media-body">
           <a href="/showPost/<%= posts[i]._id %>">
             <h4 class="media-heading">
-                  <%= posts[i].post %>
+                  <%= posts[i].post %> - <%= posts[i].course %>
              </h4>
-          </a> <%= posts[i].course %>
-          <p class="text-left"> <strong> <%= posts[i].condition %> </p>
-          <p class="text-left">  $ <%= posts[i].price  %>   </p>
-          <p class="text-left"> <%= posts[i].contact  %>  : <%= posts[i].contactInfo %>   </p>
-          <p class="text-right"> By <%= posts[i].userName %> </p>
-          <p class="text-right">  <%= status %> </p>
-          <p class="text-center">
+          </a>
             <img class="media-object" src="<%= posts[i].itemPic %>" width="200" height="200">
+            <br>
+            <br>
+            <h4><p class="text-left">  $ <%= posts[i].price  %>   </p></h4>
+          <p class="text-left"> <strong> <%= posts[i].condition %> </p>
+          <p class="text-left"> <%= posts[i].contact  %>  : <%= posts[i].contactInfo %>   </p>
+          <p class="text-left">
+            Description: <%= posts[i].description %>
           </p>
 
-          <p>  Description: <%= posts[i].description %> </p>
-          <p> STATUS:  <%= posts[i].interest %></p>
+            <p class="text-right"> By <%= posts[i].userName %> </p>
+            <!-- <p class="text-right">  <%= status %> </p> -->
+          <!-- <p> STATUS:  <%= posts[i].interest %></p> -->
 
-
+          <p class="text-right"><%= posts[i].createdAt %> </p>
           <ul class="list-inline list-unstyled">
-              <li><span><i class="glyphicon glyphicon-calendar"></i> <%= posts[i].createdAt %> </span></li>
-              <li>|</li>
+            
               <!--
                 <span><i class="glyphicon glyphicon-comment"></i>  <%=  %></span>
                 <li>|</li>
@@ -45,12 +46,11 @@
               <span><i class="fa fa-google-plus-square"></i></span>
             </li>
             <% if (user._id.equals(posts[i].userId)) { %>
-              <li>
+
                 <a href="/deletePost/<%= posts[i]._id %>" class="btn btn-info btn-lg">
                   <span class="glyphicon glyphicon-remove-circle"></span> Remove
                 </a>
-              </li>
-              <br>
+
               <a href="/editPost/<%= posts[i]._id %>" class="btn btn-info btn-lg">
                 <span class="glyphicon glyphicon-edit"></span> Edit
               </a>
