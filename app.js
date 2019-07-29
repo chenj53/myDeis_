@@ -164,6 +164,10 @@ app.get('/editProfile',isLoggedIn, (req,res)=>{
   res.render('editProfile')
 })
 
+
+app.get('/RideShareForm',isLoggedIn, (req,res)=>{
+  res.render('RideShareForm')
+})
 app.get('/editPost/:id',isLoggedIn, (req,res)=>{
     res.render('editPost')
 })
