@@ -4,63 +4,63 @@
 <br>
 <br><br>
 <strong><%= post.Destination %>, <%= post.DestinationCity %>, <%= post.DestinationState  %>   </p>
-<p class="text-left"> <strong> Pickup Location: <%= post.StartAddress %> </p>
-<p class="media-heading"> <font size="6"> <%= post.userName %>   </a></font> -  <%= status %> </p></h4>
-<p class="text-left">   <%= post.StartCity  %>, <%= post.StartState  %>, <%= post.StartZip  %>   </p>
-<p class="text-left"> Pickup Date and Time: <%= post.PickupTime %> <%= post.PickupDate %>
-<p class="text-left"> <%= post.rideContact %> : <%= post.rideContactInfo %>
+  <p class="text-left"> <strong> Pickup Location: <%= post.StartAddress %> </p>
+    <p class="media-heading"> <font size="6"> <%= post.userName %>   </a></font> -  <%= status %> </p></h4>
+    <p class="text-left">   <%= post.StartCity  %>, <%= post.StartState  %>, <%= post.StartZip  %>   </p>
+    <p class="text-left"> Pickup Date and Time: <%= post.PickupTime %> <%= post.PickupDate %>
+      <p class="text-left"> <%= post.rideContact %> : <%= post.rideContactInfo %>
 
-<p class="text-left"> <%= post.createdAt %> </p>
+        <p class="text-left"> <%= post.createdAt %> </p>
 
-<% if (post.userId.equals(user._id)) { %>
+        <% if (post.userId.equals(user._id)) { %>
 
-  <% } %>
-  <pre>
-  <%= post.post %>
-  </pre>
-
-
+          <% } %>
+          <pre>
+            <%= post.post %>
+          </pre>
 
 
 
 
 
-  <form method="post" action="/saveRideShareComment">
-      <input type="hidden" name="postId" value="<%= post._id %>">
-      <textarea name="comment"  cols="100%"></textarea><br>
-      <input class="btn btn-sm btn-primary" type="submit" value="Add Comment">
-  </form>
-  <br><br><br>
 
 
-<h2>Comments: <%= comments.length %></h2>
+          <form method="post" action="/saveRideShareComment">
+            <input type="hidden" name="postId" value="<%= post._id %>">
+            <textarea name="comment"  cols="100%"></textarea><br>
+            <input class="btn btn-sm btn-primary" type="submit" value="Add Comment">
+          </form>
+          <br><br><br>
 
 
-<% for(i = 0; i<comments.length; i++){  %>
-  <style>
-        .well {
-            height: 50px;
-            width: 100%;
-            color: white;
-            background-color: black;
-        }
-   </style>
-<body>
-   <div class="well">
-     <li> <a href="/showComment/<%= comments[i]._id %>">
-           <%= comments[i].userName %> : </a>
-           <%= comments[i].comment %> <br>
+          <h2>Comments: <%= comments.length %></h2>
 
 
-           <%= comments[i].createdAt %></\/i> <br>
-      </li>
-   </div>
-   </body>
+          <% for(i = 0; i<comments.length; i++){  %>
+            <style>
+              .well {
+                height: 50px;
+                width: 100%;
+                color: white;
+                background-color: black;
+              }
+            </style>
+            <body>
+              <div class="well">
+                <li> <a href="/showComment/<%= comments[i]._id %>">
+                  <%= comments[i].userName %> : </a>
+                  <%= comments[i].comment %> <br>
+
+
+                  <%= comments[i].createdAt %></\/i> <br>
+                </li>
+              </div>
+            </body>
 
 
 
-<% } %>
-<br>
+            <% } %>
+            <br>
 
 
-<%- include('bootfooter') -%>
+            <%- include('bootfooter') -%>

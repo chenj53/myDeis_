@@ -14,41 +14,41 @@
       </li>
 
 
-        <% if (loggedIn) { %>
+      <% if (loggedIn) { %>
 
-          <li class="nav-item">
-            <a class="nav-link" href="/rideshare">RideShare</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/market">Market</a>
-          </li>
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Profiles
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/profile">My Profile</a>
-          <a class="dropdown-item" href="/editProfile">Update Profile</a>
-        </div>
-      </li>
-
-
-      <li class="nav-item">
-        <a class="nav-link active" href="/logout"> Logout</a>
-      </li>
-      <% } else { %>
         <li class="nav-item">
-          <a class="nav-link active" href="/auth/google"> Login</a>
+          <a class="nav-link" href="/rideshare">RideShare</a>
         </li>
-        <% }  %>
-    </ul>
+        <li class="nav-item">
+          <a class="nav-link" href="/market">Market</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Profiles
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/profile">My Profile</a>
+            <a class="dropdown-item" href="/editProfile">Update Profile</a>
+          </div>
+        </li>
 
 
-    <form class="form-inline my-2 my-lg-0" method="post" action="/search">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="text">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+        <li class="nav-item">
+          <a class="nav-link active" href="/logout"> Logout</a>
+        </li>
+        <% } else { %>
+          <li class="nav-item">
+            <a class="nav-link active" href="/auth/google"> Login</a>
+          </li>
+          <% }  %>
+        </ul>
 
-  </div>
-</nav>
+
+        <form class="form-inline my-2 my-lg-0" method="post" action="/search">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="text">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+
+      </div>
+    </nav>
