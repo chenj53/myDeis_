@@ -187,6 +187,8 @@ app.get('/showProfile/:id',
 app.post('/updateProfile',profileController.update)
 app.post('/updatePost',forumPostController.update)
 
+app.get('/search', otherPostController.search)
+
 // add page for editProfile and views
 // add router for updateProfile and send browser to /profie
 

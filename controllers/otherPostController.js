@@ -183,6 +183,16 @@ exports.attachAllOtherComments = ( req, res, next ) => {
 
 
 
+exports.search = ( req, res ) => {
+  // req.query.text
+
+  // res.render('query', {})
+
+  res.send('items')
+}
+
+
+
 // exports.update = ( req, res ) => {
 //
 //   posts.findOne(req.body.postId)
