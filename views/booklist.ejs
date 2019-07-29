@@ -1,28 +1,27 @@
 <% for(i = 0; i<posts.length; i++){  %>
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <div class="well">
+    <hr><hr>
     <div class="media">
-
-
-
       <div class="media-body">
-        <p> <a href="/showPost/<%= posts[i]._id %>"> </p>
-          <h4 class="media-heading"> <font size="6"> <%= posts[i].post %>   </a></font> - <%= posts[i].course %>  </h4>
+          <a href="/showPost/<%= posts[i]._id %>">
+            <h4 class="media-heading">
+                  <%= posts[i].post %>
+             </h4>
+          </a> <%= posts[i].course %>
           <p class="text-left"> <strong> <%= posts[i].condition %> </p>
-            <p class="text-left">  $ <%= posts[i].price  %>   </p>
-            <p class="text-left"> <%= posts[i].contact  %>  : <%= posts[i].contactInfo %>   </p>
-            <p class="text-right"> By <%= posts[i].userName %> </p>
-            <p class="text-right">  <%= status %> </p>
-            <p class="text-center"> <img class="media-object" src="<%= posts[i].itemPic %>" width="200" height="200">
-            </p>
+          <p class="text-left">  $ <%= posts[i].price  %>   </p>
+          <p class="text-left"> <%= posts[i].contact  %>  : <%= posts[i].contactInfo %>   </p>
+          <p class="text-right"> By <%= posts[i].userName %> </p>
+          <p class="text-right">  <%= status %> </p>
+          <p class="text-center">
+            <img class="media-object" src="<%= posts[i].itemPic %>" width="200" height="200">
+          </p>
 
-            <p>  Description: <%= posts[i].description %> </p>
-            <p> STATUS:  <%= posts[i].interest %></p>
+          <p>  Description: <%= posts[i].description %> </p>
+          <p> STATUS:  <%= posts[i].interest %></p>
 
 
-            <ul class="list-inline list-unstyled">
+          <ul class="list-inline list-unstyled">
               <li><span><i class="glyphicon glyphicon-calendar"></i> <%= posts[i].createdAt %> </span></li>
               <li>|</li>
               <!--
@@ -56,7 +55,7 @@
               </a>
               <% } %>
             </ul>
-          </div>
         </div>
       </div>
+    </div>
       <% } %>

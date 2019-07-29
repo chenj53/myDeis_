@@ -13,8 +13,63 @@
         <a class="btn btn-lg btn-primary" href="/OtherSell" role="button">Other</a>
       </p>
     </div>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
   </div>
 </div>
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .well {
+      margin-top:10px;
+      border-top: thick solid blue;
+    }
+
+    #myInput {
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 10px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
+
+
+    </style>
+    </head>
+    <body>
+
+    <!-- <h2>My Customers</h2> -->
+
+    <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name"> -->
+
+
+    <script>
+    function myFunction() {
+      var input, filter, wells, headings, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      wells = document.getElementsByClassName("well");
+      for (i = 0; i < wells.length; i++) {
+        headings = wells[i].getElementsByClassName('media-heading')
+        txtValue = headings[0].innerText
+
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          wells[i].style.display = "";
+        } else {
+          wells[i].style.display = "none";
+        }
+      }
+    }
+    </script>
+
+    </body>
+    </html>
+
 
 <%- include('booklist') -%>
 
