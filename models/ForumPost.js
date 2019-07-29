@@ -19,6 +19,7 @@ var forumPostSchema = Schema( {
   itemPic: String,
   product: String,
   status: String,
+  interest: String,
 
 
 

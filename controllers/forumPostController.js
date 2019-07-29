@@ -28,6 +28,7 @@ exports.saveForumPost = ( req, res ) => {
     itemPic: req.body.itemPic,
     product: req.body.product,
     status: req.body.status,
+    interest: req.body.interest,
   })
 
 

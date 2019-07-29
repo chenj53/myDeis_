@@ -1,58 +1,58 @@
 <% for(i = 0; i<rides.length; i++){  %>
- <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
- <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-   <div class="well">
-      <div class="media">
-         <!--
-         <a class="pull-left" href="#">
-         <img class="media-object" src="http://placekitten.com/150/150">
-         </a>
-         -->
-        <div class="media-body">
-          <p> <a href="/showRide/<%= rides[i]._id %>"> </p>
-            <h4 class="media-heading"> <font size="6"> <%= rides[i].userName %>   </a></font> -  <%= status %> </p></h4>
-            <p class="text-left"> <strong> Pickup Location: <%= rides[i].StartAddress %> </p>
-            <p class="text-left">   <%= rides[i].StartCity  %>, <%= rides[i].StartState  %>, <%= rides[i].StartZip  %>   </p>
-            <p class="text-left"> Pickup Date and Time: <%= rides[i].PickupTime %> <%= rides[i].PickupDate %>
-            <p class="text-left"> <%= rides[i].rideContact %> : <%= rides[i].rideContactInfo %>
-                <p class="text-right">  Destination:  <%= rides[i].Destination %>, <%= rides[i].DestinationCity %>, <%= rides[i].DestinationState  %>   </p>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <div class="well">
+    <div class="media">
+      <!--
+      <a class="pull-left" href="#">
+      <img class="media-object" src="http://placekitten.com/150/150">
+    </a>
+  -->
+  <div class="media-body">
+    <p> <a href="/showRide/<%= rides[i]._id %>"> </p>
+      <h4 class="media-heading"> <font size="6"> <%= rides[i].userName %>   </a></font> -  <%= status %> </p></h4>
+      <p class="text-left"> <strong> Pickup Location: <%= rides[i].StartAddress %> </p>
+        <p class="text-left">   <%= rides[i].StartCity  %>, <%= rides[i].StartState  %>, <%= rides[i].StartZip  %>   </p>
+        <p class="text-left"> Pickup Date and Time: <%= rides[i].PickupTime %> <%= rides[i].PickupDate %>
+          <p class="text-left"> <%= rides[i].rideContact %> : <%= rides[i].rideContactInfo %>
+            <p class="text-right">  Destination:  <%= rides[i].Destination %>, <%= rides[i].DestinationCity %>, <%= rides[i].DestinationState  %>   </p>
 
 
 
             <ul class="list-inline list-unstyled">
-               <li><span><i class="glyphicon glyphicon-calendar"></i> <%= rides[i].rideCreated %> </span></li>
-               <li>|</li>
-               <!--
-               <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
-               <li>|</li>
-               <li>
-                  <span class="glyphicon glyphicon-star"></span>
-                           <span class="glyphicon glyphicon-star"></span>
-                           <span class="glyphicon glyphicon-star"></span>
-                           <span class="glyphicon glyphicon-star"></span>
-                           <span class="glyphicon glyphicon-star-empty"></span>
-               </li>
-               <li>|</li>
-               -->
-               <li>
-               <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
-                 <span><i class="fa fa-facebook-square"></i></span>
-                 <span><i class="fa fa-twitter-square"></i></span>
-                 <span><i class="fa fa-google-plus-square"></i></span>
-               </li>
-               <% if (user._id.equals(rides[i].userId)) { %>
-                 <li>
-                    <a href="/deleteRideShare/<%= rides[i]._id %>" class="btn btn-info btn-lg">
-                    <span class="glyphicon glyphicon-remove-circle"></span> Remove
-                     </a>
-                 </li>
-                 <a href="#" class="btn btn-info btn-lg">
-          <span class="glyphicon glyphicon-edit"></span> Edit
-        </a>
-              <% } %>
-            </ul>
-          </div>
-     </div>
-   </div>
-         <% } %>
+              <li><span><i class="glyphicon glyphicon-calendar"></i> <%= rides[i].rideCreated %> </span></li>
+              <li>|</li>
+              <!--
+              <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
+              <li>|</li>
+              <li>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star-empty"></span>
+            </li>
+            <li>|</li>
+          -->
+          <li>
+            <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
+            <span><i class="fa fa-facebook-square"></i></span>
+            <span><i class="fa fa-twitter-square"></i></span>
+            <span><i class="fa fa-google-plus-square"></i></span>
+          </li>
+          <% if (user._id.equals(rides[i].userId)) { %>
+            <li>
+              <a href="/deleteRideShare/<%= rides[i]._id %>" class="btn btn-info btn-lg">
+                <span class="glyphicon glyphicon-remove-circle"></span> Remove
+              </a>
+            </li>
+            <a href="#" class="btn btn-info btn-lg">
+              <span class="glyphicon glyphicon-edit"></span> Edit
+            </a>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <% } %>
