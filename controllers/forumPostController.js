@@ -196,6 +196,8 @@ exports.update = ( req, res ) => {
   .then((p) => {
     console.log(req.params.postId)
 
+    p.userId= req.user._id,
+    p.userName= req.user.googlename,
     p.post= req.body.post,
     p.createdAt=  new Date(),
     p.price=req.body.price,
