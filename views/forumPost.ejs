@@ -1,5 +1,6 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
+
 <div class="jumbotron">
   <div class="media-body">
     <h4 class="media-heading"> <font size="6"> <%= post.post %>   </a></font> - <%= post.course %>  </h4>
@@ -11,7 +12,8 @@
       <p> STATUS:  </p>
       <p class="text-right"> By <%= post.userName %> </p>
       <p class="text-right">  <%= status %> </p>
-      <p class="text-right"> <a class="btn btn-primary" href="/Interested" role="button">I'm Interested</a>
+      <p class="text-right"> <a class="btn btn-primary" role="button" href="/Interested/<%= post._id %>">I'm Interested</a>
+
     </strong>
   </div>
 </div>

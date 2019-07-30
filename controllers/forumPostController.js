@@ -122,7 +122,8 @@ exports.showOnePost = ( req, res ) => {
     .exec()
     .then( ( forumPost ) => {
       res.render( 'forumPost', {
-        post:forumPost, title:"Forum Post"
+        post:forumPost,
+        title:"Forum Post"
       } );
     } )
     .catch( ( error ) => {

@@ -1,62 +1,72 @@
+
+<div style="display: flex; flex-wrap: wrap; justify-content: center;">
 <% for(i = 0; i<posts.length; i++){  %>
-  <div class="well">
-
-    <div class="media">
-      <div class="media-body">
-          <a href="/showPost/<%= posts[i]._id %>">
-            <h4 class="media-heading">
-                  <%= posts[i].post %> - <%= posts[i].course %>
-             </h4>
-          </a>
-            <img class="media-object" src="<%= posts[i].itemPic %>" width="200" height="200">
-            <br>
-            <br>
-            <h4><p class="text-left">  $ <%= posts[i].price  %>   </p></h4>
-          <p class="text-left"> <strong> <%= posts[i].condition %> </p>
-          <p class="text-left"> <%= posts[i].contact  %>  : <%= posts[i].contactInfo %>   </p>
-          <p class="text-left">
-            Description: <%= posts[i].description %>
-          </p>
-
-            <p class="text-right"> By <%= posts[i].userName %> </p>
-            <!-- <p class="text-right">  <%= status %> </p> -->
-          <!-- <p> STATUS:  <%= posts[i].interest %></p> -->
-
-          <p class="text-right"><%= posts[i].createdAt %> </p>
-          <ul class="list-inline list-unstyled">
-            
-              <!--
-                <span><i class="glyphicon glyphicon-comment"></i>  <%=  %></span>
-                <li>|</li>
-                <li>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-              </li>
-
-              <li>|</li>
-            -->
-            <li>
-
-              <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
-              <span><i class="fa fa-facebook-square"></i></span>
-              <span><i class="fa fa-twitter-square"></i></span>
-              <span><i class="fa fa-google-plus-square"></i></span>
-            </li>
-            <% if (user._id.equals(posts[i].userId)) { %>
-
-                <a href="/deletePost/<%= posts[i]._id %>" class="btn btn-info btn-lg">
-                  <span class="glyphicon glyphicon-remove-circle"></span> Remove
-                </a>
-
-              <a href="/editPost/<%= posts[i]._id %>" class="btn btn-info btn-lg">
-                <span class="glyphicon glyphicon-edit"></span> Edit
-              </a>
-              <% } %>
-            </ul>
-        </div>
-      </div>
+<div class="card" style="width: 18rem; display: flex; flex-direction: column; justify-content: space-between;">
+  <div style="display: flex; flex-direction: column; justify-content: center; flex-grow: 1;">
+    <img class="card-img-top" src="<%= posts[i].itemPic %>" alt="Card image cap" style="max-width: 100%;">
+  </div>
+  <div class="card-body" style="display:flex; flex-direction: column; flex-grow: 0;">
+    <div style="">
+      <a href="/showPost/<%= posts[i]._id %>" >
+        <h5 class="card-title media-heading"><%= posts[i].post %> <%= posts[i].course && ` - ${posts[i].course}` %></h5>
+      </a>
     </div>
+      <h5><p class="text-left">  $ <%= posts[i].price  %>   </p></h5>
+    <p class="text-left"> <%= posts[i].condition %> </p>
+    <p class="text-left"> <%= posts[i].contact  %>  : <%= posts[i].contactInfo %>   </p>
+    <p class="text-left">
+      Description: <%= posts[i].description %>
+    </p>
+
+      <p class="text-right"> By <%= posts[i].userName %> </p>
+      <!-- <p class="text-right">  <%= status %> </p> -->
+    <!-- <p> STATUS:  <%= posts[i].interest %></p> -->
+
+    <p class="text-right"><%= posts[i].createdAt %> </p>
+    <ul class="list-inline list-unstyled">
+
+        <!--
+          <span><i class="glyphicon glyphicon-comment"></i>  <%=  %></span>
+          <li>|</li>
+          <li>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star-empty"></span>
+        </li>
+
+        <li>|</li>
+      -->
+      <li>
+
+        <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
+        <span><i class="fa fa-facebook-square"></i></span>
+        <span><i class="fa fa-twitter-square"></i></span>
+        <span><i class="fa fa-google-plus-square"></i></span>
+      </li>
+      <% if (user._id.equals(posts[i].userId)) { %>
+
+          <a href="/deletePost/<%= posts[i]._id %>" class="btn btn-info btn-lg">
+            <span class="glyphicon glyphicon-remove-circle"></span> Remove
+          </a>
+
+        <a href="/editPost/<%= posts[i]._id %>" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-edit"></span> Edit
+        </a>
+        <% } %>
+      </ul>
+  </div>
+  <!-- <ul class="list-group list-group-flush">
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div> -->
+</div>
       <% } %>
+
+      </div>
