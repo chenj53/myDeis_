@@ -296,7 +296,9 @@ app.get('/Interested/:postId', function(req, res, next) {
   res.render('Interested',{title:"Interested"});
 });
 
-
+app.get('/RideShareForm', function(req, res, next) {
+  res.render('RideShareForm',{title:"RideShareForm"});
+});
 
 app.get('/Events', function(req, res, next) {
   res.render('Events',{title:"Events"});
