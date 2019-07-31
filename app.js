@@ -97,6 +97,10 @@ app.use((req,res,next) => {
   next()
 })
 
+app.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+ });
+
 
 
 // here are the authentication routes

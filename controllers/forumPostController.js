@@ -191,6 +191,7 @@ exports.attachAllForumComments = ( req, res, next ) => {
 
 exports.update = ( req, res ) => {
 
+
   ForumPost.findOne(req.params.postId)
 
   .exec()
