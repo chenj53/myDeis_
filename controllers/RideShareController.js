@@ -29,6 +29,8 @@ exports.saveRideShare = ( req, res ) => {
     PickupTime: req.body.PickupTime,
     DestinationCity: req.body.DestinationCity,
     DestinationState: req.body.DestinationState,
+    Car: req.body.Car,
+
 
 
 
