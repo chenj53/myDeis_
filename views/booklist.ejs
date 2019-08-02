@@ -3,7 +3,7 @@
 <% for(i = 0; i<posts.length; i++){  %>
 <div class="card" style="width: 18rem; display: flex; flex-direction: column; justify-content: space-between;">
   <div style="display: flex; flex-direction: column; justify-content: center; flex-grow: 1;">
-    <img class="card-img-top" src="<%= posts[i].itemPic %>" alt="Card image cap" style="max-width: 100%;">
+    
   </div>
   <div class="card-body" style="display:flex; flex-direction: column; flex-grow: 0;">
     <div style="">
@@ -11,15 +11,11 @@
         <h5 class="card-title media-heading"><%= posts[i].post %> <%= posts[i].course && ` - ${posts[i].course}` %></h5>
       </a>
     </div>
-      <h5><p class="text-left">  $ <%= posts[i].price  %>   </p></h5>
-    <p class="text-left"> <%= posts[i].condition %> </p>
-    <p class="text-left"> <%= posts[i].contact  %>  : <%= posts[i].contactInfo %>   </p>
+
     <p class="text-left">
-      Description: <%= posts[i].description %>
+       <%= posts[i].description %>
     </p>
-    <p class="text-left">
-      STATUS: 
-    </p>
+
 
       <p class="text-right"> By <%= posts[i].userName %> </p>
       <!-- <p class="text-right">  <%= status %> </p> -->

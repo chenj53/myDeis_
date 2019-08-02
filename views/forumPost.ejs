@@ -1,18 +1,14 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
 
-<div class="jumbotron">
+<div class="well">
   <div class="media-body">
-    <h4 class="media-heading"> <font size="6"> <%= post.post %>   </a></font> - <%= post.course %>  </h4>
-    <p class="text-left"> <strong> <%= post.condition %> </p>
-      <p class="text-left">  $ <%= post.price  %>   </p>
-      <p class="text-left"> <%= post.contact  %>  : <%= post.contactInfo %>   </p>
-      <p class="text-left"> <img class="media-object" src="<%= post.itemPic %>" width="200" height="200"> (Not actual product)</p>
-      <p>  Description: <%= post.description %> </p>
-      <p> STATUS:  </p>
+    <h4 class="media-heading"> <font size="6"> <%= post.post %>   </a></font>   </h4>
+
+      <p>   <%= post.description %> </p>
+
       <p class="text-right"> By <%= post.userName %> </p>
-      <p class="text-right">  <%= status %> </p>
-      <p class="text-right"> <a class="btn btn-primary" role="button" href="/Interested/<%= post._id %>">I'm Interested</a>
+
 
     </strong>
   </div>
